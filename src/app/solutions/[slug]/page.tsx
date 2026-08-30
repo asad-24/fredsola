@@ -1,0 +1,141 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+
+import { Footer } from "@/components/site/footer";
+import { Header } from "@/components/site/header";
+import {
+  CTASection,
+  PageHero,
+  Section,
+  SectionHeading,
+  SiteShell,
+} from "@/components/site/section";
+import { services } from "@/data/site";
+
+type ServicePageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export function generateStaticParams() {
+  return services.map((service) => ({ slug: service.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: ServicePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const service = services.find((item) => item.slug === slug);
+
+  return {
+    title: service ? service.title : "Solution",
+    description: service?.summary,
+  };
+}
+
+export default async function ServicePage({ params }: ServicePageProps) {
+  const { slug } = await params;
+  const service = services.find((item) => item.slug === slug);
+
+  if (!service) {
+    notFound();
+  }
+
+  return (
+    <SiteShell>
+      <Header />
+      <main className="flex-1">
+        <PageHero
+          eyebrow="Solution"
+          title={service.title}
+          text={service.summary}
+        />
+        <Section>
+          <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
+            <SectionHeading
+              eyebrow="The Financial Concern"
+              title="Start by naming what needs attention."
+            />
+            <p className="text-lg leading-9 text-[#425166]">
+              {service.concern}
+            </p>
+          </div>
+        </Section>
+        <Section tone="cream">
+          <div className="grid gap-6 md:grid-cols-2">
+            <InfoBlock title="Why It Matters" text={service.whyItMatters} />
+            <InfoBlock
+              title="How the Strategy Works"
+              text={service.howItWorks}
+            />
+          </div>
+        </Section>
+        <Section>
+          <div className="grid gap-10 lg:grid-cols-2">
+            <div>
+              <h2 className="font-heading text-4xl text-[#071629]">
+                Who May Benefit
+              </h2>
+              <ul className="mt-8 grid gap-4">
+                {service.whoMayBenefit.map((item) => (
+                  <li
+                    key={item}
+                    className="border-l-2 border-[#C9A227] pl-4 text-base leading-7 text-[#425166]"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h2 className="font-heading text-4xl text-[#071629]">
+                Important Considerations
+              </h2>
+              <ul className="mt-8 grid gap-4">
+                {service.considerations.map((item) => (
+                  <li
+                    key={item}
+                    className="border-l-2 border-[#0B1F3A]/20 pl-4 text-base leading-7 text-[#425166]"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Section>
+        <Section tone="cream">
+          <SectionHeading
+            eyebrow="FAQs"
+            title={`Questions about ${service.shortTitle.toLowerCase()}.`}
+          />
+          <div className="mt-10 grid gap-4 lg:grid-cols-2">
+            {service.faqs.map((faq) => (
+              <article key={faq.question} className="rounded-[8px] bg-white p-7">
+                <h2 className="text-lg font-bold text-[#071629]">
+                  {faq.question}
+                </h2>
+                <p className="mt-4 text-sm leading-7 text-[#5F6B7A]">
+                  {faq.answer}
+                </p>
+              </article>
+            ))}
+          </div>
+        </Section>
+        <CTASection
+          title={`Talk through ${service.shortTitle.toLowerCase()} with clarity.`}
+          text="A conversation can help connect the educational overview to your priorities, questions, and timing."
+        />
+      </main>
+      <Footer />
+    </SiteShell>
+  );
+}
+
+function InfoBlock({ title, text }: { title: string; text: string }) {
+  return (
+    <article className="rounded-[8px] bg-white p-8">
+      <h2 className="font-heading text-4xl text-[#071629]">{title}</h2>
+      <p className="mt-5 text-base leading-8 text-[#425166]">{text}</p>
+    </article>
+  );
+}
