@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Manrope } from "next/font/google";
 import { AnimationProvider } from "@/components/site/animation-provider";
+import { StartupAnimation } from "@/components/site/startup-animation";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${manrope.variable} ${dmSerif.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full bg-background text-foreground">
+        <StartupAnimation />
         <AnimationProvider />
         {children}
       </body>

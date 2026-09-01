@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
+import {
+  BookOpen,
+  Landmark,
+  PiggyBank,
+  ShieldCheck,
+  Sprout,
+} from "lucide-react";
 
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
@@ -20,28 +27,68 @@ import {
   testimonials,
 } from "@/data/site";
 
+const heroSignals = [
+
+  {
+    Icon: BookOpen,
+    label: "Education",
+    className: "right-[7%] bottom-[10%] hidden 2xl:block",
+    delay: "-2.6s",
+    duration: "10s",
+  },
+  {
+    Icon: Sprout,
+    label: "Future",
+    className: "right-[7%] top-[10%] hidden xl:block",
+    delay: "-6s",
+    duration: "12s",
+  },
+];
+
 export default function Home() {
   return (
     <SiteShell>
       <Header />
       <main className="flex-1">
-        <section className="overflow-hidden bg-[#F7F4EC] px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
-          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.94fr_1.06fr]">
+        <section className="hero-stage relative isolate overflow-hidden bg-[#071629] px-5 py-16 text-white sm:px-8 sm:py-20 lg:px-10">
+          <div className="hero-grid" aria-hidden="true" />
+          <div className="pointer-events-none absolute inset-0">
+            {heroSignals.map(({ Icon, label, className, delay, duration }) => (
+              <div
+                key={label}
+                className={`hero-float absolute ${className}`}
+                style={
+                  {
+                    "--float-delay": delay,
+                    "--float-duration": duration,
+                  } as CSSProperties
+                }
+              >
+                <div className="hero-float-inner">
+                  <Icon className="size-5 text-[#C9A227]" aria-hidden="true" />
+                  <span>{label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
             <div className="max-w-2xl">
               <p
-                className="hero-enter mb-6 text-xs font-bold uppercase tracking-[0.24em] text-[#C9A227]"
+                className="hero-enter mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.08] px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-[#C9A227] backdrop-blur"
                 style={{ "--hero-delay": "80ms" } as CSSProperties}
               >
+                <span className="size-1.5 rounded-full bg-[#C9A227]" />
                 FKSola Financial
               </p>
               <h1
-                className="hero-enter font-heading text-6xl leading-[0.98] text-balance text-[#071629] sm:text-7xl lg:text-8xl"
+                className="hero-enter font-heading text-6xl leading-[0.98] text-balance text-white sm:text-7xl lg:text-8xl"
                 style={{ "--hero-delay": "180ms" } as CSSProperties}
               >
                 Building a Better Financial Future
               </h1>
               <p
-                className="hero-enter mt-7 max-w-xl text-lg leading-8 text-[#425166]"
+                className="hero-enter mt-7 max-w-xl text-lg leading-8 text-white/75"
                 style={{ "--hero-delay": "300ms" } as CSSProperties}
               >
                 Helping individuals and families make informed financial
@@ -49,26 +96,55 @@ export default function Home() {
               </p>
               <div
                 className="hero-enter mt-10 flex flex-col gap-4 sm:flex-row"
-                style={{ "--hero-delay": "420ms" } as CSSProperties}
+                style={{ "--hero-delay": "280ms" } as CSSProperties}
               >
                 <Link
                   href="/contact"
-                  className="inline-flex h-12 items-center justify-center rounded-full bg-[#0B1F3A] px-6 text-sm font-bold text-white transition hover:bg-[#071629]"
+                  className="motion-card inline-flex h-12 items-center justify-center rounded-full bg-[#C9A227] px-6 text-sm font-bold text-[#071629] shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-white"
                 >
                   Schedule a Conversation
                 </Link>
                 <Link
                   href="/solutions"
-                  className="inline-flex h-12 items-center justify-center rounded-full border border-[#0B1F3A]/20 px-6 text-sm font-bold text-[#071629] transition hover:border-[#C9A227] hover:bg-white"
+                  className="motion-card inline-flex h-12 items-center justify-center rounded-full border border-white/20 bg-white/[0.08] px-6 text-sm font-bold text-white backdrop-blur transition hover:-translate-y-0.5 hover:border-[#C9A227] hover:bg-white/15"
                 >
                   Explore Our Solutions
                 </Link>
               </div>
+
+              <div
+                className="hero-enter mt-9 grid gap-3 sm:grid-cols-3"
+                style={{ "--hero-delay": "360ms" } as CSSProperties}
+              >
+                {[
+                  "Education-first",
+                  "Family protection",
+                  "Retirement",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-[8px] border border-white/10 bg-white/[0.07] px-4 py-3 text-xs font-bold uppercase tracking-[0.14em] text-white/78 backdrop-blur"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="hero-image-enter relative">
-              <div className="absolute -left-8 top-8 hidden h-32 w-32 border-l border-t border-[#C9A227]/60 lg:block" />
-              <div className="overflow-hidden rounded-[8px] shadow-2xl shadow-[#071629]/18">
+              <div className="hero-corner hero-corner-top" aria-hidden="true" />
+              <div
+                className="hero-enter absolute -bottom-6 left-5 z-10 hidden max-w-xs rounded-[8px] border border-white/10 bg-[#071629]/85 p-5 text-white shadow-2xl shadow-black/25 backdrop-blur-xl sm:block"
+                style={{ "--hero-delay": "440ms" } as CSSProperties}
+              >
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A227]">
+                  Conversation First
+                </p>
+                <p className="mt-3 text-sm leading-7 text-white/75">
+                  Calm guidance for protection, planning, and prepared decisions.
+                </p>
+              </div>
+              <div className="overflow-hidden rounded-[8px] border border-white/10 shadow-2xl shadow-black/25">
                 <Image
                   data-parallax
                   src="/images/fksola-hero-consultation.png"
@@ -79,6 +155,7 @@ export default function Home() {
                   className="motion-media aspect-[4/3] w-full object-cover"
                 />
               </div>
+              <div className="hero-corner hero-corner-bottom" aria-hidden="true" />
             </div>
           </div>
         </section>
