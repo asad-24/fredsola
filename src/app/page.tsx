@@ -192,6 +192,16 @@ export default function Home() {
               </Link>
             </div>
             <div className="border-l-2 border-[#C9A227] pl-8">
+              <div className="mb-8 overflow-hidden rounded-[8px] shadow-2xl shadow-[#071629]/12">
+                <Image
+                  data-parallax
+                  src="/images/fksola-about-education.png"
+                  alt="A calm financial education conversation at a refined planning table"
+                  width={1536}
+                  height={1024}
+                  className="motion-media aspect-[16/10] w-full object-cover"
+                />
+              </div>
               <p className="font-heading text-4xl leading-tight text-[#071629]">
                 “The best financial conversation should leave people clearer
                 than when they arrived.”

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
 import {
@@ -42,6 +44,16 @@ export default function AboutPage() {
                 language and help evaluate strategies that may fit the
                 situation.
               </p>
+              <div className="overflow-hidden rounded-[8px] shadow-2xl shadow-[#071629]/12">
+                <Image
+                  data-parallax
+                  src="/images/fksola-about-education.png"
+                  alt="A calm financial education conversation at a refined planning table"
+                  width={1536}
+                  height={1024}
+                  className="motion-media aspect-[16/10] w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </Section>
