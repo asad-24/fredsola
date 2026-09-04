@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export function StartupAnimation() {
@@ -62,9 +63,17 @@ export function StartupAnimation() {
 
         <div className="startup-brand" aria-hidden="true">
           <span className="startup-reveal" />
-          <div className="startup-mark">FK</div>
-          <div>
-            <p className="startup-name">FKSola Financial</p>
+          <div className="startup-logo">
+            <Image
+              src="/images/logo-cropped.png"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 82vw, 544px"
+              className="object-contain object-center"
+              priority
+            />
+          </div>
+          <div className="startup-brand-copy">
             <p className="startup-line">Building a Better Financial Future</p>
           </div>
         </div>

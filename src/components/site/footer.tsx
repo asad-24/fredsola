@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="bg-[#071629] text-white">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.2fr_2fr] lg:px-10">
         <div>
-          <div className="[&_span:first-child]:border-[#C9A227]/40 [&_span:first-child]:bg-white [&_span:first-child]:text-[#071629] [&_span:last-child_span:first-child]:text-white [&_span:last-child_span:last-child]:text-[#C9A227]">
+          <div className="inline-flex rounded-[8px] bg-white px-3 py-2 shadow-sm shadow-black/10">
             <Logo />
           </div>
           <p className="mt-6 max-w-md text-sm leading-7 text-white/70">
