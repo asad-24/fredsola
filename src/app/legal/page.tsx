@@ -1,6 +1,7 @@
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
 import { PageHero, Section, SiteShell } from "@/components/site/section";
+import { company } from "@/data/site";
 
 export const metadata = {
   title: "Legal",
@@ -16,8 +17,8 @@ const legalSections = [
     text: "This section will contain approved website terms, acceptable use language, intellectual property notices, and visitor responsibilities.",
   },
   {
-    title: "Disclosures and Licensing Placeholder",
-    text: "This section will contain required firm disclosures, licensing information, state availability, carrier relationships, and any required compliance language.",
+    title: "Disclosures and Licensing",
+    text: `${company.representative}, ${company.role}, NPN ${company.npn}. This website is intended to provide general educational information about financial protection and planning topics. Additional firm disclosures, state availability, carrier relationships, and required compliance language will be added once approved legal text is provided.`,
   },
   {
     title: "Educational Content Notice",

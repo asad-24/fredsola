@@ -18,9 +18,11 @@ export function Footer() {
             who want clarity, protection, and a more confident view of tomorrow.
           </p>
           <p className="mt-6 text-xs leading-6 text-white/50">
-            Placeholder disclosure: FKSola Financial content is for general
-            educational purposes only and does not provide tax, legal, or
-            investment advice. Licensing and firm disclosures to be finalized.
+            FKSola Financial provides educational financial-services
+            information and conversation-based guidance. Frederick Solaga,
+            Financial Professional, NPN {company.npn}. Tax, legal, and
+            investment questions should be reviewed with qualified
+            professionals.
           </p>
         </div>
 
@@ -47,8 +49,9 @@ export function Footer() {
             <a href={`tel:${company.phone.replace(/[^0-9]/g, "")}`}>
               {company.phone}
             </a>
-            <span>{company.location}</span>
-            <span>{company.social.join(" / ")}</span>
+            <span>{company.address}</span>
+            <span>NPN: {company.npn}</span>
+            <span>{company.socialStatus}</span>
           </FooterGroup>
         </div>
       </div>

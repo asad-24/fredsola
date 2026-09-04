@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { BadgeCheck, Mail, MapPin, Phone } from "lucide-react";
 
 import { ContactForm } from "@/components/site/contact-form";
 import { Footer } from "@/components/site/footer";
@@ -27,13 +27,29 @@ export default function ContactPage() {
               <h2 className="font-heading text-4xl text-[#071629]">
                 Contact Information
               </h2>
+              <div className="mt-7 border-l-2 border-[#C9A227] pl-5">
+                <p className="font-heading text-3xl text-[#071629]">
+                  {company.representative}
+                </p>
+                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#C9A227]">
+                  {company.role}
+                </p>
+                <p className="mt-3 text-sm leading-7 text-[#5F6B7A]">
+                  NPN: {company.npn}
+                </p>
+              </div>
               <div className="mt-8 grid gap-5">
                 <ContactItem icon={Mail} label="Email" value={company.email} />
                 <ContactItem icon={Phone} label="Phone" value={company.phone} />
                 <ContactItem
                   icon={MapPin}
-                  label="Location"
-                  value={company.location}
+                  label="Main Office"
+                  value={company.address}
+                />
+                <ContactItem
+                  icon={BadgeCheck}
+                  label="NPN"
+                  value={company.npn}
                 />
               </div>
               <div className="mt-10 rounded-[8px] bg-[#F7F4EC] p-6">

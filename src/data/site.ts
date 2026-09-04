@@ -34,11 +34,19 @@ export type Service = {
 export const company = {
   name: "FKSola Financial",
   tagline: "Building a better financial future.",
-  email: "hello@fksolafinancial.com",
-  phone: "(000) 000-0000",
-  location: "Serving individuals and families by appointment",
-  address: "Business address to be added",
-  social: ["LinkedIn", "Facebook", "Instagram"],
+  representative: "Frederick Solaga",
+  role: "Financial Professional",
+  email: "Fred@fksolafinancial.com",
+  phone: "+1 (513) 906-2376",
+  location: "Main Office: Columbia, MD",
+  address: "6851 Hall Ln, Suite 100, Columbia, MD 21045, United States",
+  addressLines: [
+    "6851 Hall Ln, Suite 100",
+    "Columbia, MD 21045",
+    "United States",
+  ],
+  npn: "1345477",
+  socialStatus: "Social profiles coming soon",
 };
 
 export const navigation = [

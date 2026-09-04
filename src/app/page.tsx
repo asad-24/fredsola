@@ -1,13 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import {
-  BookOpen,
-  Landmark,
-  PiggyBank,
-  ShieldCheck,
-  Sprout,
-} from "lucide-react";
+import { BookOpen, Sprout } from "lucide-react";
 
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
@@ -28,7 +22,6 @@ import {
 } from "@/data/site";
 
 const heroSignals = [
-
   {
     Icon: BookOpen,
     label: "Education",
