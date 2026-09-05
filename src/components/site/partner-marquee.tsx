@@ -11,7 +11,7 @@ export function PartnerMarquee() {
         {partnerLoop.map((partner, index) => (
           <div
             key={`${partner}-${index}`}
-            className="flex min-h-28 w-52 shrink-0 items-center justify-center border-r border-[#0B1F3A]/10 px-6 text-center text-sm font-bold uppercase tracking-[0.16em] text-[#5F6B7A] transition hover:text-[#071629]"
+            className="flex min-h-24 w-64 shrink-0 items-center justify-center border-r border-[#0B1F3A]/10 px-5 text-center text-xs font-bold uppercase tracking-[0.14em] text-[#5F6B7A] transition hover:text-[#071629] sm:w-72 sm:text-sm"
           >
             {partner}
           </div>

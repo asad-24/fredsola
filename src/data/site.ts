@@ -47,7 +47,7 @@ export const company = {
     "Columbia, MD 21045",
     "United States",
   ],
-  npn: "1345477",
+  npn: "19808823",
   socialStatus: "Social profiles coming soon",
 };
 
@@ -56,7 +56,7 @@ export const navigation = [
   { label: "About", href: "/about" },
   { label: "Solutions", href: "/solutions" },
   { label: "Resources", href: "/resources" },
-  { label: "Careers", href: "/careers" },
+  { label: "Join Us", href: "/join-us" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -681,10 +681,17 @@ export const testimonials = [
 ];
 
 export const partners = [
-  "Carrier Partner",
-  "Education Network",
-  "Planning Alliance",
-  "Community Partner",
+  "Pacific Life",
+  "Prudential",
+  "Mutual of Omaha",
+  "Fidelity Investments",
+  "Capital Group / American Funds",
+  "AIG",
+  "Transamerica",
+  "Allianz",
+  "The Hartford",
+  "Nationwide",
+  "Franklin Templeton Investments",
 ];
 
 export const careerValues = [
