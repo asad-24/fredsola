@@ -26,12 +26,12 @@ export default function AboutPage() {
           text="FKSola Financial helps individuals and families approach important financial choices with calm, organized conversations."
         />
         <Section>
-          <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
             <SectionHeading
               eyebrow="Philosophy"
               title="A professional firm with a human way of explaining things."
             />
-            <div className="space-y-7 text-lg leading-9 text-[#425166]">
+            <div className="space-y-5 text-base leading-8 text-[#425166] lg:text-lg">
               <p>
                 FKSola Financial exists for people who want to understand their
                 options before making financial decisions. The firm’s role is to
@@ -63,9 +63,12 @@ export default function AboutPage() {
               const Icon = item.icon;
 
               return (
-                <div key={item.title} className="rounded-[8px] bg-white p-7">
+                <div
+                  key={item.title}
+                  className="rounded-[8px] bg-white p-4 sm:p-5 lg:p-6"
+                >
                   <Icon className="size-6 text-[#C9A227]" aria-hidden="true" />
-                  <h2 className="mt-8 text-xl font-bold text-[#071629]">
+                  <h2 className="mt-5 text-xl font-bold text-[#071629]">
                     {item.title}
                   </h2>
                   <p className="mt-3 text-sm leading-7 text-[#5F6B7A]">
@@ -82,13 +85,13 @@ export default function AboutPage() {
             title="A steady process for decisions that deserve attention."
             text="The process is intentionally simple so the conversation stays focused on understanding, education, and next steps."
           />
-          <div className="mt-12 grid gap-px overflow-hidden rounded-[8px] border border-[#0B1F3A]/10 bg-[#0B1F3A]/10 md:grid-cols-4">
+          <div className="mt-7 grid gap-px overflow-hidden rounded-[8px] border border-[#0B1F3A]/10 bg-[#0B1F3A]/10 md:grid-cols-4">
             {approach.map((item) => (
-              <div key={item.step} className="bg-white p-7">
-                <span className="font-heading text-4xl text-[#C9A227]">
+              <div key={item.step} className="bg-white p-4 sm:p-5 lg:p-6">
+                <span className="font-heading text-3xl text-[#C9A227] sm:text-4xl">
                   {item.step}
                 </span>
-                <h2 className="mt-8 text-xl font-bold text-[#071629]">
+                <h2 className="mt-5 text-xl font-bold text-[#071629]">
                   {item.title}
                 </h2>
                 <p className="mt-3 text-sm leading-7 text-[#5F6B7A]">

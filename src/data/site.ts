@@ -20,6 +20,8 @@ export type Service = {
   shortTitle: string;
   icon: LucideIcon;
   summary: string;
+  heroImage?: string;
+  heroImageAlt?: string;
   concern: string;
   whyItMatters: string;
   howItWorks: string;
@@ -120,6 +122,8 @@ export const services: Service[] = [
     icon: Umbrella,
     summary:
       "Explore protection designed to support loved ones if life changes unexpectedly.",
+    heroImage: "/images/services/life-insurance-hero.png",
+    heroImageAlt: "Family reviewing protection options in a calm home setting",
     concern:
       "Many families depend on income, care, and shared responsibilities that would be difficult to replace after a loss.",
     whyItMatters:
@@ -157,6 +161,8 @@ export const services: Service[] = [
     icon: Home,
     summary:
       "Review options that may help a household keep its home through difficult transitions.",
+    heroImage: "/images/services/mortgage-protection-hero.png",
+    heroImageAlt: "Home protection planning conversation with a family",
     concern:
       "A mortgage is often a family’s largest monthly obligation, and unexpected loss or illness can put housing stability under pressure.",
     whyItMatters:
@@ -184,6 +190,45 @@ export const services: Service[] = [
         question: "Can coverage be reviewed after refinancing?",
         answer:
           "Yes. Refinancing is a good time to revisit the amount, term, and fit of the strategy.",
+      },
+    ],
+  },
+  {
+    slug: "income-protection-planning",
+    title: "Income Protection Planning",
+    shortTitle: "Income Protection",
+    icon: ShieldCheck,
+    summary:
+      "Think through how household income could be protected if life or health changes unexpectedly.",
+    heroImage: "/images/services/income-protection-planning-hero.png",
+    heroImageAlt: "Professional reviewing income protection planning options",
+    concern:
+      "Income supports everyday responsibilities, family goals, housing costs, and future plans. A sudden interruption can affect more than a monthly budget.",
+    whyItMatters:
+      "Income protection planning helps identify what would need to continue if work, health, or family circumstances changed.",
+    howItWorks:
+      "A planning conversation reviews income sources, essential expenses, family responsibilities, emergency savings, and protection options that may fit the household.",
+    whoMayBenefit: [
+      "Families relying on one or two primary incomes",
+      "Self-employed professionals",
+      "Homeowners with ongoing monthly obligations",
+      "People who want a clearer contingency plan",
+    ],
+    considerations: [
+      "Available options depend on health, age, occupation, and underwriting.",
+      "Protection should be coordinated with savings and existing benefits.",
+      "Policy terms and exclusions should be reviewed carefully.",
+    ],
+    faqs: [
+      {
+        question: "Is income protection only for one-income households?",
+        answer:
+          "No. Any household that depends on earned income can benefit from reviewing how key expenses would continue if income changed.",
+      },
+      {
+        question: "Does income protection replace emergency savings?",
+        answer:
+          "No. It should be considered alongside savings, benefits, and broader household planning.",
       },
     ],
   },
@@ -225,12 +270,14 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "retirement-planning",
-    title: "Retirement Planning",
-    shortTitle: "Retirement",
+    slug: "retirement-income-planning",
+    title: "Retirement Income Planning",
+    shortTitle: "Retirement Income",
     icon: Landmark,
     summary:
       "Create a clearer view of retirement income, timing, risk, and long-term priorities.",
+    heroImage: "/images/services/retirement-income-planning-hero.png",
+    heroImageAlt: "Retirement income planning discussion with organized documents",
     concern:
       "Retirement decisions can feel complex because income, taxes, market risk, longevity, and family goals intersect.",
     whyItMatters:
@@ -262,12 +309,14 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "annuities",
-    title: "Annuities",
-    shortTitle: "Annuities",
+    slug: "fixed-index-annuities",
+    title: "Fixed Index Annuities",
+    shortTitle: "Fixed Index Annuities",
     icon: Library,
     summary:
-      "Understand annuity concepts, income options, tradeoffs, and suitability considerations.",
+      "Understand fixed index annuity concepts, income options, tradeoffs, and suitability considerations.",
+    heroImage: "/images/services/fixed-index-annuities-hero.png",
+    heroImageAlt: "Fixed index annuity education and planning materials",
     concern:
       "Many people want dependable retirement income but are unsure how to balance growth potential, access, and stability.",
     whyItMatters:
@@ -305,6 +354,8 @@ export const services: Service[] = [
     icon: GraduationCap,
     summary:
       "Think through education funding goals with clarity, balance, and family priorities in mind.",
+    heroImage: "/images/services/college-planning-hero.png",
+    heroImageAlt: "College planning conversation for a family",
     concern:
       "Families often want to support education without losing sight of retirement, protection, and daily financial stability.",
     whyItMatters:
@@ -336,12 +387,53 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "tax-efficient-planning",
+    title: "Tax-Efficient Planning",
+    shortTitle: "Tax-Efficient Planning",
+    icon: PiggyBank,
+    summary:
+      "Explore planning conversations that consider taxes, timing, and long-term financial priorities.",
+    heroImage: "/images/services/tax-efficient-planning-hero.png",
+    heroImageAlt: "Tax-efficient planning discussion with financial documents",
+    concern:
+      "Taxes can influence income decisions, retirement timing, legacy intentions, and how financial strategies are coordinated.",
+    whyItMatters:
+      "Tax-efficient planning encourages clients to ask better questions and coordinate decisions with qualified tax professionals.",
+    howItWorks:
+      "The conversation reviews goals, account types, income timing, protection strategies, and areas where a tax professional should be involved.",
+    whoMayBenefit: [
+      "Pre-retirees organizing income sources",
+      "Families reviewing long-term savings decisions",
+      "Business owners and independent professionals",
+      "Households coordinating legacy goals",
+    ],
+    considerations: [
+      "FKSola Financial does not provide tax advice.",
+      "Tax questions should be reviewed with qualified tax professionals.",
+      "Rules and personal circumstances can change over time.",
+    ],
+    faqs: [
+      {
+        question: "Is tax-efficient planning the same as tax advice?",
+        answer:
+          "No. It is an educational planning conversation. Specific tax guidance should come from a qualified tax professional.",
+      },
+      {
+        question: "Why discuss taxes during financial planning?",
+        answer:
+          "Taxes can affect timing, income, beneficiary decisions, and the way strategies are evaluated.",
+      },
+    ],
+  },
+  {
     slug: "legacy-planning",
     title: "Legacy Planning",
     shortTitle: "Legacy Planning",
     icon: BriefcaseBusiness,
     summary:
       "Clarify how values, assets, family responsibilities, and future intentions may align.",
+    heroImage: "/images/services/legacy-planning-hero.png",
+    heroImageAlt: "Legacy planning conversation across generations",
     concern:
       "Many people want to care for loved ones and causes, but delay organizing the financial pieces that support those intentions.",
     whyItMatters:
@@ -369,6 +461,123 @@ export const services: Service[] = [
         question: "Does FKSola Financial provide legal advice?",
         answer:
           "No. Legal questions should be handled by qualified legal professionals, with financial planning coordinated around those decisions.",
+      },
+    ],
+  },
+  {
+    slug: "estate-probate-planning",
+    title: "Estate & Probate Planning",
+    shortTitle: "Estate & Probate",
+    icon: BriefcaseBusiness,
+    summary:
+      "Learn how financial organization can support estate intentions and probate-aware conversations.",
+    heroImage: "/images/services/estate-probate-planning-hero.png",
+    heroImageAlt: "Estate and probate planning documents on a desk",
+    concern:
+      "Families can face confusion, delays, and added stress when ownership, beneficiaries, and estate intentions are not clearly organized.",
+    whyItMatters:
+      "Estate and probate planning conversations help clients prepare questions for legal professionals and align financial decisions with family priorities.",
+    howItWorks:
+      "FKSola Financial can help organize financial topics such as beneficiaries, policy ownership, protection needs, and coordination points for legal review.",
+    whoMayBenefit: [
+      "Families with dependents",
+      "Homeowners and business owners",
+      "People coordinating beneficiaries",
+      "Clients preparing for legal planning conversations",
+    ],
+    considerations: [
+      "Estate documents should be prepared by qualified legal professionals.",
+      "Probate rules vary by state and personal circumstances.",
+      "Financial and legal planning should be reviewed together.",
+    ],
+    faqs: [
+      {
+        question: "Does FKSola Financial prepare estate documents?",
+        answer:
+          "No. Legal documents should be prepared by qualified legal professionals. Financial conversations can help organize related questions.",
+      },
+      {
+        question: "Why review beneficiaries?",
+        answer:
+          "Beneficiary choices can affect how assets or benefits transfer and should be kept current as life changes.",
+      },
+    ],
+  },
+  {
+    slug: "financial-gap-analysis",
+    title: "Financial Gap Analysis",
+    shortTitle: "Gap Analysis",
+    icon: Landmark,
+    summary:
+      "Identify potential gaps between current resources, responsibilities, and future goals.",
+    heroImage: "/images/services/financial-gap-analysis-hero.png",
+    heroImageAlt: "Financial gap analysis with planning notes and charts",
+    concern:
+      "People often make decisions one at a time, which can leave protection, income, retirement, or legacy gaps unnoticed.",
+    whyItMatters:
+      "A gap analysis creates a clearer picture of what is already in place, what may need review, and which questions deserve priority.",
+    howItWorks:
+      "The process compares goals, obligations, coverage, savings, debt, and time horizon to help organize next-step conversations.",
+    whoMayBenefit: [
+      "Families unsure where to begin",
+      "Professionals reviewing major life changes",
+      "Homeowners and parents",
+      "Pre-retirees organizing priorities",
+    ],
+    considerations: [
+      "A gap analysis is educational and should be updated as life changes.",
+      "It does not guarantee a specific outcome.",
+      "Additional professionals may be needed for tax, legal, or investment questions.",
+    ],
+    faqs: [
+      {
+        question: "What information helps with a gap analysis?",
+        answer:
+          "Helpful starting points include income, major expenses, debts, existing coverage, savings, goals, and family responsibilities.",
+      },
+      {
+        question: "Is a gap analysis a financial plan?",
+        answer:
+          "It is a starting conversation to organize priorities and identify questions, not a complete individualized financial plan.",
+      },
+    ],
+  },
+  {
+    slug: "final-expense",
+    title: "Final Expense",
+    shortTitle: "Final Expense",
+    icon: HeartHandshake,
+    summary:
+      "Review options that may help loved ones manage end-of-life expenses with less financial strain.",
+    heroImage: "/images/services/final-expense-hero.png",
+    heroImageAlt: "Family discussing final expense planning with care",
+    concern:
+      "Final expenses can create emotional and financial pressure for loved ones when plans are unclear or resources are limited.",
+    whyItMatters:
+      "Final expense planning helps families discuss practical costs, available resources, and protection options with dignity and care.",
+    howItWorks:
+      "A conversation reviews likely expenses, existing coverage, budget, health, and policy options that may be appropriate.",
+    whoMayBenefit: [
+      "People wanting to reduce burden on loved ones",
+      "Families with limited emergency savings",
+      "Older adults reviewing coverage options",
+      "Clients organizing end-of-life planning conversations",
+    ],
+    considerations: [
+      "Coverage availability and cost can depend on age, health, and underwriting.",
+      "Policy terms should be reviewed carefully.",
+      "Final expense planning should be coordinated with broader family planning.",
+    ],
+    faqs: [
+      {
+        question: "What can final expense coverage help address?",
+        answer:
+          "It may help loved ones manage funeral, burial, medical, or other end-of-life expenses, depending on policy terms.",
+      },
+      {
+        question: "Is final expense planning only for seniors?",
+        answer:
+          "No. It can be part of a broader family protection conversation at different life stages.",
       },
     ],
   },

@@ -43,7 +43,7 @@ export default function Home() {
     <SiteShell>
       <Header />
       <main className="flex-1">
-        <section className="hero-stage relative isolate overflow-hidden bg-[#071629] px-5 py-16 text-white sm:px-8 sm:py-20 lg:px-10">
+        <section className="hero-stage relative isolate overflow-hidden bg-[#071629] px-5 py-12 text-white sm:px-8 sm:py-14 lg:px-10 lg:py-16">
           <div className="hero-grid" aria-hidden="true" />
           <div className="pointer-events-none absolute inset-0">
             {heroSignals.map(({ Icon, label, className, delay, duration }) => (
@@ -65,30 +65,30 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[0.92fr_1.08fr]">
             <div className="max-w-2xl">
               <p
-                className="hero-enter mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.08] px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-[#C9A227] backdrop-blur"
+                className="hero-enter mb-4 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.08] px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#C9A227] backdrop-blur"
                 style={{ "--hero-delay": "80ms" } as CSSProperties}
               >
                 <span className="size-1.5 rounded-full bg-[#C9A227]" />
                 FKSola Financial
               </p>
               <h1
-                className="hero-enter font-heading text-6xl leading-[0.98] text-balance text-white sm:text-7xl lg:text-8xl"
+                className="hero-enter font-heading text-4xl leading-[1.04] text-balance text-white sm:text-6xl lg:text-7xl"
                 style={{ "--hero-delay": "180ms" } as CSSProperties}
               >
                 Building a Better Financial Future
               </h1>
               <p
-                className="hero-enter mt-7 max-w-xl text-lg leading-8 text-white/75"
+                className="hero-enter mt-5 max-w-xl text-base leading-7 text-white/75 sm:text-lg sm:leading-8"
                 style={{ "--hero-delay": "300ms" } as CSSProperties}
               >
                 Helping individuals and families make informed financial
                 decisions, protect what matters most, and prepare for tomorrow.
               </p>
               <div
-                className="hero-enter mt-10 flex flex-col gap-4 sm:flex-row"
+                className="hero-enter mt-7 flex flex-col gap-3 sm:flex-row"
                 style={{ "--hero-delay": "280ms" } as CSSProperties}
               >
                 <Link
@@ -106,7 +106,7 @@ export default function Home() {
               </div>
 
               <div
-                className="hero-enter mt-9 grid gap-3 sm:grid-cols-3"
+                className="hero-enter mt-6 grid gap-3 sm:grid-cols-3"
                 style={{ "--hero-delay": "360ms" } as CSSProperties}
               >
                 {[
@@ -154,12 +154,12 @@ export default function Home() {
         </section>
 
         <Section>
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <SectionHeading
               eyebrow="Introduction"
               title="A calmer way to approach important financial decisions."
             />
-            <p className="text-lg leading-9 text-[#425166]">
+            <p className="text-base leading-8 text-[#425166] lg:text-lg">
               FKSola Financial helps individuals and families explore protection,
               planning, retirement, education, and legacy questions with clarity.
               The work begins with listening, continues through education, and
@@ -174,7 +174,7 @@ export default function Home() {
             title="Guidance built around clarity, not pressure."
             text="The firm’s philosophy is simple: help people understand the choices in front of them and prepare with confidence."
           />
-          <div className="mt-12 grid gap-px overflow-hidden rounded-[8px] border border-[#0B1F3A]/10 bg-[#0B1F3A]/10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-7 grid gap-px overflow-hidden rounded-[8px] border border-[#0B1F3A]/10 bg-[#0B1F3A]/10 sm:grid-cols-2 lg:grid-cols-4">
             {philosophy.map((item, index) => {
               const Icon = item.icon;
 
@@ -183,10 +183,10 @@ export default function Home() {
                   key={item.title}
                   data-stagger
                   style={{ "--stagger-delay": `${index * 80}ms` } as CSSProperties}
-                  className="bg-[#F7F4EC] p-7"
+                  className="bg-[#F7F4EC] p-4 sm:p-5 lg:p-6"
                 >
                   <Icon className="size-6 text-[#C9A227]" aria-hidden="true" />
-                  <h3 className="mt-8 text-xl font-bold text-[#071629]">
+                  <h3 className="mt-5 text-xl font-bold text-[#071629]">
                     {item.title}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-[#5F6B7A]">
@@ -199,7 +199,7 @@ export default function Home() {
         </Section>
 
         <Section>
-          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="mb-7 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <SectionHeading
               eyebrow="Solutions"
               title="Financial areas families can explore with FKSola."
@@ -216,12 +216,12 @@ export default function Home() {
         </Section>
 
         <Section tone="navy">
-          <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
-              <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-[#C9A227]">
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#C9A227]">
                 Our Approach
               </p>
-              <h2 className="font-heading text-5xl leading-tight text-balance sm:text-6xl">
+              <h2 className="font-heading text-3xl leading-tight text-balance sm:text-4xl lg:text-5xl">
                 Understand first. Move forward when ready.
               </h2>
             </div>
@@ -231,12 +231,12 @@ export default function Home() {
                   key={item.step}
                   data-stagger
                   style={{ "--stagger-delay": `${index * 80}ms` } as CSSProperties}
-                  className="bg-[#071629] p-7"
+                  className="bg-[#071629] p-4 sm:p-5 lg:p-6"
                 >
-                  <span className="font-heading text-4xl text-[#C9A227]">
+                  <span className="font-heading text-3xl text-[#C9A227] sm:text-4xl">
                     {item.step}
                   </span>
-                  <h3 className="mt-8 text-xl font-bold">{item.title}</h3>
+                  <h3 className="mt-5 text-xl font-bold">{item.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-white/70">
                     {item.description}
                   </p>
@@ -247,7 +247,7 @@ export default function Home() {
         </Section>
 
         <Section>
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
               <SectionHeading
                 eyebrow="About"
@@ -256,13 +256,13 @@ export default function Home() {
               />
               <Link
                 href="/about"
-                className="mt-8 inline-flex h-12 items-center justify-center rounded-full border border-[#0B1F3A]/20 px-6 text-sm font-bold text-[#071629] transition hover:border-[#C9A227] hover:bg-[#F7F4EC]"
+                className="mt-6 inline-flex h-11 items-center justify-center rounded-full border border-[#0B1F3A]/20 px-5 text-sm font-bold text-[#071629] transition hover:border-[#C9A227] hover:bg-[#F7F4EC]"
               >
                 Learn More
               </Link>
             </div>
-            <div className="border-l-2 border-[#C9A227] pl-8">
-              <div className="mb-8 overflow-hidden rounded-[8px] shadow-2xl shadow-[#071629]/12">
+            <div className="border-l-2 border-[#C9A227] pl-5 sm:pl-6">
+              <div className="mb-5 overflow-hidden rounded-[8px] shadow-2xl shadow-[#071629]/12">
                 <Image
                   data-parallax
                   src="/images/fksola-about-education.png"
@@ -272,7 +272,7 @@ export default function Home() {
                   className="motion-media aspect-[16/10] w-full object-cover"
                 />
               </div>
-              <p className="font-heading text-4xl leading-tight text-[#071629]">
+              <p className="font-heading text-3xl leading-tight text-[#071629] sm:text-4xl">
                 “The best financial conversation should leave people clearer
                 than when they arrived.”
               </p>
@@ -281,7 +281,7 @@ export default function Home() {
         </Section>
 
         <Section tone="cream">
-          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="mb-7 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <SectionHeading
               eyebrow="Resources"
               title="Education that supports better questions."
@@ -300,7 +300,7 @@ export default function Home() {
                 key={resource.title}
                 data-stagger
                 style={{ "--stagger-delay": `${index * 80}ms` } as CSSProperties}
-                className="rounded-[8px] border border-[#0B1F3A]/10 bg-white p-6"
+                className="rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 sm:p-5 lg:p-6"
               >
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A227]">
                   {resource.category}
@@ -322,18 +322,18 @@ export default function Home() {
             title="Simple, authentic reflections."
             text="Placeholder testimonials keep the layout ready for approved client quotes."
           />
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
+          <div className="mt-7 grid gap-4 md:grid-cols-3">
             {testimonials.map((item, index) => (
               <figure
                 key={item.name}
                 data-stagger
                 style={{ "--stagger-delay": `${index * 80}ms` } as CSSProperties}
-                className="rounded-[8px] border border-[#0B1F3A]/10 bg-white p-6"
+                className="rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 sm:p-5 lg:p-6"
               >
                 <blockquote className="text-lg leading-8 text-[#071629]">
                   “{item.quote}”
                 </blockquote>
-                <figcaption className="mt-8 text-sm font-semibold text-[#5F6B7A]">
+                <figcaption className="mt-5 text-sm font-semibold text-[#5F6B7A]">
                   {item.name} · {item.detail}
                 </figcaption>
               </figure>
@@ -341,13 +341,13 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section tone="cream" className="py-14 sm:py-16">
-          <div className="grid gap-8 lg:grid-cols-[0.6fr_1.4fr] lg:items-center">
+        <Section tone="cream" className="py-10 sm:py-12 lg:py-14">
+          <div className="grid gap-6 lg:grid-cols-[0.6fr_1.4fr] lg:items-center">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#C9A227]">
                 Our Partners
               </p>
-              <h2 className="mt-4 font-heading text-4xl text-[#071629]">
+              <h2 className="mt-3 font-heading text-3xl text-[#071629] sm:text-4xl">
                 Professional relationships, thoughtfully presented.
               </h2>
             </div>

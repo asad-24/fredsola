@@ -8,16 +8,16 @@ import { Logo } from "./logo";
 export function Footer() {
   return (
     <footer className="bg-[#071629] text-white">
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.2fr_2fr] lg:px-10">
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1.2fr_2fr] lg:px-10 lg:py-14">
         <div>
           <div className="inline-flex rounded-[8px] bg-white px-3 py-2 shadow-sm shadow-black/10">
             <Logo />
           </div>
-          <p className="mt-6 max-w-md text-sm leading-7 text-white/70">
+          <p className="mt-5 max-w-md text-sm leading-7 text-white/70">
             Education-first financial conversations for individuals and families
             who want clarity, protection, and a more confident view of tomorrow.
           </p>
-          <p className="mt-6 text-xs leading-6 text-white/50">
+          <p className="mt-5 text-xs leading-6 text-white/50">
             FKSola Financial provides educational financial-services
             information and conversation-based guidance. Frederick Solaga,
             Financial Professional, NPN {company.npn}. Tax, legal, and
@@ -26,7 +26,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="grid gap-10 sm:grid-cols-3">
+        <div className="grid gap-7 sm:grid-cols-3">
           <FooterGroup title="Navigation">
             {navigation.map((item) => (
               <Link key={item.href} href={item.href}>
@@ -56,7 +56,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-6 text-xs text-white/50 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-5 text-xs text-white/50 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10">
           <span>© 2026 FKSola Financial. All rights reserved.</span>
           <span>Privacy Policy / Terms / Required Disclosures</span>
         </div>

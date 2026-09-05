@@ -29,18 +29,18 @@ export default function ResourcesPage() {
             {resources.map((resource) => (
               <article
                 key={resource.title}
-                className="group rounded-[8px] border border-[#0B1F3A]/10 bg-white p-7 transition hover:-translate-y-1 hover:border-[#C9A227]/60 hover:shadow-xl hover:shadow-[#071629]/8"
+                className="group rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 transition hover:-translate-y-1 hover:border-[#C9A227]/60 hover:shadow-xl hover:shadow-[#071629]/8 sm:p-5 lg:p-6"
               >
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A227]">
                   {resource.category}
                 </p>
-                <h2 className="mt-6 text-xl font-bold leading-snug text-[#071629]">
+                <h2 className="mt-4 text-xl font-bold leading-snug text-[#071629]">
                   {resource.title}
                 </h2>
                 <p className="mt-4 text-sm leading-7 text-[#5F6B7A]">
                   {resource.description}
                 </p>
-                <span className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[#0B1F3A]">
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#0B1F3A]">
                   Read More
                   <ArrowUpRight className="size-4" aria-hidden="true" />
                 </span>

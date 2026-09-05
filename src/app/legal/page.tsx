@@ -41,7 +41,7 @@ export default function LegalPage() {
             {legalSections.map((section) => (
               <article
                 key={section.title}
-                className="rounded-[8px] border border-[#0B1F3A]/10 bg-white p-7"
+                className="rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 sm:p-5 lg:p-6"
               >
                 <h2 className="text-xl font-bold text-[#071629]">
                   {section.title}

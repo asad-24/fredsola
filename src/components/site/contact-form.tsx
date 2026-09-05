@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export function ContactForm() {
   return (
-    <form className="grid gap-5 rounded-[8px] border border-[#0B1F3A]/10 bg-white p-6 shadow-xl shadow-[#071629]/8 sm:p-8">
+    <form className="grid gap-4 rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 shadow-xl shadow-[#071629]/8 sm:p-5 lg:p-6">
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="First name" name="firstName" />
         <Field label="Last name" name="lastName" />
@@ -17,7 +17,9 @@ export function ContactForm() {
         >
           <option>Life insurance</option>
           <option>Mortgage protection</option>
-          <option>Retirement planning</option>
+          <option>Income protection planning</option>
+          <option>Retirement income planning</option>
+          <option>Fixed index annuities</option>
           <option>Financial education</option>
           <option>Careers</option>
           <option>General question</option>
