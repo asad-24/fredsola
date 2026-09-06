@@ -71,7 +71,7 @@ export default function AboutPage() {
                   <h2 className="mt-5 text-xl font-bold text-[#071629]">
                     {item.title}
                   </h2>
-                  <p className="mt-3 text-sm leading-7 text-[#5F6B7A]">
+                  <p className="mt-3 text-sm leading-7 text-[#334155]">
                     {item.description}
                   </p>
                 </div>
@@ -94,7 +94,7 @@ export default function AboutPage() {
                 <h2 className="mt-5 text-xl font-bold text-[#071629]">
                   {item.title}
                 </h2>
-                <p className="mt-3 text-sm leading-7 text-[#5F6B7A]">
+                <p className="mt-3 text-sm leading-7 text-[#334155]">
                   {item.description}
                 </p>
               </div>

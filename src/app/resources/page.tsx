@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
@@ -27,9 +28,10 @@ export default function ResourcesPage() {
         <Section>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {resources.map((resource) => (
-              <article
+              <Link
                 key={resource.title}
-                className="group rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 transition hover:-translate-y-1 hover:border-[#C9A227]/60 hover:shadow-xl hover:shadow-[#071629]/8 sm:p-5 lg:p-6"
+                href={resource.href}
+                className="motion-card group rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 transition hover:-translate-y-1 hover:border-[#C9A227]/60 hover:bg-[#F7F4EC] hover:shadow-xl hover:shadow-[#071629]/8 sm:p-5 lg:p-6"
               >
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A227]">
                   {resource.category}
@@ -37,14 +39,14 @@ export default function ResourcesPage() {
                 <h2 className="mt-4 text-xl font-bold leading-snug text-[#071629]">
                   {resource.title}
                 </h2>
-                <p className="mt-4 text-sm leading-7 text-[#5F6B7A]">
+                <p className="mt-4 text-sm leading-7 text-[#334155]">
                   {resource.description}
                 </p>
                 <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#0B1F3A]">
                   Read More
                   <ArrowUpRight className="size-4" aria-hidden="true" />
                 </span>
-              </article>
+              </Link>
             ))}
           </div>
         </Section>

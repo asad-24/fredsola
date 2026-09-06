@@ -24,7 +24,7 @@ export function Header() {
         </nav>
 
         <Link
-          href="/contact"
+          href="/contact#schedule"
           className="hidden h-11 items-center justify-center rounded-full bg-[#0B1F3A] px-5 text-sm font-semibold text-white transition hover:bg-[#071629] lg:inline-flex"
         >
           Schedule a Conversation
@@ -48,7 +48,7 @@ export function Header() {
                 </Link>
               ))}
               <Link
-                href="/contact"
+                href="/contact#schedule"
                 className="mt-2 flex h-11 items-center justify-center rounded-full bg-[#0B1F3A] px-4 text-sm font-semibold text-white"
               >
                 Schedule a Conversation

@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 
 import { Button } from "@/components/ui/button";
+import { TurnstileField, resetTurnstile } from "./turnstile-field";
 
 type SubmitState = "idle" | "sending" | "success" | "error";
 
@@ -46,6 +47,7 @@ export function ContactForm() {
       );
     } finally {
       window.clearTimeout(timeout);
+      resetTurnstile();
     }
   }
 
@@ -60,11 +62,15 @@ export function ContactForm() {
       </div>
       <Field label="Email address" name="email" type="email" required />
       <Field label="Phone number" name="phone" type="tel" required />
+      <div className="grid gap-5 sm:grid-cols-2">
+        <Field label="City of residence" name="city" required />
+        <Field label="State" name="state" required />
+      </div>
       <label className="grid gap-2 text-sm font-semibold text-[#071629]">
         Conversation topic
         <select
           name="topic"
-          className="h-12 rounded-[6px] border border-[#D1D5DB] bg-white px-4 text-sm font-normal text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15"
+          className="h-12 rounded-[6px] border border-[#D1D5DB] bg-white px-4 text-base font-normal text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
         >
           <option>Life insurance</option>
           <option>Mortgage protection</option>
@@ -82,10 +88,11 @@ export function ContactForm() {
           name="message"
           rows={5}
           required
-          className="rounded-[6px] border border-[#D1D5DB] bg-white px-4 py-3 text-sm font-normal leading-7 text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15"
+          className="rounded-[6px] border border-[#D1D5DB] bg-white px-4 py-3 text-base font-normal leading-7 text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
           placeholder="Share what you would like to understand or discuss."
         />
       </label>
+      <TurnstileField />
       <Button
         type="submit"
         disabled={submitState === "sending"}
@@ -102,7 +109,7 @@ export function ContactForm() {
           {message}
         </p>
       ) : (
-        <p className="text-xs leading-6 text-[#5F6B7A]">
+        <p className="text-xs leading-6 text-[#334155]">
           Your message will be sent securely to FKSola Financial by email.
         </p>
       )}
@@ -128,7 +135,7 @@ function Field({
         name={name}
         type={type}
         required={required}
-        className="h-12 rounded-[6px] border border-[#D1D5DB] bg-white px-4 text-sm font-normal text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15"
+        className="h-12 rounded-[6px] border border-[#D1D5DB] bg-white px-4 text-base font-normal text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
       />
     </label>
   );

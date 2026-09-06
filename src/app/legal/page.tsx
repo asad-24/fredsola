@@ -1,28 +1,36 @@
+import { ApprovedDocContent } from "@/components/site/approved-doc-content";
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
 import { PageHero, Section, SiteShell } from "@/components/site/section";
-import { company } from "@/data/site";
 
 export const metadata = {
   title: "Legal",
 };
 
-const legalSections = [
+const legalDocuments = [
   {
-    title: "Privacy Policy Placeholder",
-    text: "This section will contain FKSola Financial’s approved privacy policy, including how visitor information is collected, used, stored, and protected.",
+    id: "privacy-policy",
+    eyebrow: "Privacy",
+    title: "National Website Privacy Policy",
+    docKey: "privacyPolicy" as const,
   },
   {
-    title: "Terms of Use Placeholder",
-    text: "This section will contain approved website terms, acceptable use language, intellectual property notices, and visitor responsibilities.",
+    id: "terms-of-use",
+    eyebrow: "Terms",
+    title: "Website Terms of Use",
+    docKey: "termsOfUse" as const,
   },
   {
-    title: "Disclosures and Licensing",
-    text: `${company.representative}, ${company.role}, NPN ${company.npn}. This website is intended to provide general educational information about financial protection and planning topics. Additional firm disclosures, state availability, carrier relationships, and required compliance language will be added once approved legal text is provided.`,
+    id: "licensing-disclosures",
+    eyebrow: "Licensing",
+    title: "Licensing & Disclosures",
+    docKey: "licensingDisclosures" as const,
   },
   {
-    title: "Educational Content Notice",
-    text: "Website content is intended for general educational purposes and should not be treated as individualized tax, legal, investment, or financial advice.",
+    id: "educational-content-disclaimer",
+    eyebrow: "Educational Notice",
+    title: "Educational Content Disclaimer",
+    docKey: "educationalDisclaimer" as const,
   },
 ];
 
@@ -33,22 +41,24 @@ export default function LegalPage() {
       <main className="flex-1">
         <PageHero
           eyebrow="Legal"
-          title="Privacy, terms, disclosures, and licensing."
-          text="This combined page keeps the 15-page scope while providing a clear place for approved legal language."
+          title="Privacy, terms, disclosures, and educational notices."
+          text="Approved legal and educational notices for the FKSola Financial website."
         />
         <Section>
-          <div className="grid gap-4">
-            {legalSections.map((section) => (
+          <div className="grid gap-8">
+            {legalDocuments.map((document) => (
               <article
-                key={section.title}
-                className="rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 sm:p-5 lg:p-6"
+                key={document.id}
+                id={document.id}
+                className="scroll-mt-28"
               >
-                <h2 className="text-xl font-bold text-[#071629]">
-                  {section.title}
-                </h2>
-                <p className="mt-4 text-sm leading-7 text-[#5F6B7A]">
-                  {section.text}
+                <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#C9A227]">
+                  {document.eyebrow}
                 </p>
+                <h2 className="mb-5 font-heading text-3xl leading-tight text-[#071629] sm:text-4xl">
+                  {document.title}
+                </h2>
+                <ApprovedDocContent docKey={document.docKey} compact />
               </article>
             ))}
           </div>

@@ -11,16 +11,19 @@ export function SiteShell({ children }: { children: ReactNode }) {
 export function Section({
   children,
   className,
+  id,
   tone = "white",
   reveal = true,
 }: {
   children: ReactNode;
   className?: string;
+  id?: string;
   tone?: "white" | "cream" | "navy";
   reveal?: boolean;
 }) {
   return (
     <section
+      id={id}
       data-reveal={reveal ? "" : undefined}
       className={cn(
         "px-5 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16",
@@ -61,7 +64,7 @@ export function SectionHeading({
         {title}
       </h2>
       {text ? (
-        <p className="mt-4 text-sm leading-7 text-[#5F6B7A] sm:text-base lg:text-lg lg:leading-8">
+        <p className="mt-4 text-[15px] leading-7 text-[#334155] sm:text-base lg:text-lg lg:leading-8">
           {text}
         </p>
       ) : null}
@@ -135,12 +138,12 @@ export function CTASection({
           <h2 className="font-heading text-3xl leading-tight text-balance sm:text-4xl lg:text-5xl">
             {title}
           </h2>
-          <p className="mt-4 text-sm leading-7 text-white/70 sm:text-base lg:leading-8">
+          <p className="mt-4 text-[15px] leading-7 text-white/75 sm:text-base lg:leading-8">
             {text}
           </p>
         </div>
         <Link
-          href="/contact"
+          href="/contact#schedule"
           className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-[#C9A227] px-6 text-sm font-bold text-[#071629] transition hover:bg-white"
         >
           Schedule a Conversation

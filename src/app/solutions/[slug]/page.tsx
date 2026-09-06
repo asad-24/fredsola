@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
+import { ApprovedDocContent } from "@/components/site/approved-doc-content";
 import {
   CTASection,
   PageHero,
@@ -45,87 +46,95 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <Header />
       <main className="flex-1">
         <PageHero
-          eyebrow="Solution"
-          title={service.title}
+          eyebrow={service.title}
+          title={service.heroTitle ?? service.title}
           text={service.summary}
           image={service.heroImage}
           imageAlt={service.heroImageAlt}
         />
-        <Section>
-          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
-            <SectionHeading
-              eyebrow="The Financial Concern"
-              title="Start by naming what needs attention."
-            />
-            <p className="text-base leading-8 text-[#425166] lg:text-lg">
-              {service.concern}
-            </p>
-          </div>
-        </Section>
-        <Section tone="cream">
-          <div className="grid gap-4 md:grid-cols-2">
-            <InfoBlock title="Why It Matters" text={service.whyItMatters} />
-            <InfoBlock
-              title="How the Strategy Works"
-              text={service.howItWorks}
-            />
-          </div>
-        </Section>
-        <Section>
-          <div className="grid gap-8 lg:grid-cols-2">
-            <div>
-              <h2 className="font-heading text-3xl text-[#071629] sm:text-4xl">
-                Who May Benefit
-              </h2>
-              <ul className="mt-5 grid gap-3">
-                {service.whoMayBenefit.map((item) => (
-                  <li
-                    key={item}
-                    className="border-l-2 border-[#C9A227] pl-4 text-base leading-7 text-[#425166]"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h2 className="font-heading text-3xl text-[#071629] sm:text-4xl">
-                Important Considerations
-              </h2>
-              <ul className="mt-5 grid gap-3">
-                {service.considerations.map((item) => (
-                  <li
-                    key={item}
-                    className="border-l-2 border-[#0B1F3A]/20 pl-4 text-base leading-7 text-[#425166]"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </Section>
-        <Section tone="cream">
-          <SectionHeading
-            eyebrow="FAQs"
-            title={`Questions about ${service.shortTitle.toLowerCase()}.`}
-          />
-          <div className="mt-7 grid gap-4 lg:grid-cols-2">
-            {service.faqs.map((faq) => (
-              <article
-                key={faq.question}
-                className="rounded-[8px] bg-white p-4 sm:p-5 lg:p-6"
-              >
-                <h2 className="text-lg font-bold text-[#071629]">
-                  {faq.question}
-                </h2>
-                <p className="mt-4 text-sm leading-7 text-[#5F6B7A]">
-                  {faq.answer}
+        {service.approvedDocKey ? (
+          <Section>
+            <ApprovedDocContent docKey={service.approvedDocKey} />
+          </Section>
+        ) : (
+          <>
+            <Section>
+              <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
+                <SectionHeading
+                  eyebrow="The Financial Concern"
+                  title="Start by naming what needs attention."
+                />
+                <p className="text-base leading-8 text-[#334155] lg:text-lg">
+                  {service.concern}
                 </p>
-              </article>
-            ))}
-          </div>
-        </Section>
+              </div>
+            </Section>
+            <Section tone="cream">
+              <div className="grid gap-4 md:grid-cols-2">
+                <InfoBlock title="Why It Matters" text={service.whyItMatters} />
+                <InfoBlock
+                  title="How the Strategy Works"
+                  text={service.howItWorks}
+                />
+              </div>
+            </Section>
+            <Section>
+              <div className="grid gap-8 lg:grid-cols-2">
+                <div>
+                  <h2 className="font-heading text-3xl text-[#071629] sm:text-4xl">
+                    Who May Benefit
+                  </h2>
+                  <ul className="mt-5 grid gap-3">
+                    {service.whoMayBenefit.map((item) => (
+                      <li
+                        key={item}
+                        className="border-l-2 border-[#C9A227] pl-4 text-base leading-7 text-[#334155]"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h2 className="font-heading text-3xl text-[#071629] sm:text-4xl">
+                    Important Considerations
+                  </h2>
+                  <ul className="mt-5 grid gap-3">
+                    {service.considerations.map((item) => (
+                      <li
+                        key={item}
+                        className="border-l-2 border-[#0B1F3A]/20 pl-4 text-base leading-7 text-[#334155]"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </Section>
+            <Section tone="cream">
+              <SectionHeading
+                eyebrow="FAQs"
+                title={`Questions about ${service.shortTitle.toLowerCase()}.`}
+              />
+              <div className="mt-7 grid gap-4 lg:grid-cols-2">
+                {service.faqs.map((faq) => (
+                  <article
+                    key={faq.question}
+                    className="rounded-[8px] bg-white p-4 sm:p-5 lg:p-6"
+                  >
+                    <h2 className="text-lg font-bold text-[#071629]">
+                      {faq.question}
+                    </h2>
+                    <p className="mt-4 text-sm leading-7 text-[#334155]">
+                      {faq.answer}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </Section>
+          </>
+        )}
         <CTASection
           title={`Talk through ${service.shortTitle.toLowerCase()} with clarity.`}
           text="A conversation can help connect the educational overview to your priorities, questions, and timing."

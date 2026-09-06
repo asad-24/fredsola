@@ -92,7 +92,7 @@ export default function Home() {
                 style={{ "--hero-delay": "280ms" } as CSSProperties}
               >
                 <Link
-                  href="/contact"
+                  href="/contact#schedule"
                   className="motion-card inline-flex h-12 items-center justify-center rounded-full bg-[#C9A227] px-6 text-sm font-bold text-[#071629] shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-white"
                 >
                   Schedule a Conversation
@@ -189,7 +189,7 @@ export default function Home() {
                   <h3 className="mt-5 text-xl font-bold text-[#071629]">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-[#5F6B7A]">
+                  <p className="mt-3 text-sm leading-7 text-[#334155]">
                     {item.description}
                   </p>
                 </div>
@@ -308,7 +308,7 @@ export default function Home() {
                 <h3 className="mt-5 text-xl font-bold text-[#071629]">
                   {resource.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-[#5F6B7A]">
+                <p className="mt-3 text-sm leading-7 text-[#334155]">
                   {resource.description}
                 </p>
               </article>
@@ -333,7 +333,7 @@ export default function Home() {
                 <blockquote className="text-lg leading-8 text-[#071629]">
                   “{item.quote}”
                 </blockquote>
-                <figcaption className="mt-5 text-sm font-semibold text-[#5F6B7A]">
+                <figcaption className="mt-5 text-sm font-semibold text-[#334155]">
                   {item.name} · {item.detail}
                 </figcaption>
               </figure>

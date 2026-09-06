@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import { BadgeCheck, Mail, MapPin, Phone } from "lucide-react";
 
+import { CalendlyEmbed } from "@/components/site/calendly-embed";
 import { ContactForm } from "@/components/site/contact-form";
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
@@ -34,7 +35,7 @@ export default function ContactPage() {
                 <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#C9A227]">
                   {company.role}
                 </p>
-                <p className="mt-3 text-sm leading-7 text-[#5F6B7A]">
+                <p className="mt-3 text-sm leading-7 text-[#334155]">
                   NPN: {company.npn}
                 </p>
               </div>
@@ -56,13 +57,30 @@ export default function ContactPage() {
                 <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#C9A227]">
                   Appointment Option
                 </p>
-                <p className="mt-4 text-sm leading-7 text-[#425166]">
-                  Calendar booking can be connected here when the preferred
-                  scheduling link is available.
+                <p className="mt-4 text-[15px] leading-7 text-[#334155]">
+                  Visitors can use the form or book directly once the calendar
+                  link is connected.
                 </p>
               </div>
             </div>
             <ContactForm />
+          </div>
+        </Section>
+        <Section id="schedule" tone="cream">
+          <div className="grid gap-6 lg:grid-cols-[0.65fr_1.35fr] lg:items-start">
+            <div>
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#C9A227]">
+                Schedule
+              </p>
+              <h2 className="font-heading text-3xl leading-tight text-[#071629] sm:text-4xl">
+                Choose a conversation time.
+              </h2>
+              <p className="mt-4 text-[15px] leading-7 text-[#334155] sm:text-base">
+                The booking calendar will show Fred&apos;s real availability as
+                soon as the Calendly event URL is added.
+              </p>
+            </div>
+            <CalendlyEmbed />
           </div>
         </Section>
       </main>
@@ -87,7 +105,7 @@ function ContactItem({
       </span>
       <div>
         <p className="text-sm font-bold text-[#071629]">{label}</p>
-        <p className="mt-1 text-sm leading-7 text-[#5F6B7A]">{value}</p>
+        <p className="mt-1 text-sm leading-7 text-[#334155]">{value}</p>
       </div>
     </div>
   );

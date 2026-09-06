@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import type { ApprovedDocumentKey } from "./approved-content";
 import {
   BookOpen,
   BriefcaseBusiness,
@@ -20,8 +21,10 @@ export type Service = {
   shortTitle: string;
   icon: LucideIcon;
   summary: string;
+  heroTitle?: string;
   heroImage?: string;
   heroImageAlt?: string;
+  approvedDocKey?: ApprovedDocumentKey;
   concern: string;
   whyItMatters: string;
   howItWorks: string;
@@ -31,6 +34,14 @@ export type Service = {
     question: string;
     answer: string;
   }[];
+};
+
+export type ResourcePage = {
+  slug: string;
+  category: string;
+  title: string;
+  summary: string;
+  approvedDocKey: ApprovedDocumentKey;
 };
 
 export const company = {
@@ -117,13 +128,15 @@ export const approach = [
 export const services: Service[] = [
   {
     slug: "life-insurance",
-    title: "Life Insurance",
-    shortTitle: "Life Insurance",
+    title: "Term Life Insurance with Living Benefits",
+    shortTitle: "Term Life",
     icon: Umbrella,
     summary:
-      "Explore protection designed to support loved ones if life changes unexpectedly.",
+      "Life insurance protection for a specified period, with certain policies offering living-benefit features.",
+    heroTitle: "Protect today. Prepare for the unexpected.",
     heroImage: "/images/services/life-insurance-hero.png",
     heroImageAlt: "Family reviewing protection options in a calm home setting",
+    approvedDocKey: "termLifeLivingBenefits",
     concern:
       "Many families depend on income, care, and shared responsibilities that would be difficult to replace after a loss.",
     whyItMatters:
@@ -151,6 +164,48 @@ export const services: Service[] = [
         question: "Is life insurance only for families with children?",
         answer:
           "No. It may also support spouses, parents, business partners, or anyone who depends on another person financially.",
+      },
+    ],
+  },
+  {
+    slug: "indexed-universal-life-living-benefits",
+    title: "Indexed Universal Life with Living Benefits",
+    shortTitle: "IUL with Living Benefits",
+    icon: Umbrella,
+    summary:
+      "Permanent life insurance with death-benefit protection, cash-value potential, and certain living-benefit features depending on the policy.",
+    heroTitle: "Permanent protection with cash-value potential.",
+    heroImage: "/images/services/life-insurance-hero.png",
+    heroImageAlt:
+      "Financial planning conversation about permanent protection and living benefits",
+    approvedDocKey: "indexedUniversalLifeLivingBenefits",
+    concern:
+      "Families sometimes need permanent protection while also wanting to understand policy value, access, charges, and long-term flexibility.",
+    whyItMatters:
+      "Indexed Universal Life can be useful to discuss when permanent protection, living benefits, cash-value potential, and long-term planning goals intersect.",
+    howItWorks:
+      "An IUL is a life insurance contract. Depending on the policy, interest credited to cash value may be linked in part to an external market index, while the policyholder does not directly invest in that index.",
+    whoMayBenefit: [
+      "Families considering permanent life insurance protection",
+      "People exploring living-benefit provisions",
+      "Clients reviewing legacy or long-term planning goals",
+      "Households that want to understand policy access and tradeoffs",
+    ],
+    considerations: [
+      "Policy charges, loans, withdrawals, and funding decisions affect values.",
+      "Illustrations can include non-guaranteed elements.",
+      "Living-benefit availability and requirements vary by contract.",
+    ],
+    faqs: [
+      {
+        question: "Is IUL an investment?",
+        answer:
+          "No. IUL is life insurance with cash-value features. The policyholder does not directly invest in an external market index.",
+      },
+      {
+        question: "Can index-linked crediting remove all risk?",
+        answer:
+          "No. Certain crediting methods may have a floor on index credits, but policy charges, loans, withdrawals, and funding decisions still matter.",
       },
     ],
   },
@@ -200,8 +255,10 @@ export const services: Service[] = [
     icon: ShieldCheck,
     summary:
       "Think through how household income could be protected if life or health changes unexpectedly.",
+    heroTitle: "Protect the income that supports your life.",
     heroImage: "/images/services/income-protection-planning-hero.png",
     heroImageAlt: "Professional reviewing income protection planning options",
+    approvedDocKey: "incomeProtectionPlanning",
     concern:
       "Income supports everyday responsibilities, family goals, housing costs, and future plans. A sudden interruption can affect more than a monthly budget.",
     whyItMatters:
@@ -276,8 +333,10 @@ export const services: Service[] = [
     icon: Landmark,
     summary:
       "Create a clearer view of retirement income, timing, risk, and long-term priorities.",
+    heroTitle: "Plan for income you may need for decades.",
     heroImage: "/images/services/retirement-income-planning-hero.png",
     heroImageAlt: "Retirement income planning discussion with organized documents",
+    approvedDocKey: "retirementPlanning",
     concern:
       "Retirement decisions can feel complex because income, taxes, market risk, longevity, and family goals intersect.",
     whyItMatters:
@@ -315,8 +374,10 @@ export const services: Service[] = [
     icon: Library,
     summary:
       "Understand fixed index annuity concepts, income options, tradeoffs, and suitability considerations.",
+    heroTitle: "Protection from market loss is not the same as no risk.",
     heroImage: "/images/services/fixed-index-annuities-hero.png",
     heroImageAlt: "Fixed index annuity education and planning materials",
+    approvedDocKey: "fixedIndexedAnnuities",
     concern:
       "Many people want dependable retirement income but are unsure how to balance growth potential, access, and stability.",
     whyItMatters:
@@ -354,8 +415,10 @@ export const services: Service[] = [
     icon: GraduationCap,
     summary:
       "Think through education funding goals with clarity, balance, and family priorities in mind.",
+    heroTitle: "Plan for education without losing sight of the whole picture.",
     heroImage: "/images/services/college-planning-hero.png",
     heroImageAlt: "College planning conversation for a family",
+    approvedDocKey: "collegePlanning",
     concern:
       "Families often want to support education without losing sight of retirement, protection, and daily financial stability.",
     whyItMatters:
@@ -393,8 +456,10 @@ export const services: Service[] = [
     icon: PiggyBank,
     summary:
       "Explore planning conversations that consider taxes, timing, and long-term financial priorities.",
+    heroTitle: "Make decisions with potential tax consequences in mind.",
     heroImage: "/images/services/tax-efficient-planning-hero.png",
     heroImageAlt: "Tax-efficient planning discussion with financial documents",
+    approvedDocKey: "taxEfficientPlanning",
     concern:
       "Taxes can influence income decisions, retirement timing, legacy intentions, and how financial strategies are coordinated.",
     whyItMatters:
@@ -432,8 +497,10 @@ export const services: Service[] = [
     icon: BriefcaseBusiness,
     summary:
       "Clarify how values, assets, family responsibilities, and future intentions may align.",
+    heroTitle: "Preserve what you have built. Plan for what comes next.",
     heroImage: "/images/services/legacy-planning-hero.png",
     heroImageAlt: "Legacy planning conversation across generations",
+    approvedDocKey: "legacyPlanning",
     concern:
       "Many people want to care for loved ones and causes, but delay organizing the financial pieces that support those intentions.",
     whyItMatters:
@@ -471,8 +538,10 @@ export const services: Service[] = [
     icon: BriefcaseBusiness,
     summary:
       "Learn how financial organization can support estate intentions and probate-aware conversations.",
+    heroTitle: "Make your wishes clear.",
     heroImage: "/images/services/estate-probate-planning-hero.png",
     heroImageAlt: "Estate and probate planning documents on a desk",
+    approvedDocKey: "estateProbatePlanning",
     concern:
       "Families can face confusion, delays, and added stress when ownership, beneficiaries, and estate intentions are not clearly organized.",
     whyItMatters:
@@ -510,8 +579,10 @@ export const services: Service[] = [
     icon: Landmark,
     summary:
       "Identify potential gaps between current resources, responsibilities, and future goals.",
+    heroTitle: "Find the gaps before they become urgent.",
     heroImage: "/images/services/financial-gap-analysis-hero.png",
     heroImageAlt: "Financial gap analysis with planning notes and charts",
+    approvedDocKey: "financialGapAnalysis",
     concern:
       "People often make decisions one at a time, which can leave protection, income, retirement, or legacy gaps unnoticed.",
     whyItMatters:
@@ -549,8 +620,10 @@ export const services: Service[] = [
     icon: HeartHandshake,
     summary:
       "Review options that may help loved ones manage end-of-life expenses with less financial strain.",
+    heroTitle: "Plan ahead. Help protect the people you love.",
     heroImage: "/images/services/final-expense-hero.png",
     heroImageAlt: "Family discussing final expense planning with care",
+    approvedDocKey: "finalExpense",
     concern:
       "Final expenses can create emotional and financial pressure for loved ones when plans are unclear or resources are limited.",
     whyItMatters:
@@ -623,39 +696,72 @@ export const services: Service[] = [
 export const resources = [
   {
     category: "Financial Education",
-    title: "Questions to Ask Before Choosing a Financial Strategy",
+    title: "Frequently Asked Questions",
     description:
-      "A practical guide to slowing down, clarifying goals, and understanding tradeoffs.",
+      "Clear answers to common questions about protection, retirement, education, legacy planning, insurance, and how we work.",
+    href: "/faq",
   },
   {
     category: "Life Insurance",
-    title: "Understanding Protection Without Pressure",
+    title: "Return of Premium",
     description:
-      "A plain-language overview of how families can think about coverage needs.",
+      "Understand what return of premium means, how it can work, and what questions to ask before assuming premiums will simply be returned.",
+    href: "/resources/return-of-premium",
   },
   {
-    category: "Retirement",
-    title: "Preparing for Retirement Conversations",
+    category: "Carriers",
+    title: "Insurance Carriers and Product Availability",
     description:
-      "Key topics to organize before discussing income, timing, and risk.",
+      "Learn how insurance carriers, product approval, underwriting, and state availability affect planning conversations.",
+    href: "/resources/carriers",
   },
   {
-    category: "Family Protection",
-    title: "What Would Need to Continue?",
+    category: "Educational Notice",
+    title: "Educational Content Disclaimer",
     description:
-      "A thoughtful worksheet-style prompt for identifying household responsibilities.",
+      "Review the important notice that website content is educational and not individualized tax, legal, investment, or insurance advice.",
+    href: "/resources/educational-content-disclaimer",
   },
   {
-    category: "Mortgage Protection",
-    title: "Protecting the Home as Part of the Plan",
+    category: "Privacy",
+    title: "National Website Privacy Policy",
     description:
-      "How housing obligations fit into broader financial protection planning.",
+      "Understand how information submitted through the website may be collected, used, protected, and handled.",
+    href: "/legal#privacy-policy",
   },
   {
-    category: "College Planning",
-    title: "Balancing Education Costs and Long-Term Goals",
+    category: "Terms",
+    title: "Website Terms of Use",
     description:
-      "A family-centered look at education funding priorities and tradeoffs.",
+      "Review the terms that govern access to and use of the FKSola Financial website.",
+    href: "/legal#terms-of-use",
+  },
+];
+
+export const resourcePages: ResourcePage[] = [
+  {
+    slug: "return-of-premium",
+    category: "Educational Topic",
+    title: "Return of Premium",
+    summary:
+      "Understand what return of premium really means before assuming premiums will simply be returned.",
+    approvedDocKey: "returnOfPremium",
+  },
+  {
+    slug: "carriers",
+    category: "Carrier Education",
+    title: "Insurance Carriers and Product Availability",
+    summary:
+      "Learn how carrier relationships, product approval, underwriting, and state availability affect insurance conversations.",
+    approvedDocKey: "carriers",
+  },
+  {
+    slug: "educational-content-disclaimer",
+    category: "Educational Notice",
+    title: "Educational Content Disclaimer",
+    summary:
+      "Review the important notice that website content is educational and not individualized tax, legal, investment, or insurance advice.",
+    approvedDocKey: "educationalDisclaimer",
   },
 ];
 

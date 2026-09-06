@@ -3,6 +3,9 @@
 import { useState, type FormEvent } from "react";
 import { ArrowRight, Clock3 } from "lucide-react";
 
+import { CalendlyEmbed } from "./calendly-embed";
+import { TurnstileField, resetTurnstile } from "./turnstile-field";
+
 const dateOptions = [
   { day: "Mon", date: "Sep 7" },
   { day: "Tue", date: "Sep 8" },
@@ -17,6 +20,7 @@ export function JoinUsForm() {
   const [selectedDate, setSelectedDate] = useState("");
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [message, setMessage] = useState("");
+  const hasCalendly = Boolean(process.env.NEXT_PUBLIC_CALENDLY_URL);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -55,6 +59,7 @@ export function JoinUsForm() {
       );
     } finally {
       window.clearTimeout(timeout);
+      resetTurnstile();
     }
   }
 
@@ -73,6 +78,8 @@ export function JoinUsForm() {
         <CareerField label="Last name *" name="lastName" required />
         <CareerField label="Email *" name="email" type="email" required />
         <CareerField label="Phone *" name="phone" type="tel" required />
+        <CareerField label="City of residence *" name="city" required />
+        <CareerField label="State *" name="state" required />
       </div>
 
       <fieldset className="mt-6">
@@ -105,12 +112,12 @@ export function JoinUsForm() {
 
       <label className="mt-6 grid gap-2 text-sm font-bold text-[#071629]">
         Anything you would like us to know?{" "}
-        <span className="font-normal text-[#5F6B7A]">(optional)</span>
+        <span className="font-normal text-[#334155]">(optional)</span>
         <textarea
           name="message"
           rows={4}
           placeholder="Share any experience, questions, or goals you want to discuss."
-          className="resize-none rounded-[8px] border border-[#0B1F3A]/10 bg-white px-4 py-3 text-sm font-normal leading-7 text-[#071629] outline-none transition placeholder:text-[#5F6B7A]/70 focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15"
+          className="resize-none rounded-[8px] border border-[#0B1F3A]/10 bg-white px-4 py-3 text-base font-normal leading-7 text-[#071629] outline-none transition placeholder:text-[#334155]/70 focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
         />
       </label>
 
@@ -126,37 +133,49 @@ export function JoinUsForm() {
       </div>
 
       <input type="hidden" name="appointmentDate" value={selectedDate} />
-      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-5">
-        {dateOptions.map((option) => {
-          const value = `${option.day}, ${option.date}`;
-          const isSelected = selectedDate === value;
+      {hasCalendly ? (
+        <div className="mt-6">
+          <CalendlyEmbed />
+        </div>
+      ) : (
+        <>
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-5">
+            {dateOptions.map((option) => {
+              const value = `${option.day}, ${option.date}`;
+              const isSelected = selectedDate === value;
 
-          return (
-            <button
-              key={value}
-              type="button"
-              onClick={() => setSelectedDate(value)}
-              className={`rounded-[8px] border px-3 py-3 text-left transition ${
-                isSelected
-                  ? "border-[#C9A227] bg-[#F7F4EC] shadow-sm"
-                  : "border-[#0B1F3A]/10 bg-white hover:border-[#C9A227] hover:bg-[#F7F4EC]"
-              }`}
-            >
-              <span className="block text-sm font-bold text-[#071629]">
-                {option.day}
-              </span>
-              <span className="mt-1 block text-sm text-[#5F6B7A]">
-                {option.date}
-              </span>
-            </button>
-          );
-        })}
-      </div>
+              return (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() => setSelectedDate(value)}
+                  className={`rounded-[8px] border px-3 py-3 text-left transition ${
+                    isSelected
+                      ? "border-[#C9A227] bg-[#F7F4EC] shadow-sm"
+                      : "border-[#0B1F3A]/10 bg-white hover:border-[#C9A227] hover:bg-[#F7F4EC]"
+                  }`}
+                >
+                  <span className="block text-sm font-bold text-[#071629]">
+                    {option.day}
+                  </span>
+                  <span className="mt-1 block text-sm text-[#334155]">
+                    {option.date}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
 
-      <div className="mt-6 rounded-[8px] bg-[#F3F4F6] px-4 py-5 text-center text-sm text-[#5F6B7A]">
-        {selectedDate
-          ? `${selectedDate} selected. Exact time slots can be connected when Fred provides a booking calendar.`
-          : "Select a date to see available times."}
+          <div className="mt-6 rounded-[8px] bg-[#F3F4F6] px-4 py-5 text-center text-sm text-[#334155]">
+            {selectedDate
+              ? `${selectedDate} selected. Exact time slots can be connected when Fred provides a booking calendar.`
+              : "Select a date to see available times."}
+          </div>
+        </>
+      )}
+
+      <div className="mt-5">
+        <TurnstileField />
       </div>
 
       <button
@@ -179,7 +198,7 @@ export function JoinUsForm() {
           {message}
         </p>
       ) : (
-        <p className="mt-5 text-center text-xs leading-6 text-[#5F6B7A]">
+        <p className="mt-5 text-center text-xs leading-6 text-[#334155]">
           By submitting, you agree that FKSola Financial may contact you about
           this opportunity.
         </p>
@@ -206,7 +225,7 @@ function CareerField({
         name={name}
         type={type}
         required={required}
-        className="h-12 rounded-[8px] border border-[#0B1F3A]/10 bg-white px-4 text-sm font-normal text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15"
+        className="h-12 rounded-[8px] border border-[#0B1F3A]/10 bg-white px-4 text-base font-normal text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
       />
     </label>
   );

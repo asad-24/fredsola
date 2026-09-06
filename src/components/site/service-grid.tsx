@@ -25,13 +25,19 @@ export function ServiceGrid({
             href={`/solutions/${service.slug}`}
             data-stagger
             style={{ "--stagger-delay": `${index * 70}ms` } as CSSProperties}
-            className="motion-card group rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 hover:-translate-y-1 hover:border-[#C9A227]/60 hover:shadow-xl hover:shadow-[#071629]/8 sm:p-5 lg:p-6"
+            className="motion-card group relative overflow-hidden rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 hover:-translate-y-1 hover:border-[#C9A227]/70 hover:bg-[#F7F4EC] hover:shadow-xl hover:shadow-[#071629]/8 sm:p-5 lg:p-6"
           >
-            <Icon className="size-6 text-[#C9A227]" aria-hidden="true" />
+            <span
+              className="absolute inset-x-0 top-0 h-1 bg-[#C9A227] opacity-0 transition group-hover:opacity-100"
+              aria-hidden="true"
+            />
+            <span className="flex size-11 items-center justify-center rounded-full bg-[#F7F4EC] text-[#C9A227] transition group-hover:bg-[#0B1F3A] group-hover:text-white">
+              <Icon className="size-5" aria-hidden="true" />
+            </span>
             <h3 className="mt-5 text-lg font-bold text-[#071629]">
               {service.shortTitle}
             </h3>
-            <p className="mt-3 text-sm leading-7 text-[#5F6B7A]">
+            <p className="mt-3 text-[15px] leading-7 text-[#334155] sm:text-sm">
               {service.summary}
             </p>
             <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#0B1F3A]">

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { escapeHtml, getFormValue, sendBrevoEmail } from "@/lib/brevo";
+import { verifyTurnstile } from "@/lib/turnstile";
 
 export async function POST(request: Request) {
   try {
@@ -9,13 +10,24 @@ export async function POST(request: Request) {
     const lastName = getFormValue(formData, "lastName");
     const email = getFormValue(formData, "email");
     const phone = getFormValue(formData, "phone");
+    const city = getFormValue(formData, "city");
+    const state = getFormValue(formData, "state");
     const topic = getFormValue(formData, "topic");
     const message = getFormValue(formData, "message");
     const name = [firstName, lastName].filter(Boolean).join(" ");
 
-    if (!firstName || !lastName || !email || !phone || !message) {
+    if (!firstName || !lastName || !email || !phone || !city || !state || !message) {
       return NextResponse.json(
         { error: "Please complete all required fields." },
+        { status: 400 }
+      );
+    }
+
+    const isHuman = await verifyTurnstile(formData, request);
+
+    if (!isHuman) {
+      return NextResponse.json(
+        { error: "Please complete the spam protection check." },
         { status: 400 }
       );
     }
@@ -31,6 +43,8 @@ export async function POST(request: Request) {
         <p><strong>Name:</strong> ${escapeHtml(name)}</p>
         <p><strong>Email:</strong> ${escapeHtml(email)}</p>
         <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+        <p><strong>City of residence:</strong> ${escapeHtml(city)}</p>
+        <p><strong>State:</strong> ${escapeHtml(state)}</p>
         <p><strong>Topic:</strong> ${escapeHtml(topic)}</p>
         <p><strong>Message:</strong></p>
         <p>${escapeHtml(message).replaceAll("\n", "<br />")}</p>
@@ -40,6 +54,8 @@ export async function POST(request: Request) {
         `Name: ${name}`,
         `Email: ${email}`,
         `Phone: ${phone}`,
+        `City of residence: ${city}`,
+        `State: ${state}`,
         `Topic: ${topic}`,
         `Message: ${message}`,
       ].join("\n"),

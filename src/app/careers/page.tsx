@@ -29,7 +29,7 @@ export default function CareersPage() {
               <h1 className="font-heading text-5xl leading-[0.98] text-balance text-[#071629] sm:text-6xl lg:text-7xl">
                 Build your next chapter with FKSola.
               </h1>
-              <p className="mt-6 max-w-lg text-base leading-8 text-[#5F6B7A] sm:text-lg">
+              <p className="mt-6 max-w-lg text-base leading-8 text-[#334155] sm:text-lg">
                 Tell us a little about yourself, then choose a time to discuss
                 the financial professional opportunity.
               </p>
