@@ -12,26 +12,41 @@ export function ContactForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 20000);
+
     setSubmitState("sending");
     setMessage("");
 
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      body: new FormData(event.currentTarget),
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+        signal: controller.signal,
+      });
 
-    if (response.ok) {
-      event.currentTarget.reset();
-      setSubmitState("success");
-      setMessage("Thank you. Your message has been sent to FKSola Financial.");
-      return;
+      if (response.ok) {
+        form.reset();
+        setSubmitState("success");
+        setMessage("Thank you. Your message has been sent to FKSola Financial.");
+        return;
+      }
+
+      const data = (await response.json().catch(() => null)) as {
+        error?: string;
+      } | null;
+      setSubmitState("error");
+      setMessage(data?.error ?? "Unable to send your message right now.");
+    } catch {
+      setSubmitState("error");
+      setMessage(
+        "Unable to send your message right now. Please try again or email Fred directly."
+      );
+    } finally {
+      window.clearTimeout(timeout);
     }
-
-    const data = (await response.json().catch(() => null)) as {
-      error?: string;
-    } | null;
-    setSubmitState("error");
-    setMessage(data?.error ?? "Unable to send your message right now.");
   }
 
   return (
