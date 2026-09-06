@@ -129,7 +129,7 @@ export const services: Service[] = [
   {
     slug: "life-insurance",
     title: "Term Life Insurance with Living Benefits",
-    shortTitle: "Term Life",
+    shortTitle: "Term Life Insurance with Living Benefits",
     icon: Umbrella,
     summary:
       "Life insurance protection for a specified period, with certain policies offering living-benefit features.",
@@ -250,11 +250,11 @@ export const services: Service[] = [
   },
   {
     slug: "income-protection-planning",
-    title: "Income Protection Planning",
+    title: "Income Protection",
     shortTitle: "Income Protection",
     icon: ShieldCheck,
     summary:
-      "Think through how household income could be protected if life or health changes unexpectedly.",
+      "Strategies designed to help address the financial impact of death, disability, or serious illness.",
     heroTitle: "Protect the income that supports your life.",
     heroImage: "/images/services/income-protection-planning-hero.png",
     heroImageAlt: "Professional reviewing income protection planning options",
@@ -290,50 +290,13 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "living-benefits",
-    title: "Living Benefits",
-    shortTitle: "Living Benefits",
-    icon: HeartHandshake,
-    summary:
-      "Learn how certain policy features may provide support during qualifying health events.",
-    concern:
-      "A serious illness or injury can affect income, savings, and family stability while someone is still living.",
-    whyItMatters:
-      "Living benefits may help people understand options that can provide financial flexibility during qualifying circumstances.",
-    howItWorks:
-      "Certain policies include riders or features that may allow access to benefits if specific conditions and requirements are met.",
-    whoMayBenefit: [
-      "Families concerned about health-related income disruption",
-      "Self-employed professionals",
-      "People with limited emergency savings",
-      "Clients seeking protection beyond a death benefit",
-    ],
-    considerations: [
-      "Eligibility depends on policy terms and qualifying events.",
-      "Accessing benefits can reduce future policy values or benefits.",
-      "Policy language should be reviewed carefully.",
-    ],
-    faqs: [
-      {
-        question: "Are living benefits automatic?",
-        answer:
-          "They depend on the policy and its riders. A careful review helps clarify what is included and how it works.",
-      },
-      {
-        question: "Do living benefits replace health insurance?",
-        answer:
-          "No. They are separate from health insurance and should be considered as part of a broader protection plan.",
-      },
-    ],
-  },
-  {
     slug: "retirement-income-planning",
-    title: "Retirement Income Planning",
-    shortTitle: "Retirement Income",
+    title: "Retirement Planning",
+    shortTitle: "Retirement Planning",
     icon: Landmark,
     summary:
-      "Create a clearer view of retirement income, timing, risk, and long-term priorities.",
-    heroTitle: "Plan for income you may need for decades.",
+      "Preparing for income, longevity, taxes, protection, and the lifestyle you want your resources to support.",
+    heroTitle: "Prepare for the life you want to live.",
     heroImage: "/images/services/retirement-income-planning-hero.png",
     heroImageAlt: "Retirement income planning discussion with organized documents",
     approvedDocKey: "retirementPlanning",
@@ -369,12 +332,12 @@ export const services: Service[] = [
   },
   {
     slug: "fixed-index-annuities",
-    title: "Fixed Index Annuities",
-    shortTitle: "Fixed Index Annuities",
+    title: "Fixed Indexed Annuities",
+    shortTitle: "Fixed Indexed Annuities",
     icon: Library,
     summary:
-      "Understand fixed index annuity concepts, income options, tradeoffs, and suitability considerations.",
-    heroTitle: "Protection from market loss is not the same as no risk.",
+      "Insurance contracts that may combine index-linked interest-crediting potential with contractual guarantees.",
+    heroTitle: "An insurance contract designed for long-term planning.",
     heroImage: "/images/services/fixed-index-annuities-hero.png",
     heroImageAlt: "Fixed index annuity education and planning materials",
     approvedDocKey: "fixedIndexedAnnuities",
@@ -414,8 +377,8 @@ export const services: Service[] = [
     shortTitle: "College Planning",
     icon: GraduationCap,
     summary:
-      "Think through education funding goals with clarity, balance, and family priorities in mind.",
-    heroTitle: "Plan for education without losing sight of the whole picture.",
+      "College planning is about more than saving money. It is about building a strategy that can help you prepare for education costs while considering flexibility, protection, and financial-aid treatment.",
+    heroTitle: "College costs are rising. Your plan should be ready.",
     heroImage: "/images/services/college-planning-hero.png",
     heroImageAlt: "College planning conversation for a family",
     approvedDocKey: "collegePlanning",
@@ -455,8 +418,8 @@ export const services: Service[] = [
     shortTitle: "Tax-Efficient Planning",
     icon: PiggyBank,
     summary:
-      "Explore planning conversations that consider taxes, timing, and long-term financial priorities.",
-    heroTitle: "Make decisions with potential tax consequences in mind.",
+      "Making financial decisions with potential tax consequences in mind.",
+    heroTitle: "Make financial decisions with taxes in mind.",
     heroImage: "/images/services/tax-efficient-planning-hero.png",
     heroImageAlt: "Tax-efficient planning discussion with financial documents",
     approvedDocKey: "taxEfficientPlanning",
@@ -496,7 +459,7 @@ export const services: Service[] = [
     shortTitle: "Legacy Planning",
     icon: BriefcaseBusiness,
     summary:
-      "Clarify how values, assets, family responsibilities, and future intentions may align.",
+      "Planning around what you want your financial resources to accomplish for others.",
     heroTitle: "Preserve what you have built. Plan for what comes next.",
     heroImage: "/images/services/legacy-planning-hero.png",
     heroImageAlt: "Legacy planning conversation across generations",
@@ -537,7 +500,7 @@ export const services: Service[] = [
     shortTitle: "Estate & Probate",
     icon: BriefcaseBusiness,
     summary:
-      "Learn how financial organization can support estate intentions and probate-aware conversations.",
+      "Understanding the financial considerations involved in transferring assets and preparing for incapacity or death.",
     heroTitle: "Make your wishes clear.",
     heroImage: "/images/services/estate-probate-planning-hero.png",
     heroImageAlt: "Estate and probate planning documents on a desk",
@@ -575,11 +538,11 @@ export const services: Service[] = [
   {
     slug: "financial-gap-analysis",
     title: "Financial Gap Analysis",
-    shortTitle: "Gap Analysis",
+    shortTitle: "Financial Gap Analysis",
     icon: Landmark,
     summary:
-      "Identify potential gaps between current resources, responsibilities, and future goals.",
-    heroTitle: "Find the gaps before they become urgent.",
+      "Identifying potential differences between where you are today and where you want to be.",
+    heroTitle: "Know where you stand before you decide where to go.",
     heroImage: "/images/services/financial-gap-analysis-hero.png",
     heroImageAlt: "Financial gap analysis with planning notes and charts",
     approvedDocKey: "financialGapAnalysis",
@@ -619,7 +582,7 @@ export const services: Service[] = [
     shortTitle: "Final Expense",
     icon: HeartHandshake,
     summary:
-      "Review options that may help loved ones manage end-of-life expenses with less financial strain.",
+      "Life insurance planning focused on helping loved ones address final financial responsibilities.",
     heroTitle: "Plan ahead. Help protect the people you love.",
     heroImage: "/images/services/final-expense-hero.png",
     heroImageAlt: "Family discussing final expense planning with care",
@@ -736,6 +699,15 @@ export const resources = [
       "Review the terms that govern access to and use of the FKSola Financial website.",
     href: "/legal#terms-of-use",
   },
+];
+
+export const conversationTopics = [
+  ...services.map((service) => service.title),
+  "Return of Premium",
+  "Carriers / Product Availability",
+  "Financial Education",
+  "Join Us / Career Opportunity",
+  "General Question",
 ];
 
 export const resourcePages: ResourcePage[] = [

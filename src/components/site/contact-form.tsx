@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 
 import { Button } from "@/components/ui/button";
+import { conversationTopics } from "@/data/site";
 import { TurnstileField, resetTurnstile } from "./turnstile-field";
 
 type SubmitState = "idle" | "sending" | "success" | "error";
@@ -72,14 +73,9 @@ export function ContactForm() {
           name="topic"
           className="h-12 rounded-[6px] border border-[#D1D5DB] bg-white px-4 text-base font-normal text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
         >
-          <option>Life insurance</option>
-          <option>Mortgage protection</option>
-          <option>Income protection planning</option>
-          <option>Retirement income planning</option>
-          <option>Fixed index annuities</option>
-          <option>Financial education</option>
-          <option>Careers</option>
-          <option>General question</option>
+          {conversationTopics.map((topic) => (
+            <option key={topic}>{topic}</option>
+          ))}
         </select>
       </label>
       <label className="grid gap-2 text-sm font-semibold text-[#071629]">
