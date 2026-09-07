@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { BookOpen, Sprout } from "lucide-react";
+import { ArrowUpRight, BookOpen, Sprout } from "lucide-react";
 
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
@@ -15,9 +15,9 @@ import { PartnerMarquee } from "@/components/site/partner-marquee";
 import { ServiceGrid } from "@/components/site/service-grid";
 import {
   approach,
+  featuredHomeServices,
   philosophy,
   resources,
-  services,
   testimonials,
 } from "@/data/site";
  
@@ -43,7 +43,7 @@ export default function Home() {
     <SiteShell>
       <Header />
       <main className="flex-1">
-        <section className="hero-stage relative isolate overflow-hidden bg-[#071629] px-5 py-12 text-white sm:px-8 sm:py-14 lg:px-10 lg:py-16">
+        <section className="hero-stage relative isolate overflow-hidden bg-[#071629] px-5 py-12 text-white sm:px-8 sm:py-12 lg:px-10 lg:py-14">
           <div className="hero-grid" aria-hidden="true" />
           <div className="pointer-events-none absolute inset-0">
             {heroSignals.map(({ Icon, label, className, delay, duration }) => (
@@ -201,18 +201,18 @@ export default function Home() {
         <Section>
           <div className="mb-7 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <SectionHeading
-              eyebrow="Solutions"
-              title="Financial areas families can explore with FKSola."
-              text="Each conversation is designed to educate first, then help evaluate the next appropriate step."
+              eyebrow="Secured Solutions"
+              title="Featured financial solutions."
+              text="A focused starting point for protection, living benefits, retirement income, and final expense planning."
             />
             <Link
               href="/solutions"
-              className="text-sm font-bold text-[#0B1F3A] hover:underline"
+              className="inline-flex h-11 items-center justify-center rounded-full border border-[#0B1F3A]/20 px-5 text-sm font-bold text-[#071629] transition hover:-translate-y-0.5 hover:border-[#C9A227] hover:bg-[#F7F4EC]"
             >
-              View all solutions
+              View All Our Solutions
             </Link>
           </div>
-          <ServiceGrid services={services} />
+          <ServiceGrid services={featuredHomeServices} variant="media" />
         </Section>
 
         <Section tone="navy">
@@ -252,7 +252,7 @@ export default function Home() {
               <SectionHeading
                 eyebrow="About"
                 title="Professional guidance with a human voice."
-                text="FKSola Financial is shaped around education-first conversations. The goal is to help people feel more organized, more informed, and more confident about the choices ahead."
+                text="FKSola Financial was created to make financial education and understanding more accessible, so families can ask better questions and make informed decisions with confidence."
               />
               <Link
                 href="/about"
@@ -273,8 +273,11 @@ export default function Home() {
                 />
               </div>
               <p className="font-heading text-3xl leading-tight text-[#071629] sm:text-4xl">
-                “The best financial conversation should leave people clearer
-                than when they arrived.”
+                “Financial education should not be a privilege. It should be
+                accessible to everyone.”
+              </p>
+              <p className="mt-4 text-sm font-bold uppercase tracking-[0.16em] text-[#C9A227]">
+                Frederick Solaga, Founder & CEO, FKSola Financial
               </p>
             </div>
           </div>
@@ -296,11 +299,12 @@ export default function Home() {
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {resources.slice(0, 3).map((resource, index) => (
-              <article
+              <Link
                 key={resource.title}
+                href={resource.href}
                 data-stagger
                 style={{ "--stagger-delay": `${index * 80}ms` } as CSSProperties}
-                className="rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 sm:p-5 lg:p-6"
+                className="motion-card group rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 transition hover:-translate-y-1 hover:border-[#C9A227]/70 hover:bg-white hover:shadow-xl hover:shadow-[#071629]/8 sm:p-5 lg:p-6"
               >
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A227]">
                   {resource.category}
@@ -311,7 +315,14 @@ export default function Home() {
                 <p className="mt-3 text-sm leading-7 text-[#334155]">
                   {resource.description}
                 </p>
-              </article>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#0B1F3A]">
+                  Read More
+                  <ArrowUpRight
+                    className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    aria-hidden="true"
+                  />
+                </span>
+              </Link>
             ))}
           </div>
         </Section>

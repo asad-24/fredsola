@@ -210,6 +210,45 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "return-of-premium",
+    title: "Return of Premium",
+    shortTitle: "Return of Premium",
+    icon: PiggyBank,
+    summary:
+      "Understand what return of premium means, how it can work, and what questions to ask before assuming premiums will simply be returned.",
+    heroTitle: "Understand what return of premium really means.",
+    approvedDocKey: "returnOfPremium",
+    concern:
+      "Return of premium can sound simple, but the actual benefit depends on the specific insurance contract and its requirements.",
+    whyItMatters:
+      "Understanding the difference between premiums, cash value, guarantees, and contractual conditions helps clients ask better questions before deciding.",
+    howItWorks:
+      "A conversation reviews the policy type, contract language, cost, benefit conditions, time horizon, and alternatives that may be available.",
+    whoMayBenefit: [
+      "People comparing life insurance policy features",
+      "Families weighing cost against long-term value",
+      "Clients who want to understand contract details clearly",
+      "Households reviewing protection options before applying",
+    ],
+    considerations: [
+      "Return of premium features depend on the specific contract.",
+      "Costs, limitations, eligibility, and time requirements may apply.",
+      "Policy language should be reviewed carefully before assuming a benefit.",
+    ],
+    faqs: [
+      {
+        question: "Does return of premium always mean all premiums come back?",
+        answer:
+          "No. The exact benefit depends on the contract, eligibility requirements, timing, and policy terms.",
+      },
+      {
+        question: "Is return of premium the same as cash value?",
+        answer:
+          "Not necessarily. These can be different concepts depending on the type of policy and how the contract is designed.",
+      },
+    ],
+  },
+  {
     slug: "mortgage-protection",
     title: "Mortgage Protection",
     shortTitle: "Mortgage Protection",
@@ -617,44 +656,18 @@ export const services: Service[] = [
       },
     ],
   },
-  {
-    slug: "financial-education",
-    title: "Financial Education",
-    shortTitle: "Education",
-    icon: BookOpen,
-    summary:
-      "Build confidence by learning financial concepts in clear, practical language.",
-    concern:
-      "Financial topics can feel intimidating when explanations are full of jargon or pressure.",
-    whyItMatters:
-      "Education helps people ask better questions, understand tradeoffs, and make decisions with more confidence.",
-    howItWorks:
-      "FKSola Financial focuses on clear conversations, useful resources, and step-by-step explanations before strategy discussions.",
-    whoMayBenefit: [
-      "First-time planners",
-      "Families comparing protection options",
-      "Professionals preparing for retirement",
-      "Anyone who wants clearer financial language",
-    ],
-    considerations: [
-      "Education is not a substitute for individualized advice.",
-      "Personal circumstances should guide next steps.",
-      "Learning is most useful when paired with thoughtful questions.",
-    ],
-    faqs: [
-      {
-        question: "Can someone start with education only?",
-        answer:
-          "Yes. A conversation can begin with learning and clarification before discussing any possible strategy.",
-      },
-      {
-        question: "Are resources personalized advice?",
-        answer:
-          "No. Educational resources are general and should be followed by a personal review when decisions are involved.",
-      },
-    ],
-  },
 ];
+
+const featuredHomeServiceSlugs = [
+  "indexed-universal-life-living-benefits",
+  "life-insurance",
+  "fixed-index-annuities",
+  "final-expense",
+];
+
+export const featuredHomeServices = featuredHomeServiceSlugs
+  .map((slug) => services.find((service) => service.slug === slug))
+  .filter((service): service is Service => Boolean(service));
 
 export const resources = [
   {
@@ -665,11 +678,11 @@ export const resources = [
     href: "/faq",
   },
   {
-    category: "Life Insurance",
-    title: "Return of Premium",
+    category: "Insurance Education",
+    title: "Your Contract. Your Protection. Your Decision.",
     description:
-      "Understand what return of premium means, how it can work, and what questions to ask before assuming premiums will simply be returned.",
-    href: "/resources/return-of-premium",
+      "Understand why the insurance contract, carrier, policy details, and your own questions should guide every protection decision.",
+    href: "/resources/your-contract-your-protection",
   },
   {
     category: "Carriers",
@@ -703,21 +716,19 @@ export const resources = [
 
 export const conversationTopics = [
   ...services.map((service) => service.title),
-  "Return of Premium",
   "Carriers / Product Availability",
-  "Financial Education",
   "Join Us / Career Opportunity",
   "General Question",
 ];
 
 export const resourcePages: ResourcePage[] = [
   {
-    slug: "return-of-premium",
-    category: "Educational Topic",
-    title: "Return of Premium",
+    slug: "your-contract-your-protection",
+    category: "Insurance Education",
+    title: "Your Contract. Your Protection. Your Decision.",
     summary:
-      "Understand what return of premium really means before assuming premiums will simply be returned.",
-    approvedDocKey: "returnOfPremium",
+      "Understand the company behind the policy, the contract you are entering into, and the protection you are putting in place.",
+    approvedDocKey: "contractProtection",
   },
   {
     slug: "carriers",

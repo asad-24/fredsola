@@ -26,7 +26,7 @@ export function Section({
       id={id}
       data-reveal={reveal ? "" : undefined}
       className={cn(
-        "px-5 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16",
+        "px-5 py-12 sm:px-8 sm:py-11 lg:px-10 lg:py-12",
         tone === "cream" && "bg-[#F7F4EC]",
         tone === "navy" && "bg-[#071629] text-white",
         className
@@ -86,10 +86,10 @@ export function PageHero({
   imageAlt?: string;
 }) {
   return (
-    <Section tone="cream" className="py-12 sm:py-14 lg:py-16">
+    <Section tone="cream" className="py-12 sm:py-11 lg:py-12">
       <div
         className={cn(
-          "grid gap-8",
+          "grid gap-6 lg:gap-7",
           image && "items-center lg:grid-cols-[0.85fr_1.15fr]"
         )}
       >
@@ -100,12 +100,12 @@ export function PageHero({
           <h1 className="font-heading text-4xl leading-[1.06] text-balance text-[#071629] sm:text-5xl lg:text-6xl">
             {title}
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-[#425166] sm:text-lg sm:leading-8">
+          <p className="mt-4 max-w-2xl text-base leading-7 text-[#334155] sm:text-lg sm:leading-8">
             {text}
           </p>
         </div>
         {image ? (
-          <div className="relative min-h-[15rem] overflow-hidden rounded-[8px] border border-[#0B1F3A]/10 bg-white shadow-xl shadow-[#071629]/10 sm:min-h-[20rem] lg:min-h-[26rem]">
+          <div className="relative min-h-[15rem] overflow-hidden rounded-[8px] border border-[#0B1F3A]/10 bg-white shadow-xl shadow-[#071629]/10 sm:min-h-[18rem] lg:min-h-[22rem]">
             <Image
               src={image}
               alt={imageAlt ?? title}
@@ -129,7 +129,7 @@ export function CTASection({
   text?: string;
 }) {
   return (
-    <Section tone="navy" className="py-12 sm:py-14 lg:py-16">
+    <Section tone="navy" className="py-12 sm:py-11 lg:py-12">
       <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#C9A227]">

@@ -23,7 +23,7 @@ export default function ResourcesPage() {
         <PageHero
           eyebrow="Resources"
           title="Clear financial education for better conversations."
-          text="These original placeholder resources establish a polished education area ready for approved articles, guides, and learning tools."
+          text="Explore practical educational topics that help visitors understand contracts, carriers, disclosures, and common planning questions before a conversation."
         />
         <Section>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
