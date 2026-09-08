@@ -199,67 +199,6 @@ export default function Home() {
         </Section>
 
         <Section>
-          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
-            <div>
-              <SectionHeading
-                eyebrow="Why FKSola Financial Exists"
-                title="Financial education should be accessible to everyone."
-                text="For generations, financial education has been taught at the kitchen table, but too often, that table belonged to the wealthy. FKSola Financial was created to help bring those conversations to more families and communities."
-              />
-              <div className="mt-6 border-l-2 border-[#C9A227] pl-5">
-                <p className="text-base leading-8 text-[#334155]">
-                  Education is more than simply having information. It is about
-                  understanding your options, asking better questions, and
-                  gaining the confidence to make informed decisions.
-                </p>
-                <p className="mt-4 text-sm font-bold uppercase tracking-[0.16em] text-[#C9A227]">
-                  Frederick Solaga, Founder & CEO, FKSola Financial
-                </p>
-              </div>
-            </div>
-            <div className="rounded-[8px] border border-[#C9A227]/55 bg-[#071629] p-5 text-white shadow-xl shadow-[#071629]/18 sm:p-6 lg:p-7">
-              <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-                <div className="relative size-24 shrink-0 overflow-hidden rounded-full border-4 border-[#C9A227] bg-white shadow-lg shadow-black/20 sm:size-28">
-                  <Image
-                    src="/images/CEO.jpeg"
-                    alt="Frederick Solaga, Founder and CEO of FKSola Financial"
-                    fill
-                    sizes="112px"
-                    className="object-cover object-top"
-                  />
-                </div>
-                <div>
-                  <p className="font-heading text-2xl leading-tight text-white sm:text-3xl">
-                    Frederick Solaga
-                  </p>
-                  <p className="mt-2 text-sm font-bold text-[#C9A227]">
-                    Founder & CEO, FKSola Financial
-                  </p>
-                  <p className="mt-5 text-lg font-semibold italic leading-8 text-white/88">
-                    “Because financial education shouldn&apos;t be a privilege.
-                    It should be accessible to everyone.”
-                  </p>
-                </div>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {[
-                  "Accessible education",
-                  "Better questions",
-                  "Family conversations",
-                ].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full bg-[#C9A227] px-4 py-2 text-xs font-bold text-[#071629]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        <Section>
           <div className="mb-7 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <SectionHeading
               eyebrow="Secured Solutions"

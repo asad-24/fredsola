@@ -89,36 +89,36 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-6 space-y-4 text-base leading-8 text-white/74">
-                  <p>
-                    For generations, financial education has been taught at the
-                    kitchen table—but too often, that table belonged to the
-                    wealthy.
-                  </p>
-                  <p>
-                    It&apos;s where conversations about money, protection,
-                    wealth, and the future were shared and passed from one
-                    generation to the next.
-                  </p>
-                  <p>
-                    FKSola Financial was created to change that—to make
-                    financial education and understanding accessible to everyone.
-                  </p>
-                  <p>
-                    We believe education is more than simply having information.
-                    It&apos;s about understanding your options, asking better
-                    questions, and gaining the confidence to make informed
-                    decisions.
-                  </p>
-                  <p>
-                    We&apos;re building a team of financial professionals who
-                    believe in the power of education and understanding and are
-                    committed to bringing these important conversations to more
-                    families and communities.
-                  </p>
-                  <p>
-                    Because financial education shouldn&apos;t be a privilege. It
-                    should be accessible to everyone.
-                  </p>
+                <p>
+                  For generations, financial education has been taught at the
+                  kitchen table—but too often, that table belonged to the
+                  wealthy.
+                </p>
+                <p>
+                  It&apos;s where conversations about money, protection, wealth,
+                  and the future were shared and passed from one generation to
+                  the next.
+                </p>
+                <p>
+                  FKSola Financial was created to change that—to make financial
+                  education and understanding accessible to everyone.
+                </p>
+                <p>
+                  We believe education is more than simply having information.
+                  It&apos;s about understanding your options, asking better
+                  questions, and gaining the confidence to make informed
+                  decisions.
+                </p>
+                <p>
+                  We&apos;re building a team of financial professionals who
+                  believe in the power of education and understanding and are
+                  committed to bringing these important conversations to more
+                  families and communities.
+                </p>
+                <p>
+                  Because financial education shouldn&apos;t be a privilege. It
+                  should be accessible to everyone.
+                </p>
               </div>
 
               <div className="mt-6 flex flex-wrap gap-2">
