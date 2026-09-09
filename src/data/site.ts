@@ -175,9 +175,9 @@ export const services: Service[] = [
     summary:
       "Permanent life insurance with death-benefit protection, cash-value potential, and certain living-benefit features depending on the policy.",
     heroTitle: "Permanent protection with cash-value potential.",
-    heroImage: "/images/services/life-insurance-hero.png",
+    heroImage: "/images/services/financial-gap-analysis-hero.png",
     heroImageAlt:
-      "Financial planning conversation about permanent protection and living benefits",
+      "Family reviewing permanent protection and living-benefit planning options",
     approvedDocKey: "indexedUniversalLifeLivingBenefits",
     concern:
       "Families sometimes need permanent protection while also wanting to understand policy value, access, charges, and long-term flexibility.",

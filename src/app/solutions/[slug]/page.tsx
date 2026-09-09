@@ -59,14 +59,16 @@ export default async function ServicePage({ params }: ServicePageProps) {
         ) : (
           <>
             <Section>
-              <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
+              <div className="grid gap-6 rounded-[8px] border border-[#0B1F3A]/10 bg-white p-5 shadow-xl shadow-[#071629]/6 sm:p-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:p-7">
                 <SectionHeading
                   eyebrow="The Financial Concern"
                   title="Start by naming what needs attention."
                 />
-                <p className="text-base leading-8 text-[#334155] lg:text-lg">
-                  {service.concern}
-                </p>
+                <div className="border-l-2 border-[#C9A227] pl-5">
+                  <p className="max-w-3xl text-base leading-8 text-[#334155] lg:text-lg">
+                    {service.concern}
+                  </p>
+                </div>
               </div>
             </Section>
             <Section tone="cream">
@@ -79,7 +81,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               </div>
             </Section>
             <Section>
-              <div className="grid gap-8 lg:grid-cols-2">
+              <div className="grid gap-4 lg:grid-cols-2">
                 <div>
                   <h2 className="font-heading text-3xl text-[#071629] sm:text-4xl">
                     Who May Benefit
@@ -117,7 +119,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 eyebrow="FAQs"
                 title={`Questions about ${service.shortTitle.toLowerCase()}.`}
               />
-              <div className="mt-7 grid gap-4 lg:grid-cols-2">
+              <div className="mt-6 grid gap-4 lg:grid-cols-2">
                 {service.faqs.map((faq) => (
                   <article
                     key={faq.question}

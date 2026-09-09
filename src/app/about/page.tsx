@@ -58,82 +58,82 @@ export default function AboutPage() {
           </div>
         </Section>
         <Section tone="cream">
-          <div className="mb-8 grid gap-6 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
-            <SectionHeading
-              eyebrow="Why FKSola Financial Exists"
-              title="Financial education should be accessible to everyone."
-            />
-            <div className="rounded-[8px] border border-[#C9A227]/55 bg-[#071629] p-5 text-white shadow-xl shadow-[#071629]/18 sm:p-6 lg:p-7">
-              <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-                <div className="relative size-24 shrink-0 overflow-hidden rounded-full border-4 border-[#C9A227] bg-white shadow-lg shadow-black/20 sm:size-28">
+          <div className="mb-8 rounded-[8px] border border-[#C9A227]/55 bg-[#071629] p-5 text-white shadow-xl shadow-[#071629]/18 sm:p-6 lg:p-8">
+            <div className="grid gap-7 lg:grid-cols-[0.36fr_1fr] lg:items-start">
+              <div className="lg:sticky lg:top-28">
+                <div className="relative size-28 overflow-hidden rounded-full border-4 border-[#C9A227] bg-white shadow-lg shadow-black/20 sm:size-32">
                   <Image
                     src="/images/CEO.jpeg"
                     alt="Frederick Solaga, Founder and CEO of FKSola Financial"
                     fill
-                    sizes="112px"
+                    sizes="128px"
                     className="object-cover object-top"
                   />
                 </div>
-                <div>
-                  <p className="font-heading text-2xl leading-tight text-white sm:text-3xl">
-                    Frederick Solaga
-                  </p>
-                  <p className="mt-2 text-sm font-bold text-[#C9A227]">
-                    Founder & CEO, FKSola Financial
-                  </p>
-                  <p className="mt-5 text-lg font-semibold italic leading-8 text-white/88">
-                    “FKSola Financial was created to make financial education and
-                    understanding accessible to everyone.”
-                  </p>
+                <p className="mt-5 font-heading text-3xl leading-tight text-white sm:text-4xl">
+                  Frederick Solaga
+                </p>
+                <p className="mt-2 text-sm font-bold text-[#C9A227]">
+                  Founder & CEO, FKSola Financial
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {[
+                    "Accessible education",
+                    "Better questions",
+                    "Family conversations",
+                  ].map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full bg-[#C9A227] px-4 py-2 text-xs font-bold text-[#071629]"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
-
-              <div className="mt-6 space-y-4 text-base leading-8 text-white/74">
-                <p>
-                  For generations, financial education has been taught at the
-                  kitchen table—but too often, that table belonged to the
-                  wealthy.
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#C9A227]">
+                  Why FKSola Financial Exists
                 </p>
-                <p>
-                  It&apos;s where conversations about money, protection, wealth,
-                  and the future were shared and passed from one generation to
-                  the next.
+                <h2 className="mt-4 font-heading text-3xl leading-tight text-balance text-white sm:text-4xl lg:text-5xl">
+                  Financial education should be accessible to everyone.
+                </h2>
+                <p className="mt-5 text-lg font-semibold italic leading-8 text-white/88">
+                  “FKSola Financial was created to make financial education and
+                  understanding accessible to everyone.”
                 </p>
-                <p>
-                  FKSola Financial was created to change that—to make financial
-                  education and understanding accessible to everyone.
-                </p>
-                <p>
-                  We believe education is more than simply having information.
-                  It&apos;s about understanding your options, asking better
-                  questions, and gaining the confidence to make informed
-                  decisions.
-                </p>
-                <p>
-                  We&apos;re building a team of financial professionals who
-                  believe in the power of education and understanding and are
-                  committed to bringing these important conversations to more
-                  families and communities.
-                </p>
-                <p>
-                  Because financial education shouldn&apos;t be a privilege. It
-                  should be accessible to everyone.
-                </p>
-              </div>
-
-              <div className="mt-6 flex flex-wrap gap-2">
-                {[
-                  "Accessible education",
-                  "Better questions",
-                  "Family conversations",
-                ].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full bg-[#C9A227] px-4 py-2 text-xs font-bold text-[#071629]"
-                  >
-                    {item}
-                  </span>
-                ))}
+                <div className="mt-6 space-y-4 text-base leading-8 text-white/74">
+                  <p>
+                    For generations, financial education has been taught at the
+                    kitchen table—but too often, that table belonged to the
+                    wealthy.
+                  </p>
+                  <p>
+                    It&apos;s where conversations about money, protection,
+                    wealth, and the future were shared and passed from one
+                    generation to the next.
+                  </p>
+                  <p>
+                    FKSola Financial was created to change that—to make
+                    financial education and understanding accessible to everyone.
+                  </p>
+                  <p>
+                    We believe education is more than simply having information.
+                    It&apos;s about understanding your options, asking better
+                    questions, and gaining the confidence to make informed
+                    decisions.
+                  </p>
+                  <p>
+                    We&apos;re building a team of financial professionals who
+                    believe in the power of education and understanding and are
+                    committed to bringing these important conversations to more
+                    families and communities.
+                  </p>
+                  <p>
+                    Because financial education shouldn&apos;t be a privilege. It
+                    should be accessible to everyone.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
