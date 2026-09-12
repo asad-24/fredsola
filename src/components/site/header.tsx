@@ -1,11 +1,28 @@
+"use client";
+
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { navigation } from "@/data/site";
 
 import { Logo } from "./logo";
 
 export function Header() {
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    if (href === "/careers") {
+      return pathname === "/careers" || pathname === "/join-us";
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   return (
     <header className="header-enter sticky top-0 z-50 border-b border-[#0B1F3A]/10 bg-white/90 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
@@ -16,7 +33,12 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-semibold text-[#071629]/75 transition hover:text-[#071629]"
+              aria-current={isActive(item.href) ? "page" : undefined}
+              className={`relative py-2 text-sm font-semibold transition after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:origin-center after:bg-[#C9A227] after:transition-transform after:duration-300 ${
+                isActive(item.href)
+                  ? "text-[#071629] after:scale-x-100"
+                  : "text-[#071629]/75 after:scale-x-0 hover:text-[#071629] hover:after:scale-x-100"
+              }`}
             >
               {item.label}
             </Link>
@@ -42,7 +64,12 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-[6px] px-4 py-3 text-sm font-semibold text-[#071629]/80 transition hover:bg-[#F7F4EC] hover:text-[#071629]"
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  className={`rounded-[6px] border-l-2 px-4 py-3 text-sm font-semibold transition ${
+                    isActive(item.href)
+                      ? "border-[#C9A227] bg-[#F7F4EC] text-[#071629]"
+                      : "border-transparent text-[#071629]/80 hover:bg-[#F7F4EC] hover:text-[#071629]"
+                  }`}
                 >
                   {item.label}
                 </Link>
