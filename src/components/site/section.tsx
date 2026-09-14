@@ -94,7 +94,7 @@ export function PageHero({
         )}
       >
         <div className="max-w-4xl">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#C9A227]">
+          <p className="mb-4 max-w-full break-words text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:text-xs sm:leading-6 sm:tracking-[0.22em]">
             {eyebrow}
           </p>
           <h1 className="font-heading text-4xl leading-[1.06] text-balance text-[#071629] sm:text-5xl lg:text-6xl">
