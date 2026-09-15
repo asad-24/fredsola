@@ -66,7 +66,7 @@ export function JoinUsForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-[22px] border border-[#0B1F3A]/10 bg-white p-5 shadow-2xl shadow-[#071629]/12 sm:p-7 lg:p-9"
+      className="rounded-[18px] border border-[#0B1F3A]/10 bg-white p-4 shadow-2xl shadow-[#071629]/12 sm:p-6 lg:p-7"
     >
       <p className="text-sm font-bold text-[#C9A227]">Step 1 of 2</p>
       <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#071629]">

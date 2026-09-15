@@ -26,7 +26,7 @@ export default function AboutPage() {
           text="FKSola Financial helps individuals and families approach important financial choices with calm, organized conversations."
         />
         <Section>
-          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+          <div className="grid gap-6 lg:gap-8 lg:grid-cols-[0.75fr_1.25fr]">
             <SectionHeading
               eyebrow="Philosophy"
               title="A professional firm with a human way of explaining things."
@@ -58,7 +58,7 @@ export default function AboutPage() {
           </div>
         </Section>
         <Section tone="cream">
-          <div className="mb-8 rounded-[8px] border border-[#C9A227]/55 bg-[#071629] p-5 text-white shadow-xl shadow-[#071629]/18 sm:p-6 lg:p-8">
+          <div className="mb-7 rounded-[8px] border border-[#C9A227]/55 bg-[#071629] p-5 text-white shadow-xl shadow-[#071629]/18 sm:p-6 lg:p-7">
             <div className="grid gap-7 lg:grid-cols-[0.36fr_1fr] lg:items-start">
               <div className="lg:sticky lg:top-28">
                 <div className="relative size-28 overflow-hidden rounded-full border-4 border-[#C9A227] bg-white shadow-lg shadow-black/20 sm:size-32">
@@ -92,10 +92,10 @@ export default function AboutPage() {
                 </div>
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#C9A227]">
+                <p className="text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:text-xs sm:tracking-[0.22em]">
                   Why FKSola Financial Exists
                 </p>
-                <h2 className="mt-4 font-heading text-3xl leading-tight text-balance text-white sm:text-4xl lg:text-5xl">
+                <h2 className="mt-3 font-heading text-3xl leading-tight text-balance text-white sm:mt-4 sm:text-4xl lg:text-[2.75rem]">
                   Financial education should be accessible to everyone.
                 </h2>
                 <p className="mt-5 text-lg font-semibold italic leading-8 text-white/88">

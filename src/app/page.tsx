@@ -43,7 +43,7 @@ export default function Home() {
     <SiteShell>
       <Header />
       <main className="flex-1">
-        <section className="hero-stage relative isolate overflow-hidden bg-[#071629] px-5 py-12 text-white sm:px-8 sm:py-12 lg:px-10 lg:py-14">
+        <section className="hero-stage relative isolate overflow-hidden bg-[#071629] px-4 py-9 text-white sm:px-6 sm:py-10 lg:px-10 lg:py-12">
           <div className="hero-grid" aria-hidden="true" />
           <div className="pointer-events-none absolute inset-0">
             {heroSignals.map(({ Icon, label, className, delay, duration }) => (
@@ -65,23 +65,23 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="relative mx-auto grid max-w-7xl items-center gap-6 lg:gap-8 lg:grid-cols-[0.92fr_1.08fr]">
             <div className="max-w-2xl">
               <p
-                className="hero-enter mb-4 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.08] px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#C9A227] backdrop-blur"
+                className="hero-enter mb-4 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.08] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.14em] text-[#C9A227] backdrop-blur sm:text-xs sm:tracking-[0.2em]"
                 style={{ "--hero-delay": "80ms" } as CSSProperties}
               >
                 <span className="size-1.5 rounded-full bg-[#C9A227]" />
                 FKSola Financial
               </p>
               <h1
-                className="hero-enter font-heading text-4xl leading-[1.04] text-balance text-white sm:text-6xl lg:text-7xl"
+                className="hero-enter font-heading text-[2.4rem] leading-[1.04] text-balance text-white sm:text-6xl lg:text-[4.25rem]"
                 style={{ "--hero-delay": "180ms" } as CSSProperties}
               >
                 Building a Better Financial Future
               </h1>
               <p
-                className="hero-enter mt-5 max-w-xl text-base leading-7 text-white/75 sm:text-lg sm:leading-8"
+                className="hero-enter mt-4 max-w-xl text-base leading-7 text-white/75 sm:mt-5 sm:text-lg sm:leading-8"
                 style={{ "--hero-delay": "300ms" } as CSSProperties}
               >
                 Helping individuals and families make informed financial
@@ -154,7 +154,7 @@ export default function Home() {
         </section>
 
         <Section>
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <SectionHeading
               eyebrow="Introduction"
               title="A calmer way to approach important financial decisions."
@@ -216,12 +216,12 @@ export default function Home() {
         </Section>
 
         <Section tone="navy">
-          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="grid gap-5 lg:gap-8 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#C9A227]">
+              <p className="mb-3 text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:mb-4 sm:text-xs sm:tracking-[0.22em]">
                 Our Approach
               </p>
-              <h2 className="font-heading text-3xl leading-tight text-balance sm:text-4xl lg:text-5xl">
+              <h2 className="font-heading text-3xl leading-tight text-balance sm:text-4xl lg:text-[2.75rem]">
                 Understand first. Move forward when ready.
               </h2>
             </div>
@@ -315,10 +315,10 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section tone="cream" className="py-10 sm:py-12 lg:py-14">
+        <Section tone="cream" className="py-8 sm:py-10 lg:py-11">
           <div className="grid gap-6 lg:grid-cols-[0.6fr_1.4fr] lg:items-center">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#C9A227]">
+              <p className="text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:text-xs sm:tracking-[0.22em]">
                 Our Partners
               </p>
               <h2 className="mt-3 font-heading text-3xl text-[#071629] sm:text-4xl">

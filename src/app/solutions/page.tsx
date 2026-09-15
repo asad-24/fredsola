@@ -70,7 +70,7 @@ export default function SolutionsPage() {
           title="Explore financial areas with an education-first guide."
           text="FKSola Financial helps clients review protection, planning, retirement, education, and legacy questions without pressure."
         />
-        <Section className="py-10 sm:py-10 lg:py-11">
+        <Section className="py-8 sm:py-9 lg:py-10">
           <div className="grid gap-5">
             {solutionGroups.map((group, groupIndex) => (
               <SolutionGroup
@@ -111,7 +111,7 @@ function SolutionGroup({
     >
       <div className="grid gap-3 border-b border-[#0B1F3A]/10 pb-4 lg:grid-cols-[0.32fr_0.68fr] lg:items-end">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#C9A227]">
+          <p className="text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:text-xs sm:tracking-[0.22em]">
             {String(index + 1).padStart(2, "0")}
           </p>
           <h2 className="mt-2 font-heading text-3xl leading-tight text-[#071629] sm:text-4xl">

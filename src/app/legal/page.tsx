@@ -45,14 +45,14 @@ export default function LegalPage() {
           text="Approved legal and educational notices for the FKSola Financial website."
         />
         <Section>
-          <div className="grid gap-8">
+          <div className="grid gap-6">
             {legalDocuments.map((document) => (
               <article
                 key={document.id}
                 id={document.id}
                 className="scroll-mt-28"
               >
-                <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#C9A227]">
+                <p className="mb-3 text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:text-xs sm:tracking-[0.22em]">
                   {document.eyebrow}
                 </p>
                 <h2 className="mb-5 font-heading text-3xl leading-tight text-[#071629] sm:text-4xl">

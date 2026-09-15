@@ -28,10 +28,21 @@ export function AnimationProvider() {
       document.querySelectorAll<HTMLElement>("[data-reveal]")
     );
 
-    if (!("IntersectionObserver" in window)) {
+    const showElement = (element: HTMLElement) => {
+      element.dataset.inView = "true";
+    };
+
+    const showElementsAlreadyReached = () => {
       elements.forEach((element) => {
-        element.dataset.inView = "true";
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.95) {
+          showElement(element);
+        }
       });
+    };
+
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach(showElement);
       return;
     }
 
@@ -40,20 +51,26 @@ export function AnimationProvider() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const element = entry.target as HTMLElement;
-            element.dataset.inView = "true";
+            showElement(element);
             observer.unobserve(element);
           }
         });
       },
       {
-        rootMargin: "0px 0px -12% 0px",
-        threshold: 0.14,
+        rootMargin: "0px 0px -8% 0px",
+        threshold: 0.08,
       }
     );
 
     elements.forEach((element) => {
       observer.observe(element);
     });
+
+    showElementsAlreadyReached();
+
+    const fallbackTimer = window.setTimeout(() => {
+      elements.forEach(showElement);
+    }, 1600);
 
     let frameId = 0;
     const parallaxElements = Array.from(
@@ -86,11 +103,16 @@ export function AnimationProvider() {
     updateParallax();
     window.addEventListener("scroll", requestParallax, { passive: true });
     window.addEventListener("resize", requestParallax);
+    window.addEventListener("resize", showElementsAlreadyReached);
+    window.addEventListener("orientationchange", showElementsAlreadyReached);
 
     return () => {
+      window.clearTimeout(fallbackTimer);
       observer.disconnect();
       window.removeEventListener("scroll", requestParallax);
       window.removeEventListener("resize", requestParallax);
+      window.removeEventListener("resize", showElementsAlreadyReached);
+      window.removeEventListener("orientationchange", showElementsAlreadyReached);
       if (frameId) window.cancelAnimationFrame(frameId);
     };
   }, [pathname]);

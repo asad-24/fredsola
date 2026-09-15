@@ -8,7 +8,7 @@ import { Logo } from "./logo";
 export function Footer() {
   return (
     <footer className="bg-[#071629] text-white">
-      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1.2fr_2fr] lg:px-10 lg:py-14">
+      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-9 sm:px-6 sm:py-10 lg:grid-cols-[1.2fr_2fr] lg:px-10 lg:py-12">
         <div>
           <div className="inline-flex rounded-[8px] bg-white px-3 py-2 shadow-sm shadow-black/10">
             <Logo />
@@ -26,7 +26,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="grid gap-7 sm:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-3">
           <FooterGroup title="Navigation">
             {navigation.map((item) => (
               <Link key={item.href} href={item.href}>
@@ -74,7 +74,7 @@ function FooterGroup({
 }) {
   return (
     <div>
-      <h2 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C9A227]">
+      <h2 className="text-[11px] font-semibold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:text-xs sm:tracking-[0.2em]">
         {title}
       </h2>
       <div className="mt-5 grid gap-3 text-sm text-white/70 [&_a]:transition [&_a:hover]:text-white">

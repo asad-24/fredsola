@@ -26,7 +26,7 @@ export function Section({
       id={id}
       data-reveal={reveal ? "" : undefined}
       className={cn(
-        "px-5 py-12 sm:px-8 sm:py-11 lg:px-10 lg:py-12",
+        "px-4 py-9 sm:px-6 sm:py-10 lg:px-10 lg:py-11",
         tone === "cream" && "bg-[#F7F4EC]",
         tone === "navy" && "bg-[#071629] text-white",
         className
@@ -56,15 +56,15 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? (
-        <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#C9A227]">
+        <p className="mb-3 max-w-full break-words text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:mb-4 sm:text-xs sm:tracking-[0.22em]">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="font-heading text-3xl leading-tight text-balance text-[#071629] sm:text-4xl lg:text-5xl">
+      <h2 className="font-heading text-3xl leading-tight text-balance text-[#071629] sm:text-4xl lg:text-[2.75rem]">
         {title}
       </h2>
       {text ? (
-        <p className="mt-4 text-[15px] leading-7 text-[#334155] sm:text-base lg:text-lg lg:leading-8">
+        <p className="mt-3 text-[15px] leading-7 text-[#334155] sm:mt-4 sm:text-base lg:text-[17px] lg:leading-8">
           {text}
         </p>
       ) : null}
@@ -86,7 +86,7 @@ export function PageHero({
   imageAlt?: string;
 }) {
   return (
-    <Section tone="cream" className="py-12 sm:py-11 lg:py-12">
+    <Section tone="cream" className="py-8 sm:py-10 lg:py-11">
       <div
         className={cn(
           "grid gap-6 lg:gap-7",
@@ -94,18 +94,18 @@ export function PageHero({
         )}
       >
         <div className="max-w-4xl">
-          <p className="mb-4 max-w-full break-words text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:text-xs sm:leading-6 sm:tracking-[0.22em]">
+          <p className="mb-3 max-w-full break-words text-[11px] font-bold uppercase leading-5 tracking-[0.12em] text-[#C9A227] sm:mb-4 sm:text-xs sm:leading-6 sm:tracking-[0.2em]">
             {eyebrow}
           </p>
-          <h1 className="font-heading text-4xl leading-[1.06] text-balance text-[#071629] sm:text-5xl lg:text-6xl">
+          <h1 className="font-heading text-[2.35rem] leading-[1.06] text-balance text-[#071629] sm:text-5xl lg:text-[3.65rem]">
             {title}
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-[#334155] sm:text-lg sm:leading-8">
+          <p className="mt-4 max-w-2xl text-[16px] leading-7 text-[#334155] sm:text-lg sm:leading-8">
             {text}
           </p>
         </div>
         {image ? (
-          <div className="relative min-h-[15rem] overflow-hidden rounded-[8px] border border-[#0B1F3A]/10 bg-white shadow-xl shadow-[#071629]/10 sm:min-h-[18rem] lg:min-h-[22rem]">
+          <div className="relative min-h-[12.5rem] overflow-hidden rounded-[8px] border border-[#0B1F3A]/10 bg-white shadow-xl shadow-[#071629]/10 sm:min-h-[17rem] lg:min-h-[21rem]">
             <Image
               src={image}
               alt={imageAlt ?? title}
@@ -129,16 +129,16 @@ export function CTASection({
   text?: string;
 }) {
   return (
-    <Section tone="navy" className="py-12 sm:py-11 lg:py-12">
+    <Section tone="navy" className="py-9 sm:py-10 lg:py-11">
       <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#C9A227]">
+          <p className="mb-3 text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:mb-4 sm:text-xs sm:tracking-[0.22em]">
             Conversation First
           </p>
-          <h2 className="font-heading text-3xl leading-tight text-balance sm:text-4xl lg:text-5xl">
+          <h2 className="font-heading text-3xl leading-tight text-balance sm:text-4xl lg:text-[2.75rem]">
             {title}
           </h2>
-          <p className="mt-4 text-[15px] leading-7 text-white/75 sm:text-base lg:leading-8">
+          <p className="mt-3 text-[15px] leading-7 text-white/75 sm:mt-4 sm:text-base lg:leading-8">
             {text}
           </p>
         </div>

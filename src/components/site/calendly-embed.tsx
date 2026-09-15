@@ -14,12 +14,12 @@ export function CalendlyEmbed() {
             strategy="lazyOnload"
           />
           <div
-            className="calendly-inline-widget min-h-[42rem]"
+            className="calendly-inline-widget min-h-[34rem] sm:min-h-[38rem] lg:min-h-[42rem]"
             data-url={calendlyUrl}
           />
         </>
       ) : (
-        <div className="p-5 sm:p-6">
+        <div className="p-4 sm:p-5 lg:p-6">
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#C9A227]">
             Calendar Booking
           </p>

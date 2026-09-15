@@ -76,23 +76,23 @@ export default function CareersPage() {
     <SiteShell>
       <Header />
       <main className="flex-1 bg-white">
-        <section className="relative isolate overflow-hidden bg-[#F7F4EC] px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
+        <section className="relative isolate overflow-hidden bg-[#F7F4EC] px-4 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-12">
           <div
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_82%,rgba(201,162,39,0.16),transparent_26rem),radial-gradient(circle_at_88%_12%,rgba(11,31,58,0.08),transparent_24rem)]"
             aria-hidden="true"
           />
-          <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+          <div className="relative mx-auto grid max-w-7xl gap-6 lg:gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
             <div className="max-w-2xl">
-              <div className="mb-8 inline-flex rounded-[8px] bg-white px-3 py-2 shadow-sm shadow-[#071629]/10">
+              <div className="mb-6 inline-flex rounded-[8px] bg-white px-3 py-2 shadow-sm shadow-[#071629]/10 sm:mb-8">
                 <Logo />
               </div>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.28em] text-[#C9A227]">
+              <p className="mb-3 text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:mb-4 sm:text-xs sm:tracking-[0.22em]">
                 Career / Business Opportunity
               </p>
-              <h1 className="font-heading text-4xl leading-[1.02] text-balance text-[#071629] sm:text-5xl lg:text-6xl">
+              <h1 className="font-heading text-[2.35rem] leading-[1.04] text-balance text-[#071629] sm:text-5xl lg:text-[3.65rem]">
                 Build a Business. Make an Impact.
               </h1>
-              <p className="mt-5 max-w-xl text-2xl font-bold leading-tight text-[#071629] sm:text-3xl">
+              <p className="mt-4 max-w-xl text-xl font-bold leading-tight text-[#071629] sm:mt-5 sm:text-3xl">
                 This is not a job. It&apos;s a business.
               </p>
               <p className="mt-5 max-w-xl text-base leading-8 text-[#334155] sm:text-lg">
@@ -220,10 +220,10 @@ export default function CareersPage() {
         <Section tone="navy">
           <div className="grid gap-6 lg:grid-cols-3">
             <div className="lg:col-span-1">
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#C9A227]">
+              <p className="mb-3 text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:mb-4 sm:text-xs sm:tracking-[0.22em]">
                 Training & Compensation
               </p>
-              <h2 className="font-heading text-3xl leading-tight text-balance text-white sm:text-4xl lg:text-5xl">
+              <h2 className="font-heading text-3xl leading-tight text-balance text-white sm:text-4xl lg:text-[2.75rem]">
                 In business for yourself, not by yourself.
               </h2>
             </div>
@@ -281,12 +281,12 @@ export default function CareersPage() {
         </Section>
 
         <Section id="business-video">
-          <div className="grid gap-6 rounded-[8px] border border-[#C9A227]/50 bg-[#071629] p-5 text-white shadow-2xl shadow-[#071629]/14 sm:p-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-center lg:p-8">
+          <div className="grid gap-6 rounded-[8px] border border-[#C9A227]/50 bg-[#071629] p-5 text-white shadow-2xl shadow-[#071629]/14 sm:p-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-center lg:p-7">
             <div>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#C9A227]">
+              <p className="mb-3 text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:mb-4 sm:text-xs sm:tracking-[0.22em]">
                 Ready to Learn More?
               </p>
-              <h2 className="font-heading text-3xl leading-tight text-balance text-white sm:text-4xl lg:text-5xl">
+              <h2 className="font-heading text-3xl leading-tight text-balance text-white sm:text-4xl lg:text-[2.75rem]">
                 Watch the business-opportunity video.
               </h2>
               <p className="mt-4 text-base leading-8 text-white/74">
@@ -295,7 +295,7 @@ export default function CareersPage() {
                 started.
               </p>
             </div>
-            <div className="flex min-h-64 items-center justify-center rounded-[8px] border border-white/12 bg-white/[0.06] p-6 text-center">
+            <div className="flex min-h-52 items-center justify-center rounded-[8px] border border-white/12 bg-white/[0.06] p-5 text-center sm:min-h-60 sm:p-6">
               <div>
                 <PlayCircle
                   className="mx-auto size-14 text-[#C9A227]"

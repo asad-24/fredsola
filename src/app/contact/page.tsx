@@ -23,7 +23,7 @@ export default function ContactPage() {
           text="Reach out with questions about protection, planning, education, careers, or where to begin."
         />
         <Section>
-          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+          <div className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr]">
             <div>
               <h2 className="font-heading text-3xl text-[#071629] sm:text-4xl">
                 Contact Information
@@ -69,7 +69,7 @@ export default function ContactPage() {
         <Section id="schedule" tone="cream">
           <div className="grid gap-6 lg:grid-cols-[0.65fr_1.35fr] lg:items-start">
             <div>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#C9A227]">
+              <p className="mb-3 text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:mb-4 sm:text-xs sm:tracking-[0.22em]">
                 Schedule
               </p>
               <h2 className="font-heading text-3xl leading-tight text-[#071629] sm:text-4xl">
@@ -105,7 +105,9 @@ function ContactItem({
       </span>
       <div>
         <p className="text-sm font-bold text-[#071629]">{label}</p>
-        <p className="mt-1 text-sm leading-7 text-[#334155]">{value}</p>
+        <p className="mt-1 break-words text-sm leading-7 text-[#334155]">
+          {value}
+        </p>
       </div>
     </div>
   );
