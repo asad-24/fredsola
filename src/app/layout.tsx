@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { AnimationProvider } from "@/components/site/animation-provider";
 import { StartupAnimation } from "@/components/site/startup-animation";
+import { TranslationProvider } from "@/components/site/translation-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full bg-background text-foreground">
         <StartupAnimation />
         <AnimationProvider />
+        <TranslationProvider />
         {children}
       </body>
     </html>

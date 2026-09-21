@@ -1,9 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import type { CSSProperties } from "react";
 
 import type { Service } from "@/data/site";
+import { LocaleLink } from "./locale-link";
 
 export function ServiceGrid({
   services,
@@ -23,7 +23,7 @@ export function ServiceGrid({
         const Icon = service.icon;
 
         return variant === "media" ? (
-          <Link
+          <LocaleLink
             key={service.slug}
             href={`/solutions/${service.slug}`}
             data-stagger
@@ -64,9 +64,9 @@ export function ServiceGrid({
                 />
               </span>
             </div>
-          </Link>
+          </LocaleLink>
         ) : (
-          <Link
+          <LocaleLink
             key={service.slug}
             href={`/solutions/${service.slug}`}
             data-stagger
@@ -93,7 +93,7 @@ export function ServiceGrid({
                 aria-hidden="true"
               />
             </span>
-          </Link>
+          </LocaleLink>
         );
       })}
     </div>

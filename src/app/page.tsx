@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { CSSProperties } from "react";
 import { ArrowUpRight, BookOpen, Sprout } from "lucide-react";
 
@@ -13,6 +12,7 @@ import {
 } from "@/components/site/section";
 import { PartnerMarquee } from "@/components/site/partner-marquee";
 import { ServiceGrid } from "@/components/site/service-grid";
+import { LocaleLink } from "@/components/site/locale-link";
 import {
   approach,
   featuredHomeServices,
@@ -78,7 +78,7 @@ export default function Home() {
                 className="hero-enter font-heading text-[2.4rem] leading-[1.04] text-balance text-white sm:text-6xl lg:text-[4.25rem]"
                 style={{ "--hero-delay": "180ms" } as CSSProperties}
               >
-                Building a Better Financial Future
+                Financial Education Shouldn’t Be a Privilege
               </h1>
               <p
                 className="hero-enter mt-4 max-w-xl text-base leading-7 text-white/75 sm:mt-5 sm:text-lg sm:leading-8"
@@ -91,18 +91,18 @@ export default function Home() {
                 className="hero-enter mt-7 flex flex-col gap-3 sm:flex-row"
                 style={{ "--hero-delay": "280ms" } as CSSProperties}
               >
-                <Link
+                <LocaleLink
                   href="/contact#schedule"
                   className="motion-card inline-flex h-12 items-center justify-center rounded-full bg-[#C9A227] px-6 text-sm font-bold text-[#071629] shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-white"
                 >
                   Schedule a Conversation
-                </Link>
-                <Link
+                </LocaleLink>
+                <LocaleLink
                   href="/solutions"
                   className="motion-card inline-flex h-12 items-center justify-center rounded-full border border-white/20 bg-white/[0.08] px-6 text-sm font-bold text-white backdrop-blur transition hover:-translate-y-0.5 hover:border-[#C9A227] hover:bg-white/15"
                 >
                   Explore Our Solutions
-                </Link>
+                </LocaleLink>
               </div>
 
               <div
@@ -205,12 +205,12 @@ export default function Home() {
               title="Featured financial solutions."
               text="A focused starting point for protection, living benefits, retirement income, and final expense planning."
             />
-            <Link
+            <LocaleLink
               href="/solutions"
               className="inline-flex h-11 items-center justify-center rounded-full border border-[#0B1F3A]/20 px-5 text-sm font-bold text-[#071629] transition hover:-translate-y-0.5 hover:border-[#C9A227] hover:bg-[#F7F4EC]"
             >
               View All Our Solutions
-            </Link>
+            </LocaleLink>
           </div>
           <ServiceGrid services={featuredHomeServices} variant="media" />
         </Section>
@@ -253,16 +253,16 @@ export default function Home() {
               title="Education that supports better questions."
               text="A clean resource area helps visitors learn before they decide."
             />
-            <Link
+            <LocaleLink
               href="/resources"
               className="text-sm font-bold text-[#0B1F3A] hover:underline"
             >
               Browse resources
-            </Link>
+            </LocaleLink>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {resources.slice(0, 3).map((resource, index) => (
-              <Link
+              <LocaleLink
                 key={resource.title}
                 href={resource.href}
                 data-stagger
@@ -285,7 +285,7 @@ export default function Home() {
                     aria-hidden="true"
                   />
                 </span>
-              </Link>
+              </LocaleLink>
             ))}
           </div>
         </Section>

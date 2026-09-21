@@ -1,9 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import type { CSSProperties } from "react";
 
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
+import { LocaleLink } from "@/components/site/locale-link";
 import {
   CTASection,
   PageHero,
@@ -128,7 +128,7 @@ function SolutionGroup({
           const Icon = service.icon;
 
           return (
-            <Link
+            <LocaleLink
               key={service.slug}
               href={`/solutions/${service.slug}`}
               data-stagger
@@ -161,7 +161,7 @@ function SolutionGroup({
                   </span>
                 </div>
               </div>
-            </Link>
+            </LocaleLink>
           );
         })}
       </div>

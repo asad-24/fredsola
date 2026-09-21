@@ -74,7 +74,9 @@ export function StartupAnimation() {
             />
           </div>
           <div className="startup-brand-copy">
-            <p className="startup-line">Building a Better Financial Future</p>
+            <p className="startup-line">
+              Financial Education Shouldn’t Be a Privilege
+            </p>
           </div>
         </div>
       </div>

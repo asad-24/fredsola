@@ -1,19 +1,15 @@
 import type { ReactNode } from "react";
-import Link from "next/link";
 
 import { company, navigation, services } from "@/data/site";
 
-import { Logo } from "./logo";
+import { LocaleLink } from "./locale-link";
 
 export function Footer() {
   return (
     <footer className="bg-[#071629] text-white">
       <div className="mx-auto grid max-w-7xl gap-6 px-4 py-9 sm:px-6 sm:py-10 lg:grid-cols-[1.2fr_2fr] lg:px-10 lg:py-12">
         <div>
-          <div className="inline-flex rounded-[8px] bg-white px-3 py-2 shadow-sm shadow-black/10">
-            <Logo />
-          </div>
-          <p className="mt-5 max-w-md text-sm leading-7 text-white/70">
+          <p className="max-w-md text-sm leading-7 text-white/70">
             Education-first financial conversations for individuals and families
             who want clarity, protection, and a more confident view of tomorrow.
           </p>
@@ -29,18 +25,18 @@ export function Footer() {
         <div className="grid gap-6 sm:grid-cols-3">
           <FooterGroup title="Navigation">
             {navigation.map((item) => (
-              <Link key={item.href} href={item.href}>
+              <LocaleLink key={item.href} href={item.href}>
                 {item.label}
-              </Link>
+              </LocaleLink>
             ))}
-            <Link href="/legal">Legal</Link>
+            <LocaleLink href="/legal">Legal</LocaleLink>
           </FooterGroup>
 
           <FooterGroup title="Solutions">
             {services.slice(0, 6).map((service) => (
-              <Link key={service.slug} href={`/solutions/${service.slug}`}>
+              <LocaleLink key={service.slug} href={`/solutions/${service.slug}`}>
                 {service.shortTitle}
-              </Link>
+              </LocaleLink>
             ))}
           </FooterGroup>
 

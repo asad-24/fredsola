@@ -15,6 +15,7 @@ export async function POST(request: Request) {
     const licenseStatus = getFormValue(formData, "licenseStatus");
     const message = getFormValue(formData, "message");
     const appointmentDate = getFormValue(formData, "appointmentDate");
+    const locale = getFormValue(formData, "locale") || "en";
     const name = [firstName, lastName].filter(Boolean).join(" ");
 
     if (!firstName || !lastName || !email || !phone || !city || !state || !licenseStatus) {
@@ -46,6 +47,7 @@ export async function POST(request: Request) {
         <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
         <p><strong>City of residence:</strong> ${escapeHtml(city)}</p>
         <p><strong>State:</strong> ${escapeHtml(state)}</p>
+        <p><strong>Website language:</strong> ${escapeHtml(locale.toUpperCase())}</p>
         <p><strong>Life insurance license:</strong> ${escapeHtml(licenseStatus)}</p>
         <p><strong>Selected appointment date:</strong> ${escapeHtml(
           appointmentDate || "No date selected"
@@ -63,6 +65,7 @@ export async function POST(request: Request) {
         `Phone: ${phone}`,
         `City of residence: ${city}`,
         `State: ${state}`,
+        `Website language: ${locale.toUpperCase()}`,
         `Life insurance license: ${licenseStatus}`,
         `Selected appointment date: ${appointmentDate || "No date selected"}`,
         `Message: ${message || "No message provided."}`,

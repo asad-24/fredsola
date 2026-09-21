@@ -1,26 +1,47 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { navigation } from "@/data/site";
+import {
+  getLocaleFromPathname,
+  localeLabels,
+  locales,
+  stripLocaleFromPathname,
+  withLocalePath,
+} from "@/lib/i18n";
 
 import { Logo } from "./logo";
+import { LocaleLink } from "./locale-link";
 
 export function Header() {
   const pathname = usePathname();
+  const activeLocale = getLocaleFromPathname(pathname);
+  const cleanPath = stripLocaleFromPathname(pathname);
+  const languageHref = (locale: typeof locales[number]) =>
+    withLocalePath(cleanPath, locale);
+
+  const switchLanguage = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    event.preventDefault();
+    window.location.assign(href);
+  };
 
   const isActive = (href: string) => {
+    const activePath = stripLocaleFromPathname(pathname);
+
     if (href === "/") {
-      return pathname === "/";
+      return activePath === "/";
     }
 
     if (href === "/careers") {
-      return pathname === "/careers" || pathname === "/join-us";
+      return activePath === "/careers" || activePath === "/join-us";
     }
 
-    return pathname === href || pathname.startsWith(`${href}/`);
+    return activePath === href || activePath.startsWith(`${href}/`);
   };
 
   return (
@@ -30,7 +51,7 @@ export function Header() {
 
         <nav className="hidden items-center gap-8 lg:flex">
           {navigation.map((item) => (
-            <Link
+            <LocaleLink
               key={item.href}
               href={item.href}
               aria-current={isActive(item.href) ? "page" : undefined}
@@ -41,16 +62,35 @@ export function Header() {
               }`}
             >
               {item.label}
-            </Link>
+            </LocaleLink>
           ))}
         </nav>
 
-        <Link
-          href="/contact#schedule"
-          className="hidden h-11 items-center justify-center rounded-full bg-[#0B1F3A] px-5 text-sm font-semibold text-white transition hover:bg-[#071629] lg:inline-flex"
-        >
-          Schedule a Conversation
-        </Link>
+        <div className="hidden items-center gap-4 lg:flex">
+          <div className="flex items-center rounded-full border border-[#0B1F3A]/10 bg-[#F7F4EC] p-1">
+            {locales.map((locale) => (
+              <a
+                key={locale}
+                href={languageHref(locale)}
+                onClick={(event) => switchLanguage(event, languageHref(locale))}
+                data-no-translate
+                className={`rounded-full px-2.5 py-1 text-[11px] font-bold transition ${
+                  activeLocale === locale
+                    ? "bg-[#0B1F3A] text-white"
+                    : "text-[#071629]/70 hover:text-[#071629]"
+                }`}
+              >
+                {localeLabels[locale]}
+              </a>
+            ))}
+          </div>
+          <LocaleLink
+            href="/contact#schedule"
+            className="h-11 items-center justify-center rounded-full bg-[#0B1F3A] px-5 text-sm font-semibold text-white transition hover:bg-[#071629] lg:inline-flex"
+          >
+            Schedule a Conversation
+          </LocaleLink>
+        </div>
 
         <details className="group relative lg:hidden">
           <summary className="flex size-11 cursor-pointer list-none items-center justify-center rounded-full border border-[#0B1F3A]/15 text-[#071629] transition hover:border-[#C9A227] [&::-webkit-details-marker]:hidden">
@@ -61,7 +101,7 @@ export function Header() {
           <div className="absolute right-0 top-14 w-[min(88vw,22rem)] rounded-[8px] border border-[#0B1F3A]/10 bg-white p-3 shadow-2xl shadow-[#071629]/15">
             <nav className="grid">
               {navigation.map((item) => (
-                <Link
+                <LocaleLink
                   key={item.href}
                   href={item.href}
                   aria-current={isActive(item.href) ? "page" : undefined}
@@ -72,14 +112,31 @@ export function Header() {
                   }`}
                 >
                   {item.label}
-                </Link>
+                </LocaleLink>
               ))}
-              <Link
+              <div className="mt-2 flex items-center gap-2 px-1">
+                {locales.map((locale) => (
+                  <a
+                    key={locale}
+                    href={languageHref(locale)}
+                    onClick={(event) => switchLanguage(event, languageHref(locale))}
+                    data-no-translate
+                    className={`flex h-9 flex-1 items-center justify-center rounded-full text-xs font-bold transition ${
+                      activeLocale === locale
+                        ? "bg-[#0B1F3A] text-white"
+                        : "bg-[#F7F4EC] text-[#071629]/75 hover:text-[#071629]"
+                    }`}
+                  >
+                    {localeLabels[locale]}
+                  </a>
+                ))}
+              </div>
+              <LocaleLink
                 href="/contact#schedule"
                 className="mt-2 flex h-11 items-center justify-center rounded-full bg-[#0B1F3A] px-4 text-sm font-semibold text-white"
               >
                 Schedule a Conversation
-              </Link>
+              </LocaleLink>
             </nav>
           </div>
         </details>

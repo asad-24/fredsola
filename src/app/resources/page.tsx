@@ -1,8 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
+import { LocaleLink } from "@/components/site/locale-link";
 import {
   CTASection,
   PageHero,
@@ -28,7 +28,7 @@ export default function ResourcesPage() {
         <Section>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {resources.map((resource) => (
-              <Link
+              <LocaleLink
                 key={resource.title}
                 href={resource.href}
                 className="motion-card group rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 transition hover:-translate-y-1 hover:border-[#C9A227]/60 hover:bg-[#F7F4EC] hover:shadow-xl hover:shadow-[#071629]/8 sm:p-5 lg:p-6"
@@ -46,7 +46,7 @@ export default function ResourcesPage() {
                   Read More
                   <ArrowUpRight className="size-4" aria-hidden="true" />
                 </span>
-              </Link>
+              </LocaleLink>
             ))}
           </div>
         </Section>

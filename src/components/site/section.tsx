@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
+import { LocaleLink } from "./locale-link";
 
 export function SiteShell({ children }: { children: ReactNode }) {
   return <div className="flex min-h-screen flex-col">{children}</div>;
@@ -142,12 +142,12 @@ export function CTASection({
             {text}
           </p>
         </div>
-        <Link
+        <LocaleLink
           href="/contact#schedule"
           className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-[#C9A227] px-6 text-sm font-bold text-[#071629] transition hover:bg-white"
         >
           Schedule a Conversation
-        </Link>
+        </LocaleLink>
       </div>
     </Section>
   );

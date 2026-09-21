@@ -9,12 +9,12 @@ import {
   Users,
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
 import { JoinUsForm } from "@/components/site/join-us-form";
+import { LocaleLink } from "@/components/site/locale-link";
 import { Logo } from "@/components/site/logo";
 import { Section, SectionHeading, SiteShell } from "@/components/site/section";
 
@@ -102,20 +102,20 @@ export default function CareersPage() {
                 families and communities.
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <Link
+                <LocaleLink
                   href="#business-video"
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#C9A227] px-6 text-sm font-bold text-[#071629] transition hover:bg-[#0B1F3A] hover:text-white"
                 >
                   Watch the 3-minute video
                   <PlayCircle className="size-4" aria-hidden="true" />
-                </Link>
-                <Link
+                </LocaleLink>
+                <LocaleLink
                   href="#career-form"
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-[#0B1F3A]/20 bg-white px-6 text-sm font-bold text-[#071629] transition hover:border-[#C9A227] hover:bg-white"
                 >
                   Schedule a Conversation
                   <ArrowRight className="size-4" aria-hidden="true" />
-                </Link>
+                </LocaleLink>
               </div>
             </div>
 

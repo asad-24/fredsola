@@ -1,14 +1,18 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { conversationTopics } from "@/data/site";
+import { getLocaleFromPathname } from "@/lib/i18n";
 import { TurnstileField, resetTurnstile } from "./turnstile-field";
 
 type SubmitState = "idle" | "sending" | "success" | "error";
 
 export function ContactForm() {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname);
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [message, setMessage] = useState("");
 
@@ -57,6 +61,7 @@ export function ContactForm() {
       onSubmit={handleSubmit}
       className="grid gap-4 rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 shadow-xl shadow-[#071629]/8 sm:p-5 lg:p-6"
     >
+      <input type="hidden" name="locale" value={locale} />
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="First name" name="firstName" required />
         <Field label="Last name" name="lastName" required />

@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { usePathname } from "next/navigation";
 import { ArrowRight, Clock3 } from "lucide-react";
 
+import { getLocaleFromPathname } from "@/lib/i18n";
 import { CalendlyEmbed } from "./calendly-embed";
 import { TurnstileField, resetTurnstile } from "./turnstile-field";
 
@@ -17,6 +19,8 @@ const dateOptions = [
 type SubmitState = "idle" | "sending" | "success" | "error";
 
 export function JoinUsForm() {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname);
   const [selectedDate, setSelectedDate] = useState("");
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [message, setMessage] = useState("");
@@ -68,6 +72,7 @@ export function JoinUsForm() {
       onSubmit={handleSubmit}
       className="rounded-[18px] border border-[#0B1F3A]/10 bg-white p-4 shadow-2xl shadow-[#071629]/12 sm:p-6 lg:p-7"
     >
+      <input type="hidden" name="locale" value={locale} />
       <p className="text-sm font-bold text-[#C9A227]">Step 1 of 2</p>
       <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#071629]">
         Tell us about yourself
