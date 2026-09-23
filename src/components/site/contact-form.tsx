@@ -1,17 +1,17 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { conversationTopics } from "@/data/site";
 import { getLocaleFromPathname } from "@/lib/i18n";
+import { useCurrentPathname } from "@/lib/use-current-pathname";
 import { TurnstileField, resetTurnstile } from "./turnstile-field";
 
 type SubmitState = "idle" | "sending" | "success" | "error";
 
 export function ContactForm() {
-  const pathname = usePathname();
+  const pathname = useCurrentPathname();
   const locale = getLocaleFromPathname(pathname);
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [message, setMessage] = useState("");

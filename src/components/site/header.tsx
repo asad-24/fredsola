@@ -1,7 +1,6 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import { usePathname } from "next/navigation";
 
 import { navigation } from "@/data/site";
 import {
@@ -11,12 +10,13 @@ import {
   stripLocaleFromPathname,
   withLocalePath,
 } from "@/lib/i18n";
+import { useCurrentPathname } from "@/lib/use-current-pathname";
 
 import { Logo } from "./logo";
 import { LocaleLink } from "./locale-link";
 
 export function Header() {
-  const pathname = usePathname();
+  const pathname = useCurrentPathname();
   const activeLocale = getLocaleFromPathname(pathname);
   const cleanPath = stripLocaleFromPathname(pathname);
   const languageHref = (locale: typeof locales[number]) =>

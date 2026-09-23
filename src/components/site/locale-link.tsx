@@ -1,10 +1,10 @@
 "use client";
 
 import Link, { type LinkProps } from "next/link";
-import { usePathname } from "next/navigation";
 import type { AnchorHTMLAttributes, ReactNode } from "react";
 
 import { getLocaleFromPathname, withLocalePath } from "@/lib/i18n";
+import { useCurrentPathname } from "@/lib/use-current-pathname";
 
 type LocaleLinkProps = LinkProps &
   Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps> & {
@@ -12,7 +12,7 @@ type LocaleLinkProps = LinkProps &
   };
 
 export function LocaleLink({ href, children, ...props }: LocaleLinkProps) {
-  const pathname = usePathname();
+  const pathname = useCurrentPathname();
   const locale = getLocaleFromPathname(pathname);
   const localizedHref =
     typeof href === "string" && href.startsWith("/")

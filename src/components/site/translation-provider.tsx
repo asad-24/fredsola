@@ -1,16 +1,16 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
 
 import { translations } from "@/data/translations";
 import { getLocaleFromPathname } from "@/lib/i18n";
+import { useCurrentPathname } from "@/lib/use-current-pathname";
 
 const SKIP_SELECTOR =
   "script, style, svg, path, code, pre, textarea, input, [data-no-translate]";
 
 export function TranslationProvider() {
-  const pathname = usePathname();
+  const pathname = useCurrentPathname();
 
   useEffect(() => {
     const locale = getLocaleFromPathname(pathname);

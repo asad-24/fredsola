@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { usePathname } from "next/navigation";
 import { ArrowRight, Clock3 } from "lucide-react";
 
 import { getLocaleFromPathname } from "@/lib/i18n";
+import { useCurrentPathname } from "@/lib/use-current-pathname";
 import { CalendlyEmbed } from "./calendly-embed";
 import { TurnstileField, resetTurnstile } from "./turnstile-field";
 
@@ -19,7 +19,7 @@ const dateOptions = [
 type SubmitState = "idle" | "sending" | "success" | "error";
 
 export function JoinUsForm() {
-  const pathname = usePathname();
+  const pathname = useCurrentPathname();
   const locale = getLocaleFromPathname(pathname);
   const [selectedDate, setSelectedDate] = useState("");
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
