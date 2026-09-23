@@ -15,7 +15,6 @@ import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
 import { JoinUsForm } from "@/components/site/join-us-form";
 import { LocaleLink } from "@/components/site/locale-link";
-import { Logo } from "@/components/site/logo";
 import { Section, SectionHeading, SiteShell } from "@/components/site/section";
 
 export const metadata = {
@@ -83,19 +82,16 @@ export default function CareersPage() {
           />
           <div className="relative mx-auto grid max-w-7xl gap-6 lg:gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
             <div className="max-w-2xl">
-              <div className="mb-6 inline-flex rounded-[8px] bg-white px-3 py-2 shadow-sm shadow-[#071629]/10 sm:mb-8">
-                <Logo />
-              </div>
               <p className="mb-3 text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:mb-4 sm:text-xs sm:tracking-[0.22em]">
                 Career / Business Opportunity
               </p>
-              <h1 className="font-heading text-[2.35rem] leading-[1.04] text-balance text-[#071629] sm:text-5xl lg:text-[3.65rem]">
+              <h1 className="font-heading break-words text-[2.35rem] leading-[1.04] text-balance text-[#071629] sm:text-5xl lg:text-[3.65rem]">
                 Build a Business. Make an Impact.
               </h1>
-              <p className="mt-4 max-w-xl text-xl font-bold leading-tight text-[#071629] sm:mt-5 sm:text-3xl">
+              <p className="mt-4 max-w-xl break-words text-xl font-bold leading-tight text-[#071629] sm:mt-5 sm:text-3xl">
                 This is not a job. It&apos;s a business.
               </p>
-              <p className="mt-5 max-w-xl text-base leading-8 text-[#334155] sm:text-lg">
+              <p className="mt-5 max-w-xl break-words text-base leading-8 text-[#334155] sm:text-lg">
                 At FKSola Financial, we believe financial education should be
                 accessible to everyone. We&apos;re building a network of
                 financial professionals who can bring that education to more
@@ -104,14 +100,14 @@ export default function CareersPage() {
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <LocaleLink
                   href="#business-video"
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#C9A227] px-6 text-sm font-bold text-[#071629] transition hover:bg-[#0B1F3A] hover:text-white"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#C9A227] px-6 py-3 text-center text-sm font-bold leading-5 text-[#071629] transition hover:bg-[#0B1F3A] hover:text-white"
                 >
                   Watch the 3-minute video
                   <PlayCircle className="size-4" aria-hidden="true" />
                 </LocaleLink>
                 <LocaleLink
                   href="#career-form"
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-[#0B1F3A]/20 bg-white px-6 text-sm font-bold text-[#071629] transition hover:border-[#C9A227] hover:bg-white"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#0B1F3A]/20 bg-white px-6 py-3 text-center text-sm font-bold leading-5 text-[#071629] transition hover:border-[#C9A227] hover:bg-white"
                 >
                   Schedule a Conversation
                   <ArrowRight className="size-4" aria-hidden="true" />

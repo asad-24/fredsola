@@ -60,11 +60,11 @@ export function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="font-heading text-3xl leading-tight text-balance text-[#071629] sm:text-4xl lg:text-[2.75rem]">
+      <h2 className="font-heading break-words text-3xl leading-tight text-balance text-[#071629] sm:text-4xl lg:text-[2.75rem]">
         {title}
       </h2>
       {text ? (
-        <p className="mt-3 text-[15px] leading-7 text-[#334155] sm:mt-4 sm:text-base lg:text-[17px] lg:leading-8">
+        <p className="mt-3 break-words text-[15px] leading-7 text-[#334155] sm:mt-4 sm:text-base lg:text-[17px] lg:leading-8">
           {text}
         </p>
       ) : null}
@@ -97,10 +97,10 @@ export function PageHero({
           <p className="mb-3 max-w-full break-words text-[11px] font-bold uppercase leading-5 tracking-[0.12em] text-[#C9A227] sm:mb-4 sm:text-xs sm:leading-6 sm:tracking-[0.2em]">
             {eyebrow}
           </p>
-          <h1 className="font-heading text-[2.35rem] leading-[1.06] text-balance text-[#071629] sm:text-5xl lg:text-[3.65rem]">
+          <h1 className="font-heading break-words text-[2.35rem] leading-[1.06] text-balance text-[#071629] sm:text-5xl lg:text-[3.65rem]">
             {title}
           </h1>
-          <p className="mt-4 max-w-2xl text-[16px] leading-7 text-[#334155] sm:text-lg sm:leading-8">
+          <p className="mt-4 max-w-2xl break-words text-[16px] leading-7 text-[#334155] sm:text-lg sm:leading-8">
             {text}
           </p>
         </div>
@@ -135,10 +135,10 @@ export function CTASection({
           <p className="mb-3 text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:mb-4 sm:text-xs sm:tracking-[0.22em]">
             Conversation First
           </p>
-          <h2 className="font-heading text-3xl leading-tight text-balance sm:text-4xl lg:text-[2.75rem]">
+          <h2 className="font-heading break-words text-3xl leading-tight text-balance sm:text-4xl lg:text-[2.75rem]">
             {title}
           </h2>
-          <p className="mt-3 text-[15px] leading-7 text-white/75 sm:mt-4 sm:text-base lg:leading-8">
+          <p className="mt-3 break-words text-[15px] leading-7 text-white/75 sm:mt-4 sm:text-base lg:leading-8">
             {text}
           </p>
         </div>

@@ -103,7 +103,7 @@ function ContactItem({
       <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#0B1F3A] text-white">
         <Icon className="size-5" aria-hidden="true" />
       </span>
-      <div>
+      <div className="min-w-0">
         <p className="text-sm font-bold text-[#071629]">{label}</p>
         <p className="mt-1 break-words text-sm leading-7 text-[#334155]">
           {value}
