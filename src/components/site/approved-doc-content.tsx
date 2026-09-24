@@ -1,6 +1,11 @@
+"use client";
+
 import { CheckCircle2 } from "lucide-react";
 
 import { approvedDocuments, type ApprovedDocumentKey } from "@/data/approved-content";
+import { translations } from "@/data/translations";
+import { getLocaleFromPathname } from "@/lib/i18n";
+import { useCurrentPathname } from "@/lib/use-current-pathname";
 
 type ParsedSection = {
   title: string;
@@ -25,6 +30,9 @@ export function ApprovedDocContent({
   docKey: ApprovedDocumentKey;
   compact?: boolean;
 }) {
+  const pathname = useCurrentPathname();
+  const locale = getLocaleFromPathname(pathname);
+  const translate = getTranslator(locale);
   const sections = parseApprovedDocument(approvedDocuments[docKey].text);
 
   return (
@@ -44,11 +52,14 @@ export function ApprovedDocContent({
             } ${compact ? "p-4 sm:p-5" : "p-4 sm:p-5 lg:p-6"}`}
           >
             <h2 className="text-xl font-bold leading-snug text-[#071629] sm:text-2xl">
-              {formatTitle(section.title)}
+              {translate(formatTitle(section.title))}
             </h2>
             <div className="mt-4 grid gap-3">
-              {section.paragraphs.map((paragraph, index) =>
-                isListLike(paragraph) ? (
+              {section.paragraphs.map((paragraph, index) => {
+                const cleanedParagraph = cleanParagraph(paragraph);
+                const translatedParagraph = translate(cleanedParagraph);
+
+                return isListLike(paragraph) ? (
                   <div
                     key={`${section.title}-${paragraph}-${index}`}
                     className="flex gap-3 text-[15px] leading-7 text-[#334155] sm:text-base"
@@ -57,17 +68,17 @@ export function ApprovedDocContent({
                       className="mt-1 size-4 shrink-0 text-[#C9A227]"
                       aria-hidden="true"
                     />
-                    <span>{cleanParagraph(paragraph)}</span>
+                    <span>{translatedParagraph}</span>
                   </div>
                 ) : (
                   <p
                     key={`${section.title}-${paragraph}-${index}`}
                     className="text-[15px] leading-7 text-[#334155] sm:text-base sm:leading-8"
                   >
-                    {cleanParagraph(paragraph)}
+                    {translatedParagraph}
                   </p>
-                )
-              )}
+                );
+              })}
             </div>
           </article>
         );
@@ -196,4 +207,27 @@ function cleanParagraph(line: string) {
 
 function formatTitle(title: string) {
   return title.replace(/^\d+\.\s+/, "");
+}
+
+function getTranslator(locale: ReturnType<typeof getLocaleFromPathname>) {
+  if (locale === "en") {
+    return (value: string) => value;
+  }
+
+  const dictionary = translations[locale];
+  const normalizedDictionary = new Map(
+    Object.entries(dictionary).map(([key, value]) => [normalizeText(key), value])
+  );
+
+  return (value: string) =>
+    dictionary[value] ?? normalizedDictionary.get(normalizeText(value)) ?? value;
+}
+
+function normalizeText(value: string) {
+  return value
+    .replace(/[‘’]/g, "'")
+    .replace(/[“”]/g, '"')
+    .replace(/\u00a0/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }

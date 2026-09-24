@@ -232,6 +232,118 @@ const fr: TranslationMap = {
     "Apportez vos questions, priorités et préoccupations. FKSola Financial vous aidera à organiser la prochaine étape avec clarté.",
   "Term Life Insurance with Living Benefits":
     "Assurance vie temporaire avec prestations du vivant",
+  INTRODUCTION: "INTRODUCTION",
+  "Term life insurance generally provides life insurance protection for a specified period of time.":
+    "L’assurance vie temporaire offre généralement une protection d’assurance vie pour une période déterminée.",
+  "It can be useful when you have significant financial responsibilities that need protection, such as raising children, paying a mortgage, replacing income, funding education, or managing other household obligations.":
+    "Elle peut être utile lorsque vous avez des responsabilités financières importantes à protéger, comme élever des enfants, payer un prêt hypothécaire, remplacer un revenu, financer des études ou gérer d’autres obligations du foyer.",
+  "Certain term life insurance policies may also offer living-benefit or accelerated-death-benefit features that can allow you to access a portion of the death benefit while you are still living if specific qualifying conditions are met.":
+    "Certaines polices d’assurance vie temporaire peuvent aussi offrir des prestations du vivant ou des prestations de décès accélérées permettant d’accéder à une partie du capital décès de votre vivant si certaines conditions admissibles sont remplies.",
+  "WHY TERM LIFE INSURANCE?": "POURQUOI L’ASSURANCE VIE TEMPORAIRE ?",
+  "Term life insurance can provide straightforward protection during the years when your financial responsibilities may be greatest.":
+    "L’assurance vie temporaire peut offrir une protection simple pendant les années où vos responsabilités financières peuvent être les plus importantes.",
+  "It may help protect:": "Elle peut aider à protéger :",
+  "Family income": "Le revenu familial",
+  "Mortgage obligations": "Les obligations hypothécaires",
+  "Education goals": "Les objectifs d’éducation",
+  "Household expenses": "Les dépenses du foyer",
+  "Outstanding debts": "Les dettes en cours",
+  "Other financial responsibilities": "D’autres responsabilités financières",
+  "Term life insurance generally does not build cash value in the same way permanent life insurance does.":
+    "L’assurance vie temporaire ne crée généralement pas de valeur de rachat de la même manière qu’une assurance vie permanente.",
+  "The purpose is primarily protection for a defined period.":
+    "Son objectif principal est d’offrir une protection pendant une période définie.",
+  "LIVING BENEFITS": "PRESTATIONS DU VIVANT",
+  "One important feature of certain life insurance policies is the potential to access a portion of the death benefit while you are still living if you experience a qualifying medical condition.":
+    "Une caractéristique importante de certaines polices d’assurance vie est la possibilité d’accéder à une partie du capital décès de votre vivant si vous êtes atteint d’un problème médical admissible.",
+  "These features are commonly referred to as living benefits or accelerated death benefits.":
+    "Ces caractéristiques sont souvent appelées prestations du vivant ou prestations de décès accélérées.",
+  "The exact benefits, qualifying conditions, amount available, and requirements depend on the specific policy and rider.":
+    "Les prestations exactes, les conditions d’admissibilité, le montant disponible et les exigences dépendent de la police et de l’avenant concernés.",
+  "HOW LIVING BENEFITS CAN PROVIDE ACCESS WHILE YOU'RE ALIVE":
+    "COMMENT LES PRESTATIONS DU VIVANT PEUVENT DONNER ACCÈS À DES FONDS DE VOTRE VIVANT",
+  "Serious illness can create financial pressure at a time when your focus should be on your health and recovery.":
+    "Une maladie grave peut créer une pression financière à un moment où votre attention devrait être portée sur votre santé et votre rétablissement.",
+  "Depending on the policy, certain living-benefit provisions may allow an eligible policyholder to accelerate a portion of the death benefit while still living.":
+    "Selon la police, certaines dispositions de prestations du vivant peuvent permettre à un titulaire admissible d’accélérer une partie du capital décès de son vivant.",
+  "The money may potentially be used for needs such as medical expenses, caregiving, household expenses, mortgage payments, or replacing lost income, subject to the policy terms and applicable requirements.":
+    "Les fonds peuvent éventuellement être utilisés pour des besoins comme les frais médicaux, les soins, les dépenses du foyer, les paiements hypothécaires ou le remplacement d’un revenu perdu, sous réserve des modalités de la police et des exigences applicables.",
+  "These benefits are not automatic. The policy must include the applicable provision or rider, and the insured must meet the policy's definition and qualifying requirements.":
+    "Ces prestations ne sont pas automatiques. La police doit inclure la disposition ou l’avenant applicable, et l’assuré doit satisfaire à la définition et aux exigences d’admissibilité prévues par la police.",
+  "TERMINAL ILLNESS": "MALADIE TERMINALE",
+  "Terminal illness benefits may apply when an insured person is diagnosed with a qualifying terminal illness as defined by the policy.":
+    "Les prestations en cas de maladie terminale peuvent s’appliquer lorsqu’une personne assurée reçoit un diagnostic de maladie terminale admissible selon la définition de la police.",
+  "If the policy requirements are satisfied, a portion of the death benefit may be accelerated and paid while the insured is living.":
+    "Si les exigences de la police sont remplies, une partie du capital décès peut être accélérée et versée pendant que l’assuré est vivant.",
+  "The policy determines the definition of terminal illness, the required medical certification, the amount available, and other conditions.":
+    "La police détermine la définition de maladie terminale, la certification médicale requise, le montant disponible et les autres conditions.",
+  "CHRONIC ILLNESS": "MALADIE CHRONIQUE",
+  "Chronic illness benefits may apply when an insured person meets the policy's definition of chronic illness.":
+    "Les prestations en cas de maladie chronique peuvent s’appliquer lorsqu’une personne assurée répond à la définition de maladie chronique prévue par la police.",
+  "Depending on the policy, this may involve being unable to perform a specified number of activities of daily living, such as bathing, dressing, eating, transferring, toileting, or maintaining continence, or experiencing certain cognitive impairments.":
+    "Selon la police, cela peut inclure l’incapacité d’accomplir un nombre déterminé d’activités de la vie quotidienne, comme se laver, s’habiller, manger, se transférer, utiliser les toilettes ou maintenir la continence, ou encore la présence de certains troubles cognitifs.",
+  "The specific definition and requirements vary by policy.":
+    "La définition précise et les exigences varient selon la police.",
+  "CRITICAL ILLNESS": "MALADIE GRAVE",
+  "Some life insurance policies or riders may provide benefits when the insured experiences a specified critical illness or medical event.":
+    "Certaines polices ou certains avenants d’assurance vie peuvent prévoir des prestations lorsque l’assuré subit une maladie grave ou un événement médical précis.",
+  "Depending on the policy, qualifying conditions may include certain types of cancer, heart attack, stroke, or other serious medical conditions specifically listed in the policy.":
+    "Selon la police, les conditions admissibles peuvent inclure certains types de cancer, une crise cardiaque, un AVC ou d’autres problèmes médicaux graves spécifiquement énumérés dans la police.",
+  "Not every policy covers the same conditions, and definitions and requirements vary.":
+    "Toutes les polices ne couvrent pas les mêmes conditions, et les définitions ainsi que les exigences varient.",
+  "HOW MUCH COULD BE ACCESSED?": "QUEL MONTANT POURRAIT ÊTRE ACCESSIBLE ?",
+  "The amount available depends on the policy, rider, qualifying condition, and other factors.":
+    "Le montant disponible dépend de la police, de l’avenant, de la condition admissible et d’autres facteurs.",
+  "Some policies may allow access to a substantial portion of the eligible death benefit. In certain policies, the amount may be as much as 90% of the eligible death benefit under specific qualifying conditions.":
+    "Certaines polices peuvent permettre d’accéder à une partie importante du capital décès admissible. Dans certaines polices, le montant peut atteindre jusqu’à 90 % du capital décès admissible sous réserve de conditions particulières.",
+  "Other policies may provide a lower percentage or a specific dollar amount.":
+    "D’autres polices peuvent prévoir un pourcentage inférieur ou un montant déterminé.",
+  "For example, if a $500,000 policy allowed a 90% acceleration and all requirements were satisfied, the potential accelerated amount could be up to $450,000.":
+    "Par exemple, si une police de 500 000 $ permettait une accélération de 90 % et que toutes les exigences étaient remplies, le montant accéléré potentiel pourrait atteindre 450 000 $.",
+  "The actual amount available is determined by the policy and may be affected by policy provisions, outstanding loans, fees, benefit calculations, and other factors.":
+    "Le montant réel disponible est déterminé par la police et peut être influencé par ses dispositions, les prêts en cours, les frais, les calculs de prestations et d’autres facteurs.",
+  "WHAT HAPPENS TO THE DEATH BENEFIT?": "QU’ARRIVE-T-IL AU CAPITAL DÉCÈS ?",
+  "Living benefits are generally an acceleration of the death benefit rather than additional money added to the policy.":
+    "Les prestations du vivant constituent généralement une accélération du capital décès plutôt qu’un montant supplémentaire ajouté à la police.",
+  "Accessing a portion of the death benefit generally reduces the amount that remains available to beneficiaries.":
+    "L’accès à une partie du capital décès réduit généralement le montant qui demeure disponible pour les bénéficiaires.",
+  "$500,000 original death benefit": "Capital décès initial de 500 000 $",
+  "$450,000 accelerated while living": "450 000 $ accélérés du vivant",
+  "$50,000 remaining death benefit": "Capital décès restant de 50 000 $",
+  "The actual calculation will depend on the policy and the circumstances surrounding the benefit.":
+    "Le calcul réel dépendra de la police et des circonstances entourant la prestation.",
+  "WHO MIGHT CONSIDER TERM LIFE INSURANCE?":
+    "QUI POURRAIT ENVISAGER L’ASSURANCE VIE TEMPORAIRE ?",
+  "Term life insurance may be worth exploring if you:":
+    "L’assurance vie temporaire peut mériter d’être explorée si vous :",
+  "Have young children or dependents": "Avez de jeunes enfants ou des personnes à charge",
+  "Have a household that depends on one or two incomes":
+    "Avez un foyer qui dépend d’un ou de deux revenus",
+  "Have a mortgage or significant financial obligations":
+    "Avez un prêt hypothécaire ou des obligations financières importantes",
+  "Want protection during specific working years":
+    "Souhaitez une protection pendant certaines années de travail",
+  "Want to help protect your family's financial stability if you die unexpectedly":
+    "Souhaitez aider à protéger la stabilité financière de votre famille en cas de décès inattendu",
+  "QUESTIONS TO CONSIDER": "QUESTIONS À CONSIDÉRER",
+  "Before choosing coverage, consider:": "Avant de choisir une couverture, réfléchissez à ces questions :",
+  "How much life insurance protection does my family need?":
+    "De quel montant de protection d’assurance vie ma famille a-t-elle besoin ?",
+  "How long should the coverage last?": "Combien de temps la couverture devrait-elle durer ?",
+  "Who depends on my income?": "Qui dépend de mon revenu ?",
+  "What financial obligations would remain if I died?":
+    "Quelles obligations financières resteraient si je décédais ?",
+  "Does the policy include living-benefit features?":
+    "La police comprend-elle des prestations du vivant ?",
+  "What illnesses or conditions qualify?":
+    "Quelles maladies ou conditions sont admissibles ?",
+  "How much of the death benefit could potentially be accessed?":
+    "Quelle partie du capital décès pourrait éventuellement être accessible ?",
+  "What would remain for my beneficiaries after an accelerated benefit?":
+    "Que resterait-il pour mes bénéficiaires après une prestation accélérée ?",
+  "PROTECTION SHOULD HAVE A PURPOSE.": "LA PROTECTION DEVRAIT AVOIR UN OBJECTIF.",
+  "Understanding your options can help you make a more informed decision about protecting the people and responsibilities that matter most.":
+    "Comprendre vos options peut vous aider à prendre une décision plus éclairée pour protéger les personnes et les responsabilités qui comptent le plus.",
   "IUL with Living Benefits": "IUL avec prestations du vivant",
   "Indexed Universal Life with Living Benefits":
     "Assurance vie universelle indexée avec prestations du vivant",
