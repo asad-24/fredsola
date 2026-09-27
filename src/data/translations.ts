@@ -109,6 +109,19 @@ const es: TranslationMap = {
     "Seguro de vida permanente con protección por fallecimiento, potencial de valor en efectivo y ciertos beneficios en vida según la póliza.",
   "Insurance contracts that may combine index-linked interest-crediting potential with contractual guarantees.":
     "Contratos de seguro que pueden combinar potencial de interés vinculado a un índice con garantías contractuales.",
+  "An insurance contract designed for long-term planning.":
+    "Un contrato de seguro diseñado para la planificación a largo plazo.",
+  "College costs are rising. Your plan should be ready.":
+    "Los costos universitarios están aumentando. Su plan debe estar preparado.",
+  "Make financial decisions with taxes in mind.":
+    "Tome decisiones financieras teniendo en cuenta los impuestos.",
+  "Preserve what you have built. Plan for what comes next.":
+    "Preserve lo que ha construido. Planifique lo que viene después.",
+  "Make your wishes clear.": "Deje claros sus deseos.",
+  "Know where you stand before you decide where to go.":
+    "Sepa dónde se encuentra antes de decidir hacia dónde avanzar.",
+  "Plan ahead. Help protect the people you love.":
+    "Planifique con anticipación. Ayude a proteger a las personas que ama.",
   "Life insurance planning focused on helping loved ones address final financial responsibilities.":
     "Planificación de seguro de vida enfocada en ayudar a los seres queridos a cubrir responsabilidades financieras finales.",
   "Explore financial areas with an education-first guide.":
@@ -136,6 +149,32 @@ const es: TranslationMap = {
     "Su mensaje se enviará de forma segura a FKSola Financial por correo electrónico.",
   "Clear financial education for better conversations.":
     "Educación financiera clara para mejores conversaciones.",
+  FAQ: "Preguntas frecuentes",
+  FAQs: "Preguntas frecuentes",
+  "Frequently asked questions.": "Preguntas frecuentes.",
+  "Clear answers to common questions about protection, retirement, education, legacy planning, insurance, and how FKSola Financial works.":
+    "Respuestas claras a preguntas comunes sobre protección, jubilación, educación, planificación de legado, seguros y cómo trabaja FKSola Financial.",
+  "Still have a question?": "¿Todavía tiene una pregunta?",
+  "Start with the topic that is on your mind. FKSola Financial can help organize the conversation from there.":
+    "Comience con el tema que tiene en mente. FKSola Financial puede ayudarle a organizar la conversación desde ahí.",
+  "Bring your questions into a conversation.":
+    "Traiga sus preguntas a una conversación.",
+  "Educational content is most helpful when it can be connected to your own priorities, timing, and concerns.":
+    "El contenido educativo es más útil cuando puede conectarse con sus propias prioridades, tiempos e inquietudes.",
+  "A conversation can help connect the educational overview to your priorities, questions, and timing.":
+    "Una conversación puede ayudar a conectar la explicación educativa con sus prioridades, preguntas y tiempos.",
+  "Approved legal and educational notices for the FKSola Financial website.":
+    "Avisos legales y educativos aprobados para el sitio web de FKSola Financial.",
+  "The Financial Concern": "La preocupación financiera",
+  "Start by naming what needs attention.":
+    "Comience identificando lo que necesita atención.",
+  "Why It Matters": "Por qué importa",
+  "How the Strategy Works": "Cómo funciona la estrategia",
+  "Who May Benefit": "Quién puede beneficiarse",
+  "Important Considerations": "Consideraciones importantes",
+  "Frederick Solaga": "Frederick Solaga",
+  "This is not a job. It&apos;s a business.":
+    "Esto no es un empleo. Es un negocio.",
   "Privacy, terms, disclosures, and educational notices.":
     "Privacidad, términos, divulgaciones y avisos educativos.",
   "National Website Privacy Policy": "Política nacional de privacidad del sitio web",
@@ -232,6 +271,29 @@ const fr: TranslationMap = {
     "Apportez vos questions, priorités et préoccupations. FKSola Financial vous aidera à organiser la prochaine étape avec clarté.",
   "Term Life Insurance with Living Benefits":
     "Assurance vie temporaire avec prestations du vivant",
+  "Protect today. Prepare for the unexpected.":
+    "Protégez aujourd’hui. Préparez-vous à l’imprévu.",
+  "Permanent protection with cash-value potential.":
+    "Une protection permanente avec un potentiel de valeur de rachat.",
+  "Understand what return of premium really means.":
+    "Comprendre ce que signifie réellement le remboursement des primes.",
+  "Protect the income that supports your life.":
+    "Protégez le revenu qui soutient votre mode de vie.",
+  "Prepare for the life you want to live.":
+    "Préparez-vous à la vie que vous souhaitez vivre.",
+  "An insurance contract designed for long-term planning.":
+    "Un contrat d’assurance conçu pour la planification à long terme.",
+  "College costs are rising. Your plan should be ready.":
+    "Les coûts des études augmentent. Votre plan devrait être prêt.",
+  "Make financial decisions with taxes in mind.":
+    "Prenez des décisions financières en tenant compte des impôts.",
+  "Preserve what you have built. Plan for what comes next.":
+    "Préservez ce que vous avez bâti. Planifiez la suite.",
+  "Make your wishes clear.": "Rendez vos volontés claires.",
+  "Know where you stand before you decide where to go.":
+    "Sachez où vous en êtes avant de décider où aller.",
+  "Plan ahead. Help protect the people you love.":
+    "Planifiez à l’avance. Aidez à protéger les personnes que vous aimez.",
   INTRODUCTION: "INTRODUCTION",
   "Term life insurance generally provides life insurance protection for a specified period of time.":
     "L’assurance vie temporaire offre généralement une protection d’assurance vie pour une période déterminée.",
@@ -392,6 +454,32 @@ const fr: TranslationMap = {
     "Votre message sera envoyé en toute sécurité à FKSola Financial par courriel.",
   "Clear financial education for better conversations.":
     "Une éducation financière claire pour de meilleures conversations.",
+  FAQ: "FAQ",
+  FAQs: "FAQ",
+  "Frequently asked questions.": "Questions fréquemment posées.",
+  "Clear answers to common questions about protection, retirement, education, legacy planning, insurance, and how FKSola Financial works.":
+    "Des réponses claires aux questions courantes sur la protection, la retraite, l’éducation, la planification successorale, l’assurance et la façon dont FKSola Financial travaille.",
+  "Still have a question?": "Vous avez encore une question ?",
+  "Start with the topic that is on your mind. FKSola Financial can help organize the conversation from there.":
+    "Commencez par le sujet qui vous préoccupe. FKSola Financial peut vous aider à organiser la conversation à partir de là.",
+  "Bring your questions into a conversation.":
+    "Apportez vos questions dans une conversation.",
+  "Educational content is most helpful when it can be connected to your own priorities, timing, and concerns.":
+    "Le contenu éducatif est le plus utile lorsqu’il peut être relié à vos priorités, à votre calendrier et à vos préoccupations.",
+  "A conversation can help connect the educational overview to your priorities, questions, and timing.":
+    "Une conversation peut aider à relier l’aperçu éducatif à vos priorités, à vos questions et à votre calendrier.",
+  "Approved legal and educational notices for the FKSola Financial website.":
+    "Avis juridiques et éducatifs approuvés pour le site Web de FKSola Financial.",
+  "The Financial Concern": "La préoccupation financière",
+  "Start by naming what needs attention.":
+    "Commencez par nommer ce qui mérite votre attention.",
+  "Why It Matters": "Pourquoi c’est important",
+  "How the Strategy Works": "Comment fonctionne la stratégie",
+  "Who May Benefit": "Qui peut en bénéficier",
+  "Important Considerations": "Considérations importantes",
+  "Frederick Solaga": "Frederick Solaga",
+  "This is not a job. It&apos;s a business.":
+    "Ce n’est pas un emploi. C’est une entreprise.",
   "Privacy, terms, disclosures, and educational notices.":
     "Confidentialité, conditions, divulgations et avis éducatifs.",
   "About FKSola": "À propos de FKSola",
