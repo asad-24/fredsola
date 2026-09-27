@@ -218,9 +218,18 @@ function getTranslator(locale: ReturnType<typeof getLocaleFromPathname>) {
   const normalizedDictionary = new Map(
     Object.entries(dictionary).map(([key, value]) => [normalizeText(key), value])
   );
+  const lowercaseDictionary = new Map(
+    Object.entries(dictionary).map(([key, value]) => [
+      normalizeText(key).toLowerCase(),
+      value,
+    ])
+  );
 
   return (value: string) =>
-    dictionary[value] ?? normalizedDictionary.get(normalizeText(value)) ?? value;
+    dictionary[value] ??
+    normalizedDictionary.get(normalizeText(value)) ??
+    lowercaseDictionary.get(normalizeText(value).toLowerCase()) ??
+    value;
 }
 
 function normalizeText(value: string) {

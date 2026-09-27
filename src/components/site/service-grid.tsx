@@ -4,6 +4,7 @@ import type { CSSProperties } from "react";
 
 import type { Service } from "@/data/site";
 import { LocaleLink } from "./locale-link";
+import { TranslatedText } from "./translated-text";
 
 export function ServiceGrid({
   services,
@@ -51,13 +52,13 @@ export function ServiceGrid({
             </div>
             <div className="flex flex-1 flex-col p-4 sm:p-5">
               <h3 className="text-lg font-bold leading-snug text-[#071629] transition group-hover:text-white">
-                {service.shortTitle}
+                <TranslatedText value={service.shortTitle} />
               </h3>
               <p className="mt-3 text-[15px] leading-7 text-[#334155] transition group-hover:text-white/76 sm:text-sm">
-                {service.summary}
+                <TranslatedText value={service.summary} />
               </p>
               <span className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-bold text-[#0B1F3A] transition group-hover:text-[#C9A227]">
-                Read More
+                <TranslatedText value="Read More" />
                 <ArrowUpRight
                   className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   aria-hidden="true"
@@ -81,13 +82,13 @@ export function ServiceGrid({
               <Icon className="size-5" aria-hidden="true" />
             </span>
             <h3 className="mt-5 text-lg font-bold text-[#071629]">
-              {service.shortTitle}
+              <TranslatedText value={service.shortTitle} />
             </h3>
             <p className="mt-3 text-[15px] leading-7 text-[#334155] sm:text-sm">
-              {service.summary}
+              <TranslatedText value={service.summary} />
             </p>
             <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#0B1F3A]">
-              Learn More
+              <TranslatedText value="Learn More" />
               <ArrowUpRight
                 className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 aria-hidden="true"

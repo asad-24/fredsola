@@ -24,9 +24,18 @@ export function TranslationProvider() {
     const normalizedDictionary = new Map(
       Object.entries(dictionary).map(([key, value]) => [normalizeText(key), value])
     );
+    const lowercaseDictionary = new Map(
+      Object.entries(dictionary).map(([key, value]) => [
+        normalizeText(key).toLowerCase(),
+        value,
+      ])
+    );
 
     const translate = (value: string) =>
-      dictionary[value.trim()] ?? normalizedDictionary.get(normalizeText(value)) ?? value;
+      dictionary[value.trim()] ??
+      normalizedDictionary.get(normalizeText(value)) ??
+      lowercaseDictionary.get(normalizeText(value).toLowerCase()) ??
+      value;
 
     const translateTextNode = (node: Text) => {
       const original = node.nodeValue ?? "";

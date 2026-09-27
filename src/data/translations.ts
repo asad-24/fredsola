@@ -183,6 +183,10 @@ const es: TranslationMap = {
   "Educational Content Disclaimer": "Aviso de contenido educativo",
   Navigation: "Navegación",
   "Social profiles coming soon": "Perfiles sociales próximamente",
+  "Tax, legal, and investment questions should be reviewed with qualified professionals.":
+    "Las preguntas fiscales, legales y de inversión deben revisarse con profesionales calificados.",
+  "Privacy Policy / Terms / Required Disclosures":
+    "Política de privacidad / Términos / Divulgaciones requeridas",
   "All rights reserved.": "Todos los derechos reservados.",
 };
 
@@ -551,6 +555,10 @@ const fr: TranslationMap = {
   "Educational Content Disclaimer": "Avis sur le contenu éducatif",
   Navigation: "Navigation",
   "Social profiles coming soon": "Profils sociaux bientôt disponibles",
+  "Tax, legal, and investment questions should be reviewed with qualified professionals.":
+    "Les questions fiscales, juridiques et d’investissement doivent être examinées avec des professionnels qualifiés.",
+  "Privacy Policy / Terms / Required Disclosures":
+    "Politique de confidentialité / Conditions / Divulgations requises",
   "All rights reserved.": "Tous droits réservés.",
 };
 
