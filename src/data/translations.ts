@@ -107,6 +107,18 @@ const es: TranslationMap = {
     "Protección de seguro de vida por un período determinado, con ciertas pólizas que ofrecen beneficios en vida.",
   "Permanent life insurance with death-benefit protection, cash-value potential, and certain living-benefit features depending on the policy.":
     "Seguro de vida permanente con protección por fallecimiento, potencial de valor en efectivo y ciertos beneficios en vida según la póliza.",
+  "Permanent life insurance with death protection, cash value potential, and certain living benefits depending on the policy.":
+    "Seguro de vida permanente con protección por fallecimiento, potencial de valor en efectivo y ciertos beneficios en vida según la póliza.",
+  "Permanent protection with potential cash value.":
+    "Protección permanente con potencial de valor en efectivo.",
+  "Permanent protection with cash value potential.":
+    "Protección permanente con potencial de valor en efectivo.",
+  "It provides a death benefit and can accumulate cash value.":
+    "Proporciona un beneficio por fallecimiento y puede acumular valor en efectivo.",
+  "Depending on the policy, interest credited to the cash value can be partly linked to an external market index.":
+    "Dependiendo de la póliza, los intereses acreditados al valor en efectivo pueden estar vinculados en parte a un índice de mercado externo.",
+  "The insured does not invest directly in that index.":
+    "El asegurado no invierte directamente en ese índice.",
   "Insurance contracts that may combine index-linked interest-crediting potential with contractual guarantees.":
     "Contratos de seguro que pueden combinar potencial de interés vinculado a un índice con garantías contractuales.",
   "An insurance contract designed for long-term planning.":
@@ -279,6 +291,10 @@ const fr: TranslationMap = {
     "Protégez aujourd’hui. Préparez-vous à l’imprévu.",
   "Permanent protection with cash-value potential.":
     "Une protection permanente avec un potentiel de valeur de rachat.",
+  "Permanent protection with potential cash value.":
+    "Une protection permanente avec un potentiel de valeur de rachat.",
+  "Permanent protection with cash value potential.":
+    "Une protection permanente avec un potentiel de valeur de rachat.",
   "Understand what return of premium really means.":
     "Comprendre ce que signifie réellement le remboursement des primes.",
   "Protect the income that supports your life.":
@@ -429,6 +445,14 @@ const fr: TranslationMap = {
     "Protection d’assurance vie pour une période déterminée, certaines polices offrant des prestations du vivant.",
   "Permanent life insurance with death-benefit protection, cash-value potential, and certain living-benefit features depending on the policy.":
     "Assurance vie permanente avec protection en cas de décès, potentiel de valeur de rachat et certaines prestations du vivant selon la police.",
+  "Permanent life insurance with death protection, cash value potential, and certain living benefits depending on the policy.":
+    "Assurance vie permanente avec protection en cas de décès, potentiel de valeur de rachat et certaines prestations du vivant selon la police.",
+  "It provides a death benefit and can accumulate cash value.":
+    "Elle offre une prestation de décès et peut accumuler une valeur de rachat.",
+  "Depending on the policy, interest credited to the cash value can be partly linked to an external market index.":
+    "Selon la police, les intérêts crédités à la valeur de rachat peuvent être en partie liés à un indice de marché externe.",
+  "The insured does not invest directly in that index.":
+    "L’assuré n’investit pas directement dans cet indice.",
   "Insurance contracts that may combine index-linked interest-crediting potential with contractual guarantees.":
     "Contrats d’assurance pouvant combiner un potentiel d’intérêt lié à un indice avec des garanties contractuelles.",
   "Life insurance planning focused on helping loved ones address final financial responsibilities.":
