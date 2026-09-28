@@ -6,6 +6,7 @@ import { ContactForm } from "@/components/site/contact-form";
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
 import { PageHero, Section, SiteShell } from "@/components/site/section";
+import { TranslatedText } from "@/components/site/translated-text";
 import { company } from "@/data/site";
 
 export const metadata = {
@@ -23,17 +24,17 @@ export default function ContactPage() {
           text="Reach out with questions about protection, planning, education, careers, or where to begin."
         />
         <Section>
-          <div className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr]">
-            <div>
+          <div className="grid min-w-0 gap-6 lg:grid-cols-[0.75fr_1.25fr]">
+            <div className="min-w-0">
               <h2 className="font-heading text-3xl text-[#071629] sm:text-4xl">
-                Contact Information
+                <TranslatedText value="Contact Information" />
               </h2>
               <div className="mt-5 border-l-2 border-[#C9A227] pl-4">
                 <p className="font-heading text-2xl text-[#071629] sm:text-3xl">
                   {company.representative}
                 </p>
                 <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#C9A227]">
-                  {company.role}
+                  <TranslatedText value={company.role} />
                 </p>
                 <p className="mt-3 text-sm leading-7 text-[#334155]">
                   NPN: {company.npn}
@@ -53,13 +54,12 @@ export default function ContactPage() {
                   value={company.npn}
                 />
               </div>
-              <div className="mt-7 rounded-[8px] bg-[#F7F4EC] p-4 sm:p-5">
+              <div className="mt-7 min-w-0 rounded-[8px] bg-[#F7F4EC] p-4 sm:p-5">
                 <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#C9A227]">
-                  Appointment Option
+                  <TranslatedText value="Appointment Option" />
                 </p>
-                <p className="mt-4 text-[15px] leading-7 text-[#334155]">
-                  Visitors can use the form or book directly once the calendar
-                  link is connected.
+                <p className="mt-4 break-words text-[15px] leading-7 text-[#334155]">
+                  <TranslatedText value="Visitors can use the form or book directly once the calendar link is connected." />
                 </p>
               </div>
             </div>
@@ -70,14 +70,13 @@ export default function ContactPage() {
           <div className="grid gap-6 lg:grid-cols-[0.65fr_1.35fr] lg:items-start">
             <div>
               <p className="mb-3 text-[11px] font-bold uppercase leading-5 tracking-[0.14em] text-[#C9A227] sm:mb-4 sm:text-xs sm:tracking-[0.22em]">
-                Schedule
+                <TranslatedText value="Schedule" />
               </p>
               <h2 className="font-heading text-3xl leading-tight text-[#071629] sm:text-4xl">
-                Choose a conversation time.
+                <TranslatedText value="Choose a conversation time." />
               </h2>
               <p className="mt-4 text-[15px] leading-7 text-[#334155] sm:text-base">
-                The booking calendar will show Fred&apos;s real availability as
-                soon as the Calendly event URL is added.
+                <TranslatedText value="The booking calendar will show Fred's real availability as soon as the Calendly event URL is added." />
               </p>
             </div>
             <CalendlyEmbed />
@@ -104,7 +103,9 @@ function ContactItem({
         <Icon className="size-5" aria-hidden="true" />
       </span>
       <div className="min-w-0">
-        <p className="text-sm font-bold text-[#071629]">{label}</p>
+        <p className="text-sm font-bold text-[#071629]">
+          <TranslatedText value={label} />
+        </p>
         <p className="mt-1 break-words text-sm leading-7 text-[#334155]">
           {value}
         </p>

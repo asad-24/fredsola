@@ -27,14 +27,26 @@ export function useTranslation() {
       ])
     );
 
-    return (
+    const translated =
       dictionary[value] ??
       dictionary[value.trim()] ??
       normalizedDictionary.get(normalizeText(value)) ??
       lowercaseDictionary.get(normalizeText(value).toLowerCase()) ??
-      value
-    );
+      value;
+
+    return formatTranslation(translated, locale);
   };
+}
+
+function formatTranslation(
+  value: string,
+  locale: ReturnType<typeof getLocaleFromPathname>
+) {
+  if (locale === "es") {
+    return value.replace(/¿/g, "");
+  }
+
+  return value;
 }
 
 function normalizeText(value: string) {

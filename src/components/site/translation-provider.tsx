@@ -31,11 +31,15 @@ export function TranslationProvider() {
       ])
     );
 
-    const translate = (value: string) =>
-      dictionary[value.trim()] ??
-      normalizedDictionary.get(normalizeText(value)) ??
-      lowercaseDictionary.get(normalizeText(value).toLowerCase()) ??
-      value;
+    const translate = (value: string) => {
+      const translated =
+        dictionary[value.trim()] ??
+        normalizedDictionary.get(normalizeText(value)) ??
+        lowercaseDictionary.get(normalizeText(value).toLowerCase()) ??
+        value;
+
+      return formatTranslation(translated, locale);
+    };
 
     const translateTextNode = (node: Text) => {
       const original = node.nodeValue ?? "";
@@ -118,4 +122,15 @@ function normalizeText(value: string) {
     .replace(/\u00a0/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function formatTranslation(
+  value: string,
+  locale: ReturnType<typeof getLocaleFromPathname>
+) {
+  if (locale === "es") {
+    return value.replace(/¿/g, "");
+  }
+
+  return value;
 }

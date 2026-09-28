@@ -157,8 +157,31 @@ const es: TranslationMap = {
   Message: "Mensaje",
   Sending: "Enviando",
   "Sending...": "Enviando...",
+  "(optional)": "(opcional)",
+  "Share any experience, questions, or goals you want to discuss.":
+    "Comparta cualquier experiencia, pregunta o meta que desee conversar.",
+  "selected. Exact time slots can be connected when Fred provides a booking calendar.":
+    "seleccionado. Los horarios exactos se pueden conectar cuando Fred proporcione un calendario de reservas.",
+  "Thank you. Your message has been sent to FKSola Financial.":
+    "Gracias. Su mensaje ha sido enviado a FKSola Financial.",
+  "Thank you. Your inquiry has been sent to FKSola Financial.":
+    "Gracias. Su consulta ha sido enviada a FKSola Financial.",
+  "Unable to send your message right now.":
+    "No se puede enviar su mensaje en este momento.",
+  "Unable to send your inquiry right now.":
+    "No se puede enviar su consulta en este momento.",
+  "Unable to send your message right now. Please try again or email Fred directly.":
+    "No se puede enviar su mensaje en este momento. Inténtelo de nuevo o envíe un correo directamente a Fred.",
+  "Unable to send your inquiry right now. Please try again or email Fred directly.":
+    "No se puede enviar su consulta en este momento. Inténtelo de nuevo o envíe un correo directamente a Fred.",
   "Your message will be sent securely to FKSola Financial by email.":
     "Su mensaje se enviará de forma segura a FKSola Financial por correo electrónico.",
+  "Calendar Booking": "Reserva de calendario",
+  "Calendly is ready to connect.": "Calendly está listo para conectarse.",
+  "Add Fred's Calendly event URL to":
+    "Agregue la URL del evento de Calendly de Fred a",
+  "and this area will display live available dates and times.":
+    "y esta área mostrará las fechas y horas disponibles en vivo.",
   "Clear financial education for better conversations.":
     "Educación financiera clara para mejores conversaciones.",
   FAQ: "Preguntas frecuentes",
@@ -573,6 +596,29 @@ const fr: TranslationMap = {
   "Tell us a little about yourself.": "Parlez-nous un peu de vous.",
   "Use the form to share your information and choose a time to discuss the financial professional opportunity.":
     "Utilisez le formulaire pour partager vos informations et choisir un moment pour discuter de l’opportunité de professionnel financier.",
+  "(optional)": "(facultatif)",
+  "Share any experience, questions, or goals you want to discuss.":
+    "Partagez toute expérience, question ou objectif dont vous souhaitez discuter.",
+  "selected. Exact time slots can be connected when Fred provides a booking calendar.":
+    "sélectionné. Les créneaux horaires exacts pourront être connectés lorsque Fred fournira un calendrier de réservation.",
+  "Thank you. Your message has been sent to FKSola Financial.":
+    "Merci. Votre message a été envoyé à FKSola Financial.",
+  "Thank you. Your inquiry has been sent to FKSola Financial.":
+    "Merci. Votre demande a été envoyée à FKSola Financial.",
+  "Unable to send your message right now.":
+    "Impossible d’envoyer votre message pour le moment.",
+  "Unable to send your inquiry right now.":
+    "Impossible d’envoyer votre demande pour le moment.",
+  "Unable to send your message right now. Please try again or email Fred directly.":
+    "Impossible d’envoyer votre message pour le moment. Veuillez réessayer ou envoyer un courriel directement à Fred.",
+  "Unable to send your inquiry right now. Please try again or email Fred directly.":
+    "Impossible d’envoyer votre demande pour le moment. Veuillez réessayer ou envoyer un courriel directement à Fred.",
+  "Calendar Booking": "Réservation du calendrier",
+  "Calendly is ready to connect.": "Calendly est prêt à être connecté.",
+  "Add Fred's Calendly event URL to":
+    "Ajoutez l’URL de l’événement Calendly de Fred à",
+  "and this area will display live available dates and times.":
+    "et cette zone affichera les dates et heures disponibles en direct.",
   "National Website Privacy Policy": "Politique nationale de confidentialité du site",
   "Website Terms of Use": "Conditions d’utilisation du site",
   "Licensing & Disclosures": "Licences et divulgations",

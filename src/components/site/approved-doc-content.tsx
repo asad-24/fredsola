@@ -225,11 +225,26 @@ function getTranslator(locale: ReturnType<typeof getLocaleFromPathname>) {
     ])
   );
 
-  return (value: string) =>
-    dictionary[value] ??
-    normalizedDictionary.get(normalizeText(value)) ??
-    lowercaseDictionary.get(normalizeText(value).toLowerCase()) ??
-    value;
+  return (value: string) => {
+    const translated =
+      dictionary[value] ??
+      normalizedDictionary.get(normalizeText(value)) ??
+      lowercaseDictionary.get(normalizeText(value).toLowerCase()) ??
+      value;
+
+    return formatTranslation(translated, locale);
+  };
+}
+
+function formatTranslation(
+  value: string,
+  locale: ReturnType<typeof getLocaleFromPathname>
+) {
+  if (locale === "es") {
+    return value.replace(/¿/g, "");
+  }
+
+  return value;
 }
 
 function normalizeText(value: string) {

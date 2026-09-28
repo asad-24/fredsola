@@ -5,6 +5,7 @@ import { ArrowRight, Clock3 } from "lucide-react";
 
 import { getLocaleFromPathname } from "@/lib/i18n";
 import { useCurrentPathname } from "@/lib/use-current-pathname";
+import { useTranslation } from "@/lib/use-translation";
 import { CalendlyEmbed } from "./calendly-embed";
 import { TurnstileField, resetTurnstile } from "./turnstile-field";
 
@@ -21,6 +22,7 @@ type SubmitState = "idle" | "sending" | "success" | "error";
 export function JoinUsForm() {
   const pathname = useCurrentPathname();
   const locale = getLocaleFromPathname(pathname);
+  const t = useTranslation();
   const [selectedDate, setSelectedDate] = useState("");
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [message, setMessage] = useState("");
@@ -70,12 +72,12 @@ export function JoinUsForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-[18px] border border-[#0B1F3A]/10 bg-white p-4 shadow-2xl shadow-[#071629]/12 sm:p-6 lg:p-7"
+      className="min-w-0 rounded-[18px] border border-[#0B1F3A]/10 bg-white p-4 shadow-2xl shadow-[#071629]/12 sm:p-6 lg:p-7"
     >
       <input type="hidden" name="locale" value={locale} />
-      <p className="text-sm font-bold text-[#C9A227]">Step 1 of 2</p>
+      <p className="text-sm font-bold text-[#C9A227]">{t("Step 1 of 2")}</p>
       <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#071629]">
-        Tell us about yourself
+        {t("Tell us about yourself")}
       </h2>
 
       <div className="mt-7 grid gap-5 sm:grid-cols-2">
@@ -89,7 +91,7 @@ export function JoinUsForm() {
 
       <fieldset className="mt-6">
         <legend className="text-sm font-bold text-[#071629]">
-          Do you currently have an active life insurance license? *
+          {t("Do you currently have an active life insurance license? *")}
         </legend>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
           <label className="flex h-13 cursor-pointer items-center gap-3 rounded-[8px] border border-[#0B1F3A]/10 px-4 text-sm font-semibold text-[#071629] transition hover:border-[#C9A227] hover:bg-[#F7F4EC]">
@@ -100,7 +102,7 @@ export function JoinUsForm() {
               required
               className="size-4 accent-[#0B1F3A]"
             />
-            Yes, I am licensed
+            {t("Yes, I am licensed")}
           </label>
           <label className="flex h-13 cursor-pointer items-center gap-3 rounded-[8px] border border-[#0B1F3A]/10 px-4 text-sm font-semibold text-[#071629] transition hover:border-[#C9A227] hover:bg-[#F7F4EC]">
             <input
@@ -110,31 +112,31 @@ export function JoinUsForm() {
               required
               className="size-4 accent-[#0B1F3A]"
             />
-            Not yet
+            {t("Not yet")}
           </label>
         </div>
       </fieldset>
 
-      <label className="mt-6 grid gap-2 text-sm font-bold text-[#071629]">
-        Anything you would like us to know?{" "}
-        <span className="font-normal text-[#334155]">(optional)</span>
+      <label className="mt-6 grid min-w-0 gap-2 text-sm font-bold text-[#071629]">
+        {t("Anything you would like us to know?")}{" "}
+        <span className="font-normal text-[#334155]">{t("(optional)")}</span>
         <textarea
           name="message"
           rows={4}
-          placeholder="Share any experience, questions, or goals you want to discuss."
-          className="resize-none rounded-[8px] border border-[#0B1F3A]/10 bg-white px-4 py-3 text-base font-normal leading-7 text-[#071629] outline-none transition placeholder:text-[#334155]/70 focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
+          placeholder={t("Share any experience, questions, or goals you want to discuss.")}
+          className="w-full min-w-0 resize-none rounded-[8px] border border-[#0B1F3A]/10 bg-white px-4 py-3 text-base font-normal leading-7 text-[#071629] outline-none transition placeholder:text-[#334155]/70 focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
         />
       </label>
 
       <div className="my-7 h-px bg-[#0B1F3A]/10" />
 
-      <p className="text-sm font-bold text-[#C9A227]">Step 2 of 2</p>
+      <p className="text-sm font-bold text-[#C9A227]">{t("Step 2 of 2")}</p>
       <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#071629]">
-        Choose a time
+        {t("Choose a time")}
       </h2>
       <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#071629] px-4 py-2 text-sm font-bold text-white shadow-lg shadow-[#071629]/20">
         <Clock3 className="size-4 text-[#C9A227]" aria-hidden="true" />
-        30-minute conversation · Eastern Time
+        {t("30-minute conversation · Eastern Time")}
       </div>
 
       <input type="hidden" name="appointmentDate" value={selectedDate} />
@@ -173,8 +175,8 @@ export function JoinUsForm() {
 
           <div className="mt-6 rounded-[8px] bg-[#F3F4F6] px-4 py-5 text-center text-sm text-[#334155]">
             {selectedDate
-              ? `${selectedDate} selected. Exact time slots can be connected when Fred provides a booking calendar.`
-              : "Select a date to see available times."}
+              ? `${selectedDate} ${t("selected. Exact time slots can be connected when Fred provides a booking calendar.")}`
+              : t("Select a date to see available times.")}
           </div>
         </>
       )}
@@ -189,8 +191,8 @@ export function JoinUsForm() {
         className="mt-6 inline-flex h-12 w-full items-center justify-center gap-3 rounded-[8px] bg-[#C9A227] px-5 text-sm font-bold text-[#071629] transition hover:bg-[#0B1F3A] hover:text-white disabled:pointer-events-none disabled:opacity-60"
       >
         {submitState === "sending"
-          ? "Sending..."
-          : "Schedule my conversation"}
+          ? t("Sending...")
+          : t("Schedule my conversation")}
         <ArrowRight className="size-4" aria-hidden="true" />
       </button>
 
@@ -200,12 +202,11 @@ export function JoinUsForm() {
             submitState === "success" ? "text-[#0B1F3A]" : "text-red-700"
           }`}
         >
-          {message}
+          {t(message)}
         </p>
       ) : (
         <p className="mt-5 text-center text-xs leading-6 text-[#334155]">
-          By submitting, you agree that FKSola Financial may contact you about
-          this opportunity.
+          {t("By submitting, you agree that FKSola Financial may contact you about this opportunity.")}
         </p>
       )}
     </form>
@@ -223,14 +224,16 @@ function CareerField({
   type?: string;
   required?: boolean;
 }) {
+  const t = useTranslation();
+
   return (
-    <label className="grid gap-2 text-sm font-bold text-[#071629]">
-      {label}
+    <label className="grid min-w-0 gap-2 text-sm font-bold text-[#071629]">
+      {t(label)}
       <input
         name={name}
         type={type}
         required={required}
-        className="h-12 rounded-[8px] border border-[#0B1F3A]/10 bg-white px-4 text-base font-normal text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
+        className="h-12 w-full min-w-0 rounded-[8px] border border-[#0B1F3A]/10 bg-white px-4 text-base font-normal text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
       />
     </label>
   );

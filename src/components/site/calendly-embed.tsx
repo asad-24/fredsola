@@ -2,6 +2,8 @@
 
 import Script from "next/script";
 
+import { TranslatedText } from "./translated-text";
+
 export function CalendlyEmbed() {
   const calendlyUrl = getCalendlyUrl();
 
@@ -21,15 +23,15 @@ export function CalendlyEmbed() {
       ) : (
         <div className="p-4 sm:p-5 lg:p-6">
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#C9A227]">
-            Calendar Booking
+            <TranslatedText value="Calendar Booking" />
           </p>
           <h2 className="mt-3 text-2xl font-bold text-[#071629]">
-            Calendly is ready to connect.
+            <TranslatedText value="Calendly is ready to connect." />
           </h2>
           <p className="mt-4 text-[15px] leading-7 text-[#334155] sm:text-base">
-            Add Fred&apos;s Calendly event URL to{" "}
-            <span className="font-semibold">NEXT_PUBLIC_CALENDLY_URL</span> and
-            this area will display live available dates and times.
+            <TranslatedText value="Add Fred's Calendly event URL to" />{" "}
+            <span className="font-semibold">NEXT_PUBLIC_CALENDLY_URL</span>{" "}
+            <TranslatedText value="and this area will display live available dates and times." />
           </p>
         </div>
       )}

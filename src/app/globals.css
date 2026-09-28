@@ -375,8 +375,35 @@ html[data-startup="done"] .hero-corner {
 }
 
 @media (max-width: 640px) {
+  .startup-content {
+    min-height: 18rem;
+    width: min(84vw, 22rem);
+  }
+
+  .startup-words {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .startup-words span {
+    max-width: 100%;
+    font-size: clamp(2.15rem, 12vw, 3.35rem);
+    line-height: 0.98;
+    white-space: normal;
+  }
+
   .startup-brand {
     gap: 1.25rem;
+  }
+
+  .startup-logo {
+    width: min(76vw, 21rem);
+  }
+
+  .startup-line {
+    max-width: 80vw;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
   }
 }
 

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { conversationTopics } from "@/data/site";
 import { getLocaleFromPathname } from "@/lib/i18n";
 import { useCurrentPathname } from "@/lib/use-current-pathname";
+import { useTranslation } from "@/lib/use-translation";
 import { TurnstileField, resetTurnstile } from "./turnstile-field";
 
 type SubmitState = "idle" | "sending" | "success" | "error";
@@ -13,6 +14,7 @@ type SubmitState = "idle" | "sending" | "success" | "error";
 export function ContactForm() {
   const pathname = useCurrentPathname();
   const locale = getLocaleFromPathname(pathname);
+  const t = useTranslation();
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [message, setMessage] = useState("");
 
@@ -59,7 +61,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="grid gap-4 rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 shadow-xl shadow-[#071629]/8 sm:p-5 lg:p-6"
+      className="grid min-w-0 gap-4 rounded-[8px] border border-[#0B1F3A]/10 bg-white p-4 shadow-xl shadow-[#071629]/8 sm:p-5 lg:p-6"
     >
       <input type="hidden" name="locale" value={locale} />
       <div className="grid gap-5 sm:grid-cols-2">
@@ -72,25 +74,27 @@ export function ContactForm() {
         <Field label="City of residence" name="city" required />
         <Field label="State" name="state" required />
       </div>
-      <label className="grid gap-2 text-sm font-semibold text-[#071629]">
-        Conversation topic
+      <label className="grid min-w-0 gap-2 text-sm font-semibold text-[#071629]">
+        {t("Conversation topic")}
         <select
           name="topic"
-          className="h-12 rounded-[6px] border border-[#D1D5DB] bg-white px-4 text-base font-normal text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
+          className="h-12 w-full min-w-0 rounded-[6px] border border-[#D1D5DB] bg-white px-4 text-base font-normal text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
         >
           {conversationTopics.map((topic) => (
-            <option key={topic}>{topic}</option>
+            <option key={topic} value={topic}>
+              {t(topic)}
+            </option>
           ))}
         </select>
       </label>
-      <label className="grid gap-2 text-sm font-semibold text-[#071629]">
-        Message
+      <label className="grid min-w-0 gap-2 text-sm font-semibold text-[#071629]">
+        {t("Message")}
         <textarea
           name="message"
           rows={5}
           required
-          className="rounded-[6px] border border-[#D1D5DB] bg-white px-4 py-3 text-base font-normal leading-7 text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
-          placeholder="Share what you would like to understand or discuss."
+          className="w-full min-w-0 rounded-[6px] border border-[#D1D5DB] bg-white px-4 py-3 text-base font-normal leading-7 text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
+          placeholder={t("Share what you would like to understand or discuss.")}
         />
       </label>
       <TurnstileField />
@@ -99,7 +103,7 @@ export function ContactForm() {
         disabled={submitState === "sending"}
         className="h-12 w-full rounded-full sm:w-fit"
       >
-        {submitState === "sending" ? "Sending..." : "Schedule a Conversation"}
+        {submitState === "sending" ? t("Sending...") : t("Schedule a Conversation")}
       </Button>
       {message ? (
         <p
@@ -107,11 +111,11 @@ export function ContactForm() {
             submitState === "success" ? "text-[#0B1F3A]" : "text-red-700"
           }`}
         >
-          {message}
+          {t(message)}
         </p>
       ) : (
         <p className="text-xs leading-6 text-[#334155]">
-          Your message will be sent securely to FKSola Financial by email.
+          {t("Your message will be sent securely to FKSola Financial by email.")}
         </p>
       )}
     </form>
@@ -129,14 +133,16 @@ function Field({
   type?: string;
   required?: boolean;
 }) {
+  const t = useTranslation();
+
   return (
-    <label className="grid gap-2 text-sm font-semibold text-[#071629]">
-      {label}
+    <label className="grid min-w-0 gap-2 text-sm font-semibold text-[#071629]">
+      {t(label)}
       <input
         name={name}
         type={type}
         required={required}
-        className="h-12 rounded-[6px] border border-[#D1D5DB] bg-white px-4 text-base font-normal text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
+        className="h-12 w-full min-w-0 rounded-[6px] border border-[#D1D5DB] bg-white px-4 text-base font-normal text-[#071629] outline-none transition focus:border-[#C9A227] focus:ring-4 focus:ring-[#C9A227]/15 sm:text-sm"
       />
     </label>
   );
