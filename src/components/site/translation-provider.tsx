@@ -117,8 +117,12 @@ export function TranslationProvider() {
 
 function normalizeText(value: string) {
   return value
+    .replace(/&apos;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, "&")
     .replace(/[‘’]/g, "'")
     .replace(/[“”]/g, '"')
+    .replace(/[–—]/g, "-")
     .replace(/\u00a0/g, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -128,9 +132,19 @@ function formatTranslation(
   value: string,
   locale: ReturnType<typeof getLocaleFromPathname>
 ) {
+  const decoded = decodeTextEntities(value);
+
   if (locale === "es") {
-    return value.replace(/¿/g, "");
+    return decoded.replace(/¿/g, "");
   }
 
-  return value;
+  return decoded;
+}
+
+function decodeTextEntities(value: string) {
+  return value
+    .replace(/&apos;/g, "'")
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, "&");
 }

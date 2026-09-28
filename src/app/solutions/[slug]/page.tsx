@@ -137,10 +137,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </Section>
           </>
         )}
-        <CTASection
-          title={`Talk through ${service.shortTitle.toLowerCase()} with clarity.`}
-          text="A conversation can help connect the educational overview to your priorities, questions, and timing."
-        />
+        <CTASection text="A conversation can help connect the educational overview to your priorities, questions, and timing." />
       </main>
       <Footer />
     </SiteShell>

@@ -113,6 +113,29 @@ const es: TranslationMap = {
     "Protección permanente con potencial de valor en efectivo.",
   "Permanent protection with cash value potential.":
     "Protección permanente con potencial de valor en efectivo.",
+  "Indexed Universal Life is a form of permanent life insurance.":
+    "Indexed Universal Life es una forma de seguro de vida permanente.",
+  "It provides a death benefit and may accumulate cash value.":
+    "Proporciona un beneficio por fallecimiento y puede acumular valor en efectivo.",
+  "Depending on the policy, interest credited to the cash value may be linked in part to an external market index.":
+    "Según la póliza, los intereses acreditados al valor en efectivo pueden estar vinculados en parte a un índice de mercado externo.",
+  "The policyholder does not directly invest in that index.":
+    "El titular de la póliza no invierte directamente en ese índice.",
+  "WHY DO PEOPLE CONSIDER IUL?": "POR QUÉ LAS PERSONAS CONSIDERAN IUL",
+  "Depending on the policy and how it is designed, an IUL may be considered for:":
+    "Según la póliza y cómo esté diseñada, una IUL puede considerarse para:",
+  "Cash-value accumulation.": "Acumulación de valor en efectivo.",
+  "Potential living benefits.": "Posibles beneficios en vida.",
+  "Long-term family planning.": "Planificación familiar a largo plazo.",
+  "Certain education or retirement strategies.":
+    "Ciertas estrategias de educación o jubilación.",
+  "The purpose should determine whether the strategy deserves consideration.":
+    "El propósito debe determinar si la estrategia merece consideración.",
+  "HOW DOES INDEXING WORK?": "CÓMO FUNCIONA LA INDEXACIÓN",
+  "The policy may use an external index as part of an interest-crediting formula.":
+    "La póliza puede usar un índice externo como parte de una fórmula de acreditación de intereses.",
+  "Important elements can include:":
+    "Los elementos importantes pueden incluir:",
   "It provides a death benefit and can accumulate cash value.":
     "Proporciona un beneficio por fallecimiento y puede acumular valor en efectivo.",
   "Depending on the policy, interest credited to the cash value can be partly linked to an external market index.":
@@ -129,6 +152,30 @@ const es: TranslationMap = {
     "Tome decisiones financieras teniendo en cuenta los impuestos.",
   "Preserve what you have built. Plan for what comes next.":
     "Preserve lo que ha construido. Planifique lo que viene después.",
+  "PRESERVE WHAT YOU'VE BUILT. PLAN FOR WHAT COMES NEXT.":
+    "PRESERVE LO QUE HA CONSTRUIDO. PLANIFIQUE LO QUE VIENE DESPUÉS.",
+  "A legacy can be financial. But it can also be the opportunities, protection, values, and choices you leave behind.":
+    "Un legado puede ser financiero. Pero también puede incluir las oportunidades, la protección, los valores y las decisiones que deja atrás.",
+  "WHAT COULD YOUR LEGACY INCLUDE?": "QUÉ PODRÍA INCLUIR SU LEGADO",
+  "Family security.": "Seguridad familiar.",
+  "Future generations.": "Futuras generaciones.",
+  "Business interests.": "Intereses empresariales.",
+  "Charitable giving.": "Donaciones caritativas.",
+  "Retirement assets.": "Activos de jubilación.",
+  "Property.": "Propiedad.",
+  "Other financial resources.": "Otros recursos financieros.",
+  "WHY PLAN EARLY?": "POR QUÉ PLANIFICAR CON ANTICIPACIÓN",
+  "Without intentional planning, the transfer of assets can become more complicated for your family. Legacy planning gives you an opportunity to think about:":
+    "Sin una planificación intencional, la transferencia de activos puede volverse más complicada para su familia. La planificación de legado le da la oportunidad de pensar en:",
+  "Who receives what?": "Quién recibe qué?",
+  "Understand your goals.": "Comprender sus objetivos.",
+  "Identify financial considerations.": "Identificar consideraciones financieras.",
+  "Coordinate with legal and tax professionals when appropriate.":
+    "Coordinar con profesionales legales y fiscales cuando corresponda.",
+  "Review your plan as circumstances change.":
+    "Revisar su plan a medida que cambien las circunstancias.",
+  "YOUR LEGACY SHOULD REFLECT WHAT MATTERS TO YOU.":
+    "SU LEGADO DEBE REFLEJAR LO QUE IMPORTA PARA USTED.",
   "Make your wishes clear.": "Deje claros sus deseos.",
   "Know where you stand before you decide where to go.":
     "Sepa dónde se encuentra antes de decidir hacia dónde avanzar.",
@@ -470,6 +517,29 @@ const fr: TranslationMap = {
     "Assurance vie permanente avec protection en cas de décès, potentiel de valeur de rachat et certaines prestations du vivant selon la police.",
   "Permanent life insurance with death protection, cash value potential, and certain living benefits depending on the policy.":
     "Assurance vie permanente avec protection en cas de décès, potentiel de valeur de rachat et certaines prestations du vivant selon la police.",
+  "Indexed Universal Life is a form of permanent life insurance.":
+    "L’assurance vie universelle indexée est une forme d’assurance vie permanente.",
+  "It provides a death benefit and may accumulate cash value.":
+    "Elle offre une prestation de décès et peut accumuler une valeur de rachat.",
+  "Depending on the policy, interest credited to the cash value may be linked in part to an external market index.":
+    "Selon la police, les intérêts crédités à la valeur de rachat peuvent être liés en partie à un indice de marché externe.",
+  "The policyholder does not directly invest in that index.":
+    "Le titulaire de la police n’investit pas directement dans cet indice.",
+  "WHY DO PEOPLE CONSIDER IUL?": "POURQUOI ENVISAGER UNE IUL",
+  "Depending on the policy and how it is designed, an IUL may be considered for:":
+    "Selon la police et sa conception, une IUL peut être envisagée pour :",
+  "Cash-value accumulation.": "Accumulation de valeur de rachat.",
+  "Potential living benefits.": "Prestations du vivant potentielles.",
+  "Long-term family planning.": "Planification familiale à long terme.",
+  "Certain education or retirement strategies.":
+    "Certaines stratégies d’éducation ou de retraite.",
+  "The purpose should determine whether the strategy deserves consideration.":
+    "L’objectif doit déterminer si la stratégie mérite d’être envisagée.",
+  "HOW DOES INDEXING WORK?": "COMMENT FONCTIONNE L’INDEXATION",
+  "The policy may use an external index as part of an interest-crediting formula.":
+    "La police peut utiliser un indice externe dans le cadre d’une formule de crédit d’intérêts.",
+  "Important elements can include:":
+    "Les éléments importants peuvent inclure :",
   "It provides a death benefit and can accumulate cash value.":
     "Elle offre une prestation de décès et peut accumuler une valeur de rachat.",
   "Depending on the policy, interest credited to the cash value can be partly linked to an external market index.":
@@ -484,6 +554,30 @@ const fr: TranslationMap = {
     "Explorez les domaines financiers avec un guide axé sur l’éducation.",
   "FKSola Financial helps clients review protection, planning, retirement, education, and legacy questions without pressure.":
     "FKSola Financial aide les clients à examiner sans pression les questions de protection, de planification, de retraite, d’éducation et de transmission.",
+  "PRESERVE WHAT YOU'VE BUILT. PLAN FOR WHAT COMES NEXT.":
+    "PRÉSERVEZ CE QUE VOUS AVEZ BÂTI. PRÉPAREZ CE QUI VIENT ENSUITE.",
+  "A legacy can be financial. But it can also be the opportunities, protection, values, and choices you leave behind.":
+    "Un héritage peut être financier. Il peut aussi inclure les occasions, la protection, les valeurs et les choix que vous laissez derrière vous.",
+  "WHAT COULD YOUR LEGACY INCLUDE?": "QUE POURRAIT INCLURE VOTRE HÉRITAGE",
+  "Family security.": "Sécurité familiale.",
+  "Future generations.": "Générations futures.",
+  "Business interests.": "Intérêts commerciaux.",
+  "Charitable giving.": "Dons caritatifs.",
+  "Retirement assets.": "Actifs de retraite.",
+  "Property.": "Biens immobiliers.",
+  "Other financial resources.": "Autres ressources financières.",
+  "WHY PLAN EARLY?": "POURQUOI PLANIFIER TÔT",
+  "Without intentional planning, the transfer of assets can become more complicated for your family. Legacy planning gives you an opportunity to think about:":
+    "Sans planification intentionnelle, le transfert des actifs peut devenir plus compliqué pour votre famille. La planification successorale vous donne l’occasion de réfléchir à :",
+  "Who receives what?": "Qui reçoit quoi?",
+  "Understand your goals.": "Comprendre vos objectifs.",
+  "Identify financial considerations.": "Identifier les considérations financières.",
+  "Coordinate with legal and tax professionals when appropriate.":
+    "Coordonner avec des professionnels juridiques et fiscaux lorsque cela est approprié.",
+  "Review your plan as circumstances change.":
+    "Réviser votre plan lorsque les circonstances changent.",
+  "YOUR LEGACY SHOULD REFLECT WHAT MATTERS TO YOU.":
+    "VOTRE HÉRITAGE DEVRAIT REFLÉTER CE QUI COMPTE POUR VOUS.",
   Opportunity: "Opportunité",
   "Career / Business Opportunity": "Carrière / Opportunité d’affaires",
   "Build a Business. Make an Impact.": "Construisez une entreprise. Créez un impact.",

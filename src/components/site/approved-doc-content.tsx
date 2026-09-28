@@ -49,12 +49,12 @@ export function ApprovedDocContent({
               isDisclosure
                 ? "border-[#C9A227]/30 bg-[#F7F4EC]"
                 : "border-[#0B1F3A]/10 bg-white"
-            } ${compact ? "p-4 sm:p-5" : "p-4 sm:p-5 lg:p-6"}`}
+            } ${compact ? "p-4 sm:p-5" : "p-3.5 sm:p-5 lg:p-6"}`}
           >
-            <h2 className="text-xl font-bold leading-snug text-[#071629] sm:text-2xl">
+            <h2 className="break-words text-lg font-bold leading-snug text-[#071629] sm:text-2xl">
               {translate(formatTitle(section.title))}
             </h2>
-            <div className="mt-4 grid gap-3">
+            <div className="mt-3 grid gap-2.5 sm:mt-4 sm:gap-3">
               {section.paragraphs.map((paragraph, index) => {
                 const cleanedParagraph = cleanParagraph(paragraph);
                 const translatedParagraph = translate(cleanedParagraph);
@@ -62,7 +62,7 @@ export function ApprovedDocContent({
                 return isListLike(paragraph) ? (
                   <div
                     key={`${section.title}-${paragraph}-${index}`}
-                    className="flex gap-3 text-[15px] leading-7 text-[#334155] sm:text-base"
+                    className="flex gap-3 break-words text-[15px] leading-7 text-[#334155] sm:text-base"
                   >
                     <CheckCircle2
                       className="mt-1 size-4 shrink-0 text-[#C9A227]"
@@ -73,7 +73,7 @@ export function ApprovedDocContent({
                 ) : (
                   <p
                     key={`${section.title}-${paragraph}-${index}`}
-                    className="text-[15px] leading-7 text-[#334155] sm:text-base sm:leading-8"
+                    className="break-words text-[15px] leading-7 text-[#334155] sm:text-base sm:leading-8"
                   >
                     {translatedParagraph}
                   </p>
@@ -150,7 +150,9 @@ function trimIntroContext(lines: string[]) {
 
 function trimDesignerNotes(lines: string[]) {
   const designerNoteIndex = lines.findIndex((line) =>
-    /^DESIGNER NOTE$/i.test(line)
+    /^(DESIGNER NOTE|SOURCE NOTE FOR DESIGNER|SOURCE NOTE FOR DESIGNER \/ COMPLIANCE REVIEW)$/i.test(
+      line
+    )
   );
   return designerNoteIndex >= 0 ? lines.slice(0, designerNoteIndex) : lines;
 }
@@ -230,28 +232,78 @@ function getTranslator(locale: ReturnType<typeof getLocaleFromPathname>) {
       dictionary[value] ??
       normalizedDictionary.get(normalizeText(value)) ??
       lowercaseDictionary.get(normalizeText(value).toLowerCase()) ??
+      translateSentenceParts(value, dictionary, normalizedDictionary, lowercaseDictionary) ??
       value;
 
     return formatTranslation(translated, locale);
   };
 }
 
+function translateSentenceParts(
+  value: string,
+  dictionary: Record<string, string>,
+  normalizedDictionary: Map<string, string>,
+  lowercaseDictionary: Map<string, string>
+) {
+  const parts = value.match(/[^.!?]+[.!?]+|[^.!?]+$/g);
+  if (!parts || parts.length < 2) {
+    return null;
+  }
+
+  let translatedAny = false;
+  const translated = parts
+    .map((part) => {
+      const leading = part.match(/^\s*/)?.[0] ?? "";
+      const trailing = part.match(/\s*$/)?.[0] ?? "";
+      const trimmed = part.trim();
+      const normalized = normalizeText(trimmed);
+      const translatedPart =
+        dictionary[trimmed] ??
+        normalizedDictionary.get(normalized) ??
+        lowercaseDictionary.get(normalized.toLowerCase());
+
+      if (translatedPart) {
+        translatedAny = true;
+        return `${leading}${translatedPart}${trailing}`;
+      }
+
+      return part;
+    })
+    .join("");
+
+  return translatedAny ? translated : null;
+}
+
 function formatTranslation(
   value: string,
   locale: ReturnType<typeof getLocaleFromPathname>
 ) {
+  const decoded = decodeTextEntities(value);
+
   if (locale === "es") {
-    return value.replace(/¿/g, "");
+    return decoded.replace(/¿/g, "");
   }
 
-  return value;
+  return decoded;
 }
 
 function normalizeText(value: string) {
   return value
+    .replace(/&apos;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, "&")
     .replace(/[‘’]/g, "'")
     .replace(/[“”]/g, '"')
+    .replace(/[–—]/g, "-")
     .replace(/\u00a0/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function decodeTextEntities(value: string) {
+  return value
+    .replace(/&apos;/g, "'")
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, "&");
 }
