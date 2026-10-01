@@ -119,13 +119,23 @@ const es: TranslationMap = {
     "Proporciona un beneficio por fallecimiento y puede acumular valor en efectivo.",
   "Depending on the policy, interest credited to the cash value may be linked in part to an external market index.":
     "Según la póliza, los intereses acreditados al valor en efectivo pueden estar vinculados en parte a un índice de mercado externo.",
+  "According to the policy, the interest credited to the cash value may be partly linked to an external market index.":
+    "Según la póliza, los intereses acreditados al valor en efectivo pueden estar vinculados en parte a un índice de mercado externo.",
   "The policyholder does not directly invest in that index.":
     "El titular de la póliza no invierte directamente en ese índice.",
+  "The policyholder does not invest directly in that index.":
+    "El titular de la póliza no invierte directamente en ese índice.",
   "WHY DO PEOPLE CONSIDER IUL?": "POR QUÉ LAS PERSONAS CONSIDERAN IUL",
+  "WHY PEOPLE CONSIDER IT IUL": "POR QUÉ LAS PERSONAS CONSIDERAN IUL",
+  "WHY PEOPLE CONSIDER IUL": "POR QUÉ LAS PERSONAS CONSIDERAN IUL",
   "Depending on the policy and how it is designed, an IUL may be considered for:":
     "Según la póliza y cómo esté diseñada, una IUL puede considerarse para:",
+  "Depending on the policy and how it is designed, an IUL can be considered for:":
+    "Según la póliza y cómo esté diseñada, una IUL puede considerarse para:",
   "Cash-value accumulation.": "Acumulación de valor en efectivo.",
+  "Accumulation of cash value.": "Acumulación de valor en efectivo.",
   "Potential living benefits.": "Posibles beneficios en vida.",
+  "Potential benefits during life.": "Posibles beneficios en vida.",
   "Long-term family planning.": "Planificación familiar a largo plazo.",
   "Certain education or retirement strategies.":
     "Ciertas estrategias de educación o jubilación.",
@@ -134,14 +144,67 @@ const es: TranslationMap = {
   "HOW DOES INDEXING WORK?": "CÓMO FUNCIONA LA INDEXACIÓN",
   "The policy may use an external index as part of an interest-crediting formula.":
     "La póliza puede usar un índice externo como parte de una fórmula de acreditación de intereses.",
+  "The policy may use an external index as part of an interest accreditation formula.":
+    "La póliza puede usar un índice externo como parte de una fórmula de acreditación de intereses.",
   "Important elements can include:":
     "Los elementos importantes pueden incluir:",
+  "Important elements may include:":
+    "Los elementos importantes pueden incluir:",
+  "CAPS - A maximum interest-crediting rate under a particular method.":
+    "TOPES: una tasa máxima de acreditación de intereses bajo un método particular.",
+  "CAPS: maximum interest credit rate according to a particular method.":
+    "TOPES: tasa máxima de acreditación de intereses según un método particular.",
+  "PARTICIPATION RATES - The percentage of index performance used under a particular method.":
+    "TASAS DE PARTICIPACIÓN: el porcentaje del rendimiento del índice usado bajo un método particular.",
+  "PARTICIPATION RATES: the percentage return of the index used according to a particular method.":
+    "TASAS DE PARTICIPACIÓN: el porcentaje del rendimiento del índice usado según un método particular.",
+  "SPREADS - An amount that may affect the interest credited under certain methods.":
+    "DIFERENCIALES: una cantidad que puede afectar el interés acreditado bajo ciertos métodos.",
+  "SPREADS - An amount that can affect the interest credited under certain methods.":
+    "DIFERENCIALES: una cantidad que puede afectar el interés acreditado bajo ciertos métodos.",
+  "POLICY CHARGES - Insurance and other charges that affect policy values.":
+    "CARGOS DE LA PÓLIZA: seguros y otros cargos que afectan los valores de la póliza.",
+  "POLICY CHARGES: insurance and other charges that affect policy values.":
+    "CARGOS DE LA PÓLIZA: seguros y otros cargos que afectan los valores de la póliza.",
+  "These features vary by policy and carrier.":
+    "Estas características varían según la póliza y la compañía aseguradora.",
+  "These features vary depending on the policy and the provider.":
+    "Estas características varían según la póliza y la compañía aseguradora.",
+  "WHAT HAPPENS WHEN THE INDEX GOES DOWN?":
+    "QUÉ PASA CUANDO EL ÍNDICE BAJA",
   "It provides a death benefit and can accumulate cash value.":
     "Proporciona un beneficio por fallecimiento y puede acumular valor en efectivo.",
   "Depending on the policy, interest credited to the cash value can be partly linked to an external market index.":
     "Dependiendo de la póliza, los intereses acreditados al valor en efectivo pueden estar vinculados en parte a un índice de mercado externo.",
   "The insured does not invest directly in that index.":
     "El asegurado no invierte directamente en ese índice.",
+  "Under certain crediting methods, a negative index return may result in a zero index credit rather than a negative index credit.":
+    "Bajo ciertos métodos de acreditación, un rendimiento negativo del índice puede resultar en un crédito de índice cero en lugar de un crédito negativo.",
+  "That is an important feature.": "Esa es una característica importante.",
+  "That's an important feature.": "Esa es una característica importante.",
+  "But it should not be confused with having no risk.":
+    "Pero no debe confundirse con no tener riesgo.",
+  "But this should not be confused with having no risk.":
+    "Pero esto no debe confundirse con no tener riesgo.",
+  "Policy charges continue. Loans and withdrawals can affect values. Funding decisions and policy performance can affect sustainability.":
+    "Los cargos de la póliza continúan. Los préstamos y retiros pueden afectar los valores. Las decisiones de financiamiento y el desempeño de la póliza pueden afectar su sostenibilidad.",
+  "Certain IUL policies may provide living-benefit provisions or riders.":
+    "Ciertas pólizas IUL pueden incluir disposiciones o cláusulas adicionales de beneficios en vida.",
+  "When qualifying conditions are met, these may allow access to a portion of the death benefit while the insured is living.":
+    "Cuando se cumplen las condiciones calificadas, estas pueden permitir acceder a una parte del beneficio por fallecimiento mientras el asegurado está vivo.",
+  "The specific conditions and benefits depend on the contract.":
+    "Las condiciones y beneficios específicos dependen del contrato.",
+  "Depending on the policy, qualifying conditions may include certain critical, chronic, or terminal illnesses. The actual benefits, definitions, limitations, and requirements vary by policy and carrier.":
+    "Según la póliza, las condiciones calificadas pueden incluir ciertas enfermedades críticas, crónicas o terminales. Los beneficios reales, definiciones, limitaciones y requisitos varían según la póliza y la compañía aseguradora.",
+  "CASH VALUE AND POLICY ACCESS": "VALOR EN EFECTIVO Y ACCESO A LA PÓLIZA",
+  "An IUL may accumulate cash value over time, depending on policy funding, interest credits, charges, and other contractual factors.":
+    "Una IUL puede acumular valor en efectivo con el tiempo, según el financiamiento de la póliza, los créditos de intereses, los cargos y otros factores contractuales.",
+  "Depending on the policy, available cash value may potentially be accessed through withdrawals or policy loans.":
+    "Según la póliza, el valor en efectivo disponible puede accederse potencialmente mediante retiros o préstamos de la póliza.",
+  "These transactions can reduce cash value and the death benefit and can affect whether the policy remains in force. Policy loans may also accrue interest.":
+    "Estas transacciones pueden reducir el valor en efectivo y el beneficio por fallecimiento, y pueden afectar si la póliza permanece vigente. Los préstamos de la póliza también pueden acumular intereses.",
+  "Understanding how policy values, charges, loans, withdrawals, and funding interact is important before using an IUL as part of a broader financial strategy.":
+    "Es importante comprender cómo interactúan los valores de la póliza, los cargos, los préstamos, los retiros y el financiamiento antes de usar una IUL como parte de una estrategia financiera más amplia.",
   "Insurance contracts that may combine index-linked interest-crediting potential with contractual guarantees.":
     "Contratos de seguro que pueden combinar potencial de interés vinculado a un índice con garantías contractuales.",
   "An insurance contract designed for long-term planning.":
