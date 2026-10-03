@@ -1012,7 +1012,7 @@ export const generatedTranslations: Record<Exclude<Locale, "en">, GeneratedTrans
     "WHY MIGHT SOMEONE CONSIDER AN FIA?": "¿POR QUÉ ALGUIEN PODRÍA CONSIDERAR UNA FIA?",
     "Depending on the contract, an FIA may offer:": "Dependiendo del contrato, una FIA puede ofrecer:",
     "Tax-deferred accumulation.": "Acumulación de impuestos diferidos.",
-    "Contractual guarantees.": "<g id=\"pt69\">Garantías contractuales</g><g id=\"pt70\">:</g>",
+    "Contractual guarantees.": "Garantías contractuales:",
     "Interest-crediting potential linked to an external index.": "Potencial de crédito de intereses vinculado a un índice externo.",
     "Retirement-income options.": "Opciones de ingresos de jubilación.",
     "Protection from negative index credits under certain crediting methods.": "Protección contra créditos de índice negativo bajo ciertos métodos de acreditación.",
