@@ -240,8 +240,19 @@ const es: TranslationMap = {
   "YOUR LEGACY SHOULD REFLECT WHAT MATTERS TO YOU.":
     "SU LEGADO DEBE REFLEJAR LO QUE IMPORTA PARA USTED.",
   "Make your wishes clear.": "Deje claros sus deseos.",
+  "MAKE YOUR WISHES CLEAR": "DEJE CLAROS SUS DESEOS",
   "Know where you stand before you decide where to go.":
     "Sepa dónde se encuentra antes de decidir hacia dónde avanzar.",
+  "KNOW WHERE YOU STAND BEFORE YOU DECIDE WHERE TO GO":
+    "SEPA DÓNDE SE ENCUENTRA ANTES DE DECIDIR HACIA DÓNDE AVANZAR",
+  "MAKE FINANCIAL DECISIONS WITH TAXES IN MIND":
+    "TOME DECISIONES FINANCIERAS TENIENDO EN CUENTA LOS IMPUESTOS",
+  "UNDERSTAND WHAT 'RETURN OF PREMIUM' REALLY MEANS":
+    "ENTIENDA LO QUE REALMENTE SIGNIFICA LA DEVOLUCIÓN DE PRIMA",
+  "WHAT DOES RETURN OF PREMIUM MEAN?":
+    "QUÉ SIGNIFICA LA DEVOLUCIÓN DE PRIMA",
+  "DIFFERENT CARRIERS. MORE OPTIONS.":
+    "DIFERENTES COMPAÑÍAS. MÁS OPCIONES.",
   "Plan ahead. Help protect the people you love.":
     "Planifique con anticipación. Ayude a proteger a las personas que ama.",
   "Life insurance planning focused on helping loved ones address final financial responsibilities.":
@@ -443,8 +454,19 @@ const fr: TranslationMap = {
   "Preserve what you have built. Plan for what comes next.":
     "Préservez ce que vous avez bâti. Planifiez la suite.",
   "Make your wishes clear.": "Rendez vos volontés claires.",
+  "MAKE YOUR WISHES CLEAR": "RENDEZ VOS VOLONTÉS CLAIRES",
   "Know where you stand before you decide where to go.":
     "Sachez où vous en êtes avant de décider où aller.",
+  "KNOW WHERE YOU STAND BEFORE YOU DECIDE WHERE TO GO":
+    "SACHEZ OÙ VOUS EN ÊTES AVANT DE DÉCIDER OÙ ALLER",
+  "MAKE FINANCIAL DECISIONS WITH TAXES IN MIND":
+    "PRENEZ DES DÉCISIONS FINANCIÈRES EN TENANT COMPTE DES IMPÔTS",
+  "UNDERSTAND WHAT 'RETURN OF PREMIUM' REALLY MEANS":
+    "COMPRENEZ CE QUE SIGNIFIE RÉELLEMENT LE REMBOURSEMENT DE PRIME",
+  "WHAT DOES RETURN OF PREMIUM MEAN?":
+    "QUE SIGNIFIE LE REMBOURSEMENT DE PRIME",
+  "DIFFERENT CARRIERS. MORE OPTIONS.":
+    "DIFFÉRENTS ASSUREURS. PLUS D’OPTIONS.",
   "Plan ahead. Help protect the people you love.":
     "Planifiez à l’avance. Aidez à protéger les personnes que vous aimez.",
   INTRODUCTION: "INTRODUCTION",

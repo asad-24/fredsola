@@ -36,7 +36,7 @@ export function ApprovedDocContent({
   const sections = parseApprovedDocument(approvedDocuments[docKey].text);
 
   return (
-    <div className="grid gap-4">
+    <div className="grid gap-4" data-no-translate>
       {sections.map((section) => {
         const isDisclosure = /disclosure|disclaimer|notice|terms|privacy/i.test(
           section.title
@@ -164,6 +164,8 @@ function shouldSkipLine(line: string) {
     /^WORKING PAGE \d+/i.test(line) ||
     /^SOLUTION \d+/i.test(line) ||
     /^SOLUTIONS LANDING PAGE/i.test(line) ||
+    /^SOLUTIONS \/ INFORMATION LANDING PAGE/i.test(line) ||
+    /^EXPANDED .*PAGE$/i.test(line) ||
     /^EDUCATIONAL PAGE/i.test(line) ||
     /^RESOURCE \/ EDUCATIONAL TOPIC/i.test(line) ||
     /^Short description:/i.test(line) ||
@@ -233,10 +235,98 @@ function getTranslator(locale: ReturnType<typeof getLocaleFromPathname>) {
       normalizedDictionary.get(normalizeText(value)) ??
       lowercaseDictionary.get(normalizeText(value).toLowerCase()) ??
       translateSentenceParts(value, dictionary, normalizedDictionary, lowercaseDictionary) ??
+      translateKnownApprovedContent(value, locale) ??
       value;
 
     return formatTranslation(translated, locale);
   };
+}
+
+function translateKnownApprovedContent(
+  value: string,
+  locale: ReturnType<typeof getLocaleFromPathname>
+) {
+  const normalized = normalizeText(value).toLowerCase();
+
+  if (locale === "es") {
+    if (/^how indexing works$/.test(normalized)) {
+      return "CÓMO FUNCIONA LA INDEXACIÓN";
+    }
+    if (/^caps[:\s-].*maximum.*interest.*credit.*particular method/.test(normalized)) {
+      return "TOPES: una tasa máxima de acreditación de intereses bajo un método particular.";
+    }
+    if (/^participation rates[:\s-].*percentage.*index.*(return|performance).*particular method/.test(normalized)) {
+      return "TASAS DE PARTICIPACIÓN: el porcentaje del rendimiento del índice usado bajo un método particular.";
+    }
+    if (/^(spreads|differentials)[:\s-].*(amount|cantidad).*affect.*interest.*credited/.test(normalized)) {
+      return "DIFERENCIALES: una cantidad que puede afectar el interés acreditado bajo ciertos métodos.";
+    }
+    if (/^policy charges[:\s-].*insurance.*charges.*affect policy values/.test(normalized)) {
+      return "CARGOS DE LA PÓLIZA: seguros y otros cargos que afectan los valores de la póliza.";
+    }
+    if (/^the policy may use an external index as part of an interest/.test(normalized)) {
+      return "La póliza puede usar un índice externo como parte de una fórmula de acreditación de intereses.";
+    }
+    if (/^important elements (can|may) include/.test(normalized)) {
+      return "Los elementos importantes pueden incluir:";
+    }
+    if (/^these features vary/.test(normalized)) {
+      return "Estas características varían según la póliza y la compañía aseguradora.";
+    }
+    if (/^under certain crediting methods.*negative index return/.test(normalized)) {
+      return "Bajo ciertos métodos de acreditación, un rendimiento negativo del índice puede resultar en un crédito de índice cero en lugar de un crédito negativo.";
+    }
+    if (/^that('s| is) an important feature/.test(normalized)) {
+      return "Esa es una característica importante.";
+    }
+    if (/^but (this|it) should not be confused with having no risk/.test(normalized)) {
+      return "Pero esto no debe confundirse con no tener riesgo.";
+    }
+    if (/^policy charges continue/.test(normalized)) {
+      return "Los cargos de la póliza continúan. Los préstamos y retiros pueden afectar los valores. Las decisiones de financiamiento y el desempeño de la póliza pueden afectar su sostenibilidad.";
+    }
+  }
+
+  if (locale === "fr") {
+    if (/^how indexing works$/.test(normalized)) {
+      return "COMMENT FONCTIONNE L’INDEXATION";
+    }
+    if (/^caps[:\s-].*maximum.*interest.*credit.*particular method/.test(normalized)) {
+      return "PLAFONDS : un taux maximal de crédit d’intérêt selon une méthode particulière.";
+    }
+    if (/^participation rates[:\s-].*percentage.*index.*(return|performance).*particular method/.test(normalized)) {
+      return "TAUX DE PARTICIPATION : le pourcentage du rendement de l’indice utilisé selon une méthode particulière.";
+    }
+    if (/^(spreads|differentials)[:\s-].*(amount|montant).*affect.*interest.*credited/.test(normalized)) {
+      return "ÉCARTS : un montant qui peut affecter les intérêts crédités selon certaines méthodes.";
+    }
+    if (/^policy charges[:\s-].*insurance.*charges.*affect policy values/.test(normalized)) {
+      return "FRAIS DE POLICE : assurance et autres frais qui affectent les valeurs de la police.";
+    }
+    if (/^the policy may use an external index as part of an interest/.test(normalized)) {
+      return "La police peut utiliser un indice externe dans le cadre d’une formule de crédit d’intérêts.";
+    }
+    if (/^important elements (can|may) include/.test(normalized)) {
+      return "Les éléments importants peuvent inclure :";
+    }
+    if (/^these features vary/.test(normalized)) {
+      return "Ces caractéristiques varient selon la police et l’assureur.";
+    }
+    if (/^under certain crediting methods.*negative index return/.test(normalized)) {
+      return "Selon certaines méthodes de crédit, un rendement d’indice négatif peut donner lieu à un crédit d’indice nul plutôt qu’à un crédit négatif.";
+    }
+    if (/^that('s| is) an important feature/.test(normalized)) {
+      return "C’est une caractéristique importante.";
+    }
+    if (/^but (this|it) should not be confused with having no risk/.test(normalized)) {
+      return "Mais cela ne doit pas être confondu avec une absence de risque.";
+    }
+    if (/^policy charges continue/.test(normalized)) {
+      return "Les frais de police continuent. Les prêts et les retraits peuvent affecter les valeurs. Les décisions de financement et le rendement de la police peuvent affecter sa viabilité.";
+    }
+  }
+
+  return null;
 }
 
 function translateSentenceParts(
