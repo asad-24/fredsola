@@ -15,6 +15,10 @@ type ParsedSection = {
 const skipLines = new Set([
   "FKSOLA FINANCIAL",
   "FKSola Financial",
+  "National Website Privacy Policy",
+  "Website Terms of Use",
+  "Licensing & Disclosures",
+  "Educational Content Disclaimer",
   "PAGE TITLE",
   "HERO",
   "CTA",
